@@ -1,0 +1,1 @@
+module.exports = require("npm:tether@1.4.0/dist/js/tether.js");

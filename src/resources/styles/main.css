@@ -1,3 +1,33 @@
+h2 {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 20px;
+  padding-left: 10px; }
 
+main {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  justify-content: center;
+  font-family: "Merriweather", serif;
+  font-size: 14px;
+  color: #101313; }
+  @media screen and (max-width: 875px) {
+    main {
+      flex-direction: column-reverse;
+      -webkit-align-items: center;
+      align-items: center; } }
+  main .form {
+    box-shadow: 1px 2px 9px -1px #757575;
+    border-radius: 3px; }
+
+section {
+  padding: 10px;
+  margin: 10px;
+  width: 38%; }
+  @media screen and (max-width: 875px) {
+    section {
+      width: 70%; } }
 
 /*# sourceMappingURL=main.css.map */

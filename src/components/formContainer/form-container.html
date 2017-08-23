@@ -1,3 +1,26 @@
 <template>
   <h2>${headline}</h2>
+  <h3>#Attribute</h3>
+  <form action="">
+    <label repeat.for="num of numAttr">
+        <input model.bind="num" checked.bind="$parent.selectedAttr" type="radio" name="numAttr">
+        ${num.label}
+    </label>
+  </form>
+  <h3>#Abhängigkeiten</h3>
+  <form action="">
+    <label repeat.for="dep of numDep">
+          <input  model.bind="dep" checked.bind="$parent.selectedDep" type="radio" name="numDep">
+          ${dep.label}
+      </label>
+  </form>
+  <form>
+    <label>
+      Attribute benennen?
+      <input checked.bind="nameAttr" type="checkbox" name="nameAttr" change.delegate="log()" disabled.bind="(!selectedDep) || (!selectedAttr)">
+    </label>
+    
+  </form>
+
+  <button type="button" disabled.bind="(!selectedDep) || (!selectedAttr)">Bestätigen</button>
 </template>

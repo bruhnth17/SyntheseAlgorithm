@@ -1,1 +1,47 @@
 @import '../../components/asideInfo/asideInfo';
+@import '../../components/formContainer/formContainer';
+
+@import '../styles/_var.scss';
+
+$break-small: 875px;
+
+h2 {
+  font-family: $font-headline;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+main {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row; 
+  flex-direction: row;
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  font-family: $font-text;
+  font-size: 14px;  //TODO: Make this generall
+  color: #101313;
+
+  @media screen and (max-width: $break-small) {
+    flex-direction: column-reverse;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .form {
+    //border: 1px solid #757575;
+    box-shadow: $box-shaddow;
+    border-radius: 3px;
+  }
+}
+
+section {
+  padding: 10px;
+  margin: 10px;
+  width: 38%;
+
+  @media screen and (max-width: $break-small) {
+    width: 70%;
+  }
+}

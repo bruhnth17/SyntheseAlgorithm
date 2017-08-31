@@ -28,4 +28,8 @@ export class FormContainer {
   log() {
     console.log(this.nameAttr);
   }
+
+  rotate() {
+    document.getElementsByClassName('form')[0].classList.add('rotate');
+  }
 }

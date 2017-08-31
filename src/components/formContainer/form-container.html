@@ -22,7 +22,8 @@
         </label>
         <nav>
           <button disabled="disabled">Zurück</button>
-          <button type="Submit" disabled.bind="(!selectedDep) || (!selectedAttr)">Weiter</button>
+          <button type="Submit" disabled.bind="(!selectedDep) || (!selectedAttr)"
+                  click.delegate="rotate()">Weiter</button>
         </nav>
       </form>
   </div>

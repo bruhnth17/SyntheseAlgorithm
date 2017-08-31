@@ -37,7 +37,8 @@ dependencies-container label {
 h2 {
   font-family: "Fjalla One", sans-serif;
   font-size: 20px;
-  padding-left: 10px; }
+  padding-left: 10px;
+  margin-top: 10px; }
 
 main {
   display: -webkit-flex;
@@ -55,7 +56,6 @@ main {
       -webkit-align-items: center;
       align-items: center; } }
   main .form {
-    margin-top: 100px;
     transform-style: preserve-3d;
     perspective: 1000px; }
     main .form dependencies-container {
@@ -68,25 +68,27 @@ main {
 section {
   margin: 10px;
   width: 38%; }
+  section.info {
+    padding: 1rem; }
   @media screen and (max-width: 875px) {
     section {
       width: 70%; } }
 
 form-container,
 dependencies-container {
-  background-color: white;
-  background-size: cover;
-  background-position: center;
   transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  backface-visibility: hidden; }
+  backface-visibility: hidden;
+  background-color: lightgoldenrodyellow;
+  border-radius: 5px; }
   form-container div.content,
   dependencies-container div.content {
     transform: translateY(-50%) translateZ(60px) scale(0.94);
     top: 50%;
-    position: absolute;
     left: 0;
+    position: absolute;
     width: 100%;
-    padding: 2rem;
+    height: 100%;
+    padding: 1rem;
     box-sizing: border-box;
     outline: 1px solid transparent;
     perspective: inherit;
@@ -107,14 +109,16 @@ dependencies-container {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; }
 
-.form:hover dependencies-container, .form:hover form-container {
+.form.rotate dependencies-container, .form.rotate form-container {
   transition: transform 1s cubic-bezier(0.4, 0.2, 0.2, 1); }
-.form:hover form-container {
+.form.rotate form-container {
   transform: rotateY(-180deg);
   transform-style: preserve-3d; }
-.form:hover dependencies-container {
+.form.rotate dependencies-container {
   transform: rotateY(0deg);
   transform-style: preserve-3d; }
 

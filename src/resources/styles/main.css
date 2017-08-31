@@ -1,3 +1,39 @@
+form-container label {
+  color: grey;
+  cursor: pointer;
+  margin: 0 auto; }
+  form-container label span {
+    font-size: 20px;
+    padding: 0 5px; }
+  form-container label input {
+    display: none; }
+    form-container label input:checked + span {
+      color: black; }
+    form-container label input:not(:checked):hover + span {
+      color: darkgrey; }
+
+dependencies-container form {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+dependencies-container .middle {
+  padding: 0 25px; }
+dependencies-container label {
+  color: grey;
+  cursor: pointer; }
+  dependencies-container label span {
+    font-size: 20px;
+    padding: 0 2px; }
+  dependencies-container label input {
+    display: none; }
+    dependencies-container label input:checked + span {
+      color: black; }
+    dependencies-container label input:not(:checked):hover + span {
+      color: darkgrey; }
+
+* {
+  box-sizing: border-box; }
+
 h2 {
   font-family: "Fjalla One", sans-serif;
   font-size: 20px;
@@ -19,15 +55,67 @@ main {
       -webkit-align-items: center;
       align-items: center; } }
   main .form {
-    box-shadow: 1px 2px 9px -1px #757575;
-    border-radius: 3px; }
+    margin-top: 100px;
+    transform-style: preserve-3d;
+    perspective: 1000px; }
+    main .form dependencies-container {
+      transform: rotateY(180deg);
+      transform-style: preserve-3d; }
+    main .form form-container {
+      transform: rotateY(0deg);
+      transform-style: preserve-3d; }
 
 section {
-  padding: 10px;
   margin: 10px;
   width: 38%; }
   @media screen and (max-width: 875px) {
     section {
       width: 70%; } }
+
+form-container,
+dependencies-container {
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  backface-visibility: hidden; }
+  form-container div.content,
+  dependencies-container div.content {
+    transform: translateY(-50%) translateZ(60px) scale(0.94);
+    top: 50%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    outline: 1px solid transparent;
+    perspective: inherit;
+    z-index: 2; }
+
+form-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  content: '';
+  display: block;
+  backface-visibility: hidden; }
+
+dependencies-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
+.form:hover dependencies-container, .form:hover form-container {
+  transition: transform 1s cubic-bezier(0.4, 0.2, 0.2, 1); }
+.form:hover form-container {
+  transform: rotateY(-180deg);
+  transform-style: preserve-3d; }
+.form:hover dependencies-container {
+  transform: rotateY(0deg);
+  transform-style: preserve-3d; }
 
 /*# sourceMappingURL=main.css.map */

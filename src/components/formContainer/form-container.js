@@ -3,7 +3,7 @@ import {bindable} from 'aurelia-framework';
 export class FormContainer {
 
   constructor() {
-    this.headline = 'Schritt 1: Attribute & Abhängigkeiten';
+    this.headline = 'Schritt 1: Anzahl Attribute & Abhängigkeiten';
     this.numAttr = [
       {id: 3, label: '3'},
       {id: 4, label: '4'},

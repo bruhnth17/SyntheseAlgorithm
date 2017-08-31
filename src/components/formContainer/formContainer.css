@@ -1,3 +1,15 @@
-
+form-container label {
+  color: grey;
+  cursor: pointer;
+  margin: 0 auto; }
+  form-container label span {
+    font-size: 20px;
+    padding: 0 5px; }
+  form-container label input {
+    display: none; }
+    form-container label input:checked + span {
+      color: black; }
+    form-container label input:not(:checked):hover + span {
+      color: darkgrey; }
 
 /*# sourceMappingURL=formContainer.css.map */

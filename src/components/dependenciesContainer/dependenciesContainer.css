@@ -1,0 +1,20 @@
+dependencies-container form {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+dependencies-container .middle {
+  padding: 0 25px; }
+dependencies-container label {
+  color: grey;
+  cursor: pointer; }
+  dependencies-container label span {
+    font-size: 20px;
+    padding: 0 2px; }
+  dependencies-container label input {
+    display: none; }
+    dependencies-container label input:checked + span {
+      color: black; }
+    dependencies-container label input:not(:checked):hover + span {
+      color: darkgrey; }
+
+/*# sourceMappingURL=dependenciesContainer.css.map */

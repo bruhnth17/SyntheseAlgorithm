@@ -4,6 +4,10 @@ dependencies-container {
     width: 100%;
     display: flex;
     justify-content: center;
+
+    &.dependency.hide {
+      display: none;
+    }
   }
 
   .middle {

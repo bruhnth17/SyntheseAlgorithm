@@ -10,12 +10,21 @@ export class DependenciesContainer {
 
   subscribe() {
     this.ea.subscribe('numbers', response => {
-      this.adjustDependencieOptions(response.attr.id, response.dep.id);
+      this.adjustDependencyOptions(response.attr.id, response.dep.id);
     });
   }
 
-  adjustDependencieOptions(attr, dep) {
-    console.log(attr, dep);
+  adjustDependencyOptions(attr, dep) {
+    //console.log('adjustDependencyOptions');
+    let dependencies = document.getElementsByClassName('dependency');
+    console.log(dependencies);
+    for (let i = 0; i < dependencies.length; i++) {
+      if (parseInt(dependencies[i].id) > dep) {
+        dependencies[i].classList.add('hide');
+      } else {
+        dependencies[i].classList.remove('hide');
+      }
+    }
   }
 
 

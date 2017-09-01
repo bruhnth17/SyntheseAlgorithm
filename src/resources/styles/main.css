@@ -24,6 +24,8 @@ dependencies-container label {
   dependencies-container label span {
     font-size: 20px;
     padding: 0 2px; }
+  dependencies-container label.hidden {
+    display: none; }
   dependencies-container label input {
     display: none; }
     dependencies-container label input:checked + span {
@@ -48,7 +50,7 @@ main {
   -webkit-justify-content: center;
   justify-content: center;
   font-family: "Merriweather", serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #101313; }
   @media screen and (max-width: 875px) {
     main {
@@ -67,7 +69,8 @@ main {
 
 section {
   margin: 10px;
-  width: 38%; }
+  width: 38%;
+  max-width: 550px; }
   section.info {
     padding: 1rem; }
   @media screen and (max-width: 875px) {
@@ -76,10 +79,15 @@ section {
 
 form-container,
 dependencies-container {
-  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 1s cubic-bezier(0.4, 0.2, 0.2, 1);
   backface-visibility: hidden;
-  background-color: lightgoldenrodyellow;
-  border-radius: 5px; }
+  background-color: white;
+  border: 3px solid lightcoral;
+  border-radius: 10px;
+  box-shadow: 1px 3px 13px 0px rgba(128, 128, 128, 0.65); }
   form-container div.content,
   dependencies-container div.content {
     transform: translateY(-50%) translateZ(60px) scale(0.94);

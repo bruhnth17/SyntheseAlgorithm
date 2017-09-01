@@ -26,7 +26,7 @@ main {
   justify-content: center;
 
   font-family: $font-text;
-  font-size: 14px;  //TODO: Make this generall
+  font-size: 16px;  //TODO: Make this generall
   color: #101313;
 
   @media screen and (max-width: $break-small) {
@@ -54,6 +54,7 @@ main {
 section {
   margin: 10px;
   width: 38%;
+  max-width: 550px;
 
   &.info {
     padding: 1rem;
@@ -66,10 +67,16 @@ section {
 
 form-container,
 dependencies-container {
-	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+	transition: transform 1s cubic-bezier(0.4, 0.2, 0.2, 1);
   backface-visibility: hidden;
-  background-color:lightgoldenrodyellow;
-  border-radius: 5px;
+  background-color: white;
+  border:3px solid lightcoral;
+  border-radius: 10px;
+  box-shadow: 1px 3px 13px 0px rgba(128, 128, 128, 0.65);
   
   div.content {
     transform: translateY(-50%) translateZ(60px) scale(0.94);

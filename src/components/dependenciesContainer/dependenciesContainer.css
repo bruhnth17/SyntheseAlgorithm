@@ -10,6 +10,8 @@ dependencies-container label {
   dependencies-container label span {
     font-size: 20px;
     padding: 0 2px; }
+  dependencies-container label.hidden {
+    display: none; }
   dependencies-container label input {
     display: none; }
     dependencies-container label input:checked + span {

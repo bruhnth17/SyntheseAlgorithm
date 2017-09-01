@@ -20,6 +20,10 @@ dependencies-container {
       padding: 0 2px;
     }
 
+    &.hidden {
+      display: none;
+    }
+
     input {
       display: none;
 

@@ -1,5 +1,9 @@
-import {inject} from 'aurelia-framework';
-import {EventAggregator} from 'aurelia-event-aggregator';
+import {
+  inject
+} from 'aurelia-framework';
+import {
+  EventAggregator
+} from 'aurelia-event-aggregator';
 
 @inject(EventAggregator)
 export class DependenciesContainer {
@@ -14,21 +18,40 @@ export class DependenciesContainer {
     });
   }
 
+  /**
+   * Adjust form for entering dependencies
+   * @param {*number of attributes shown in form} attr
+   * @param {*number of dependencies shown in form} dep
+   */
   adjustDependencyOptions(attr, dep) {
     //console.log('adjustDependencyOptions');
     let dependencies = document.getElementsByClassName('dependency');
-    console.log(dependencies);
+    let attributes = document.getElementsByClassName('attribute');
+    let attributeArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].slice(0, attr);
+
     for (let i = 0; i < dependencies.length; i++) {
       if (parseInt(dependencies[i].id) > dep) {
-        dependencies[i].classList.add('hide');
+        dependencies[i].classList.add('hidden');
       } else {
-        dependencies[i].classList.remove('hide');
+        dependencies[i].classList.remove('hidden');
+      }
+    }
+
+    for (let i = 0; i < attributes.length; i++) {
+      let containsClass = false;
+      attributeArray.forEach(function(c) {
+        containsClass = containsClass || attributes[i].classList.contains(c);
+      });
+
+      if (containsClass) {
+        attributes[i].parentNode.classList.remove('hidden');
+      } else {
+        attributes[i].parentNode.classList.add('hidden');
       }
     }
   }
 
-
-  removeRotate() { //go Back
+  removeRotate() {
     document.getElementsByClassName('form')[0].classList.remove('rotate');
   }
 }

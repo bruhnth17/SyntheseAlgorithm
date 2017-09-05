@@ -2,7 +2,7 @@ dependencies-container form {
   width: 100%;
   display: flex;
   justify-content: center; }
-  dependencies-container form.dependency.hide {
+  dependencies-container form.hidden {
     display: none; }
 dependencies-container .middle {
   padding: 0 25px; }

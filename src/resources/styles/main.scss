@@ -1,5 +1,5 @@
-@import '../../components/asideInfo/asideInfo';
 @import '../../components/formContainer/formContainer';
+@import '../../components/asideInfo/asideInfo';
 @import '../../components/dependenciesContainer/dependenciesContainer';
 
 @import '../styles/_var.scss';
@@ -8,13 +8,33 @@ $break-small: 875px;
 
 *{
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: $lightgrey;
+
+  &:after {
+    content: "";
+    background: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    z-index: -1;
+  }
 }
 
 h2 {
   font-family: $font-headline;
-  font-size: 20px;
-  padding-left: 10px;
-  margin-top: 10px;
+  font-size: 22px;
+  padding-left: 0.5rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $red;
 }
 
 main {
@@ -24,10 +44,10 @@ main {
   flex-direction: row;
   -webkit-justify-content: center;
   justify-content: center;
-
   font-family: $font-text;
   font-size: 16px;  //TODO: Make this generall
-  color: #101313;
+  color: $black;
+  margin-top: $medium;
 
   @media screen and (max-width: $break-small) {
     flex-direction: column-reverse;
@@ -52,12 +72,18 @@ main {
 }
 
 section {
-  margin: 10px;
-  width: 38%;
-  max-width: 550px;
+  margin: $medium;
+  padding: $medium;
+  width:45%;
+  max-width: 560px;
+  min-height: 500px;
+
+  @media screen and (max-width: $break-small) {
+    margin: $tiny;
+  }
 
   &.info {
-    padding: 1rem;
+    
   }
 
   @media screen and (max-width: $break-small) {
@@ -70,14 +96,10 @@ dependencies-container {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-
-	transition: transform 1s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 1s cubic-bezier(0.4, 0.2, 0.2, 1);
   backface-visibility: hidden;
   background-color: white;
-  border:3px solid lightcoral;
-  border-radius: 10px;
-  box-shadow: 1px 3px 13px 0px rgba(128, 128, 128, 0.65);
-  
+  border-radius: 5px;
   div.content {
     transform: translateY(-50%) translateZ(60px) scale(0.94);
     top: 50%;
@@ -85,7 +107,7 @@ dependencies-container {
     position: absolute;
     width: 100%;
     height: 100%;
-    padding: 1rem;
+    padding: 2rem;
     box-sizing: border-box;
     outline: 1px solid transparent;
     perspective: inherit;
@@ -101,8 +123,7 @@ form-container {
   width: 100%;
   height: 100%;
   content: '';
-  display: block;
-  //background-color: #FFFFFF;
+  display: block; //background-color: #FFFFFF;
   backface-visibility: hidden;
 }
 
@@ -116,8 +137,8 @@ dependencies-container {
 }
 
 .form.rotate {
-  dependencies-container, form-container
-  {
+  dependencies-container,
+  form-container {
     transition: transform 1s cubic-bezier(0.4, 0.2, 0.2, 1);
   }
   form-container {
@@ -128,8 +149,40 @@ dependencies-container {
     transform: rotateY(0deg);
     transform-style: preserve-3d;
   }
-
 }
 
+button {
+  background: $orange;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: $tiny $small;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  margin: $small $tiny;
+  border-radius: 6px;
+  border: solid $black;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1), inset 0 0 3px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s ease;
+
+  &.back {
+    background: $grey;
+  }
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.4);
+    border-bottom-width: 4px;
+  }
+  &:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(255, 255, 255, 0.4);
+    border-bottom-width: 1px;
+    transition: 0.1s ease;
+  }
+}
 
 

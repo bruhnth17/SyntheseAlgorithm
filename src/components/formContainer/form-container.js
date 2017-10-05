@@ -5,7 +5,7 @@ import {EventAggregator} from 'aurelia-event-aggregator';
 export class FormContainer {
 
   constructor(eventAggregator) {
-    this.headline = 'Schritt 1: Anzahl Attribute & Abhängigkeiten';
+    this.headline = 'Schritt 1';
     this.ea = eventAggregator;
     this.numAttr = this.numDep =  [
       {id: 3, label: '3'},

@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-      <h2>Schritt 2: Abhängigkeiten definieren</h2>
+      <h2>Schritt 2</h2>
       <form class="dependency" id="1">
         <div class="left">
           <label id="1">
@@ -526,7 +526,9 @@
                           <span>H</span>
                         </label>
                       </div>
-                      <div class="middle"> -> </div>
+                      <div class="middle">
+                        ->
+                        </div>
                       <div class="right">
                         <label id="1">
                           <input type="checkbox" class="attribute A">
@@ -563,7 +565,7 @@
                       </form>
  
       <nav>
-        <button click.delegate="removeRotate()">Zurück</button>
+        <button click.delegate="removeRotate()" class="back">Zurück</button>
         <button click.delegate="evaluateDependencies()">Weiter</button>
       </nav>
   </div>

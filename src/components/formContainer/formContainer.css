@@ -1,15 +1,28 @@
+form-container h3 {
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  font-size: 14px; }
+form-container .content > form {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  justify-content: center; }
 form-container label {
-  color: grey;
+  color: #e8e9eb;
   cursor: pointer;
-  margin: 0 auto; }
+  margin-bottom: 1rem;
+  margin-top: 0.5rem; }
   form-container label span {
-    font-size: 20px;
-    padding: 0 5px; }
+    font-size: 47px;
+    padding: 0 10px;
+    font-weight: bold; }
   form-container label input {
     display: none; }
     form-container label input:checked + span {
-      color: black; }
+      color: #313638; }
     form-container label input:not(:checked):hover + span {
-      color: darkgrey; }
+      color: #c1c0b8; }
 
 /*# sourceMappingURL=formContainer.css.map */

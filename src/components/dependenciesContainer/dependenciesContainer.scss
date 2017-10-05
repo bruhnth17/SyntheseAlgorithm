@@ -4,20 +4,25 @@ dependencies-container {
     width: 100%;
     display: flex;
     justify-content: center;
-
+    margin-bottom: $tiny;
     &.hidden {
       display: none;
     }
   }
 
   .middle {
-    padding: 0 25px;
+    padding: 0 $tiny;
+    margin-top: .45rem;
+    font-weight: bold;
   }
 
   label {
 
-    color: grey;
+    color: $lightgrey;
     cursor: pointer;
+    font-size: 25px;
+    padding: 0 1px;
+    font-weight: bold;
 
     span {
       font-size: 20px;
@@ -32,12 +37,25 @@ dependencies-container {
       display: none;
 
       &:checked+span {
-        color: black;
+        color: $black;
       }
 
       &:not(:checked):hover + span {
-        color: darkgrey;
+        color: $grey;
       }
+    }
+  }
+
+  nav {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row; 
+    flex-direction: row;
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    button {
+      margin-top: $medium;
     }
   }
 }

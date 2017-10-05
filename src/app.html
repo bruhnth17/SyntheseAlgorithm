@@ -2,14 +2,13 @@
   <require from="./components/formContainer/form-container"></require>
   <require from="./components/dependenciesContainer/dependencies-container"></require>
   <require from="./components/asideInfo/aside-info"></require>
-  <h1>${headline}</h1>
   <main>
+    <section class="info">
+        <aside-info></aside-info>  
+    </section>
     <section class="form">
         <form-container></form-container>
         <dependencies-container></dependencies-container>
-    </section>
-    <section class="info">
-        <aside-info></aside-info>  
     </section>
   </main>
 </template>

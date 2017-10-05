@@ -1,23 +1,42 @@
+@import '../../resources/styles/_var.scss';
+
 form-container {
+  h3 {
+    margin-top: $tiny;
+    margin-left: $medium;
+    font-size: 14px;
+  }
+
+  .content > form {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row; 
+    flex-direction: row;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  
   label {
-    color: grey;
+    color: $lightgrey;
     cursor: pointer;
-    margin: 0 auto;
+    margin-bottom: $small;
+    margin-top: $tiny;
 
     span {
-      font-size: 20px;
-      padding: 0 5px;
+      font-size: 47px;
+      padding: 0 10px;
+      font-weight: bold;
     }
 
     input {
       display: none;
 
       &:checked+span {
-        color: black;
+        color: $black;
       }
 
       &:not(:checked):hover + span {
-        color: darkgrey;
+        color: $grey;
       }
     }
   }

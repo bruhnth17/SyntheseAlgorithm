@@ -1,28 +1,47 @@
+form-container h3 {
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  font-size: 14px; }
+form-container .content > form {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  justify-content: center; }
 form-container label {
-  color: grey;
+  color: #e8e9eb;
   cursor: pointer;
-  margin: 0 auto; }
+  margin-bottom: 1rem;
+  margin-top: 0.5rem; }
   form-container label span {
-    font-size: 20px;
-    padding: 0 5px; }
+    font-size: 47px;
+    padding: 0 10px;
+    font-weight: bold; }
   form-container label input {
     display: none; }
     form-container label input:checked + span {
-      color: black; }
+      color: #313638; }
     form-container label input:not(:checked):hover + span {
-      color: darkgrey; }
+      color: #c1c0b8; }
 
 dependencies-container form {
   width: 100%;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin-bottom: 0.5rem; }
   dependencies-container form.hidden {
     display: none; }
 dependencies-container .middle {
-  padding: 0 25px; }
+  padding: 0 0.5rem;
+  margin-top: .45rem;
+  font-weight: bold; }
 dependencies-container label {
-  color: grey;
-  cursor: pointer; }
+  color: #e8e9eb;
+  cursor: pointer;
+  font-size: 25px;
+  padding: 0 1px;
+  font-weight: bold; }
   dependencies-container label span {
     font-size: 20px;
     padding: 0 2px; }
@@ -31,18 +50,44 @@ dependencies-container label {
   dependencies-container label input {
     display: none; }
     dependencies-container label input:checked + span {
-      color: black; }
+      color: #313638; }
     dependencies-container label input:not(:checked):hover + span {
-      color: darkgrey; }
+      color: #c1c0b8; }
+dependencies-container nav {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  justify-content: center; }
+  dependencies-container nav button {
+    margin-top: 2rem; }
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+body {
+  background: #e8e9eb; }
+  body:after {
+    content: "";
+    background: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    z-index: -1; }
 
 h2 {
-  font-family: "Fjalla One", sans-serif;
-  font-size: 20px;
-  padding-left: 10px;
-  margin-top: 10px; }
+  font-family: "Wombi", sans-serif;
+  font-size: 22px;
+  padding-left: 0.5rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f06543; }
 
 main {
   display: -webkit-flex;
@@ -51,9 +96,10 @@ main {
   flex-direction: row;
   -webkit-justify-content: center;
   justify-content: center;
-  font-family: "Merriweather", serif;
+  font-family: "Inter UI";
   font-size: 16px;
-  color: #101313; }
+  color: #313638;
+  margin-top: 2rem; }
   @media screen and (max-width: 875px) {
     main {
       flex-direction: column-reverse;
@@ -70,11 +116,14 @@ main {
       transform-style: preserve-3d; }
 
 section {
-  margin: 10px;
-  width: 38%;
-  max-width: 550px; }
-  section.info {
-    padding: 1rem; }
+  margin: 2rem;
+  padding: 2rem;
+  width: 45%;
+  max-width: 560px;
+  min-height: 500px; }
+  @media screen and (max-width: 875px) {
+    section {
+      margin: 0.5rem; } }
   @media screen and (max-width: 875px) {
     section {
       width: 70%; } }
@@ -87,9 +136,7 @@ dependencies-container {
   transition: transform 1s cubic-bezier(0.4, 0.2, 0.2, 1);
   backface-visibility: hidden;
   background-color: white;
-  border: 3px solid lightcoral;
-  border-radius: 10px;
-  box-shadow: 1px 3px 13px 0px rgba(128, 128, 128, 0.65); }
+  border-radius: 5px; }
   form-container div.content,
   dependencies-container div.content {
     transform: translateY(-50%) translateZ(60px) scale(0.94);
@@ -98,7 +145,7 @@ dependencies-container {
     position: absolute;
     width: 100%;
     height: 100%;
-    padding: 1rem;
+    padding: 2rem;
     box-sizing: border-box;
     outline: 1px solid transparent;
     perspective: inherit;
@@ -123,7 +170,8 @@ dependencies-container {
   height: 100%;
   backface-visibility: hidden; }
 
-.form.rotate dependencies-container, .form.rotate form-container {
+.form.rotate dependencies-container,
+.form.rotate form-container {
   transition: transform 1s cubic-bezier(0.4, 0.2, 0.2, 1); }
 .form.rotate form-container {
   transform: rotateY(-180deg);
@@ -131,5 +179,33 @@ dependencies-container {
 .form.rotate dependencies-container {
   transform: rotateY(0deg);
   transform-style: preserve-3d; }
+
+button {
+  background: #f09d51;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  margin: 1rem 0.5rem;
+  border-radius: 6px;
+  border: solid #313638;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1), inset 0 0 3px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s ease; }
+  button.back {
+    background: #c1c0b8; }
+  button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.4);
+    border-bottom-width: 4px; }
+  button:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(255, 255, 255, 0.4);
+    border-bottom-width: 1px;
+    transition: 0.1s ease; }
 
 /*# sourceMappingURL=main.css.map */

@@ -203,4 +203,13 @@ button {
   }
 }
 
+.errormsg {
+  //display: none;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+  color: $red;
+}
 

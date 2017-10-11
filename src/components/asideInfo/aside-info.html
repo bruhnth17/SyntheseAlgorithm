@@ -38,23 +38,17 @@
         </ul>
       </li>
       <li>
-        Conflate: 
+        Eliminate: 
         <ul>
-            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Für alle Funktionalen Abhängigkeiten <strong>α → β ∈ F</strong></li>
-            <ul>
-              <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> prüfe für alle <strong>B ∈ β</strong> ob <br /><strong>B ∈ AttrHülle(F − (α → β) ∪ (α → (b−B)), α)</strong>
-              <br /> <span> //prüfe ob du all B's bla bla bla, weiß ich grade selber nicht...</span>
-              </li> 
-              <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> Falls ja, ersetze <strong>α → β</strong> durch <strong>( α − A ) → β</strong>
-            </ul>
+            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Eliminate all <strong>FDs</strong> with <strong>α → ∅</strong></li>
         </ul>
       </li>
       <li>       
-        Eliminate: 
+        Conflate:
         <ul>
-            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Für alle Funktionalen Abhängigkeiten <strong>α → β ∈ F</strong></li>
+            <li><i class="fa fa-angle-right" aria-hidden="true"></i> For all <strong>α</strong> with <strong>α → β_1, …, α → β_n</strong></li>
             <ul>
-              <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> prüfe für alle <strong>B ∈ β</strong> ob <br /><strong>B ∈ AttrHülle(F − (α → β) ∪ (α → (b−B)), α)</strong></li>
+              <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> Substitude <strong>α → β_1, …, α → β_n</strong> with <strong>α → (β_1 ∪ … ∪ α → β_n)</strong></li>
             </ul>
         </ul>
       </li>

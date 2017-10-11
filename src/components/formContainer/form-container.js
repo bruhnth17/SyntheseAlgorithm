@@ -20,11 +20,14 @@ export class FormContainer {
   }
 
   rotate() {
-    if ((2 < this.selectedAttr.id < 9) && (2 < this.selectedDep.id < 9)) {
-      this.ea.publish('numbers', {'attr': this.selectedAttr, 'dep': this.selectedDep});
-      document.getElementsByClassName('form')[0].classList.add('rotate');
+    if (!this.selectedAttr || !this.selectedDep) {
+      document.getElementsByClassName('errormsg FC')[0].style.display = 'block';
     } else {
-      alert('HACKERALERT');
+      if ((2 < this.selectedAttr.id < 9) && (2 < this.selectedDep.id < 9)) {
+        this.ea.publish('numbers', {'attr': this.selectedAttr, 'dep': this.selectedDep});
+        document.getElementsByClassName('errormsg FC')[0].style.display = 'none';
+        document.getElementsByClassName('form')[0].classList.add('rotate');
+      }
     }
   }
 }

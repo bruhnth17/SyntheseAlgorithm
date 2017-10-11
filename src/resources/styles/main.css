@@ -244,4 +244,12 @@ button {
   button .fa-chevron-right {
     padding-left: 5px; }
 
+.errormsg {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+  color: #f06543; }
+
 /*# sourceMappingURL=main.css.map */

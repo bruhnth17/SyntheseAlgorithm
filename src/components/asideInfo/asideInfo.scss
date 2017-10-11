@@ -1,0 +1,41 @@
+aside-info {
+  h3 {
+    color: $red;
+    margin-left: $tiny;
+    margin-top: $medium;
+    text-transform: uppercase;
+  }
+
+  font-size: 15px;
+  ol {
+    list-style-type: none;
+    color: $lightgrey;
+    background-color: $black;
+    padding: $small;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    ul {
+      font-weight: 500;
+      border-radius: 2px;
+      //background-color: $grey;
+      list-style-type: none;
+      padding-left: $small;
+      padding: .5rem;
+
+      span {
+        color: $orange;
+
+      }
+
+      strong {
+        font-weight: 700;
+      }
+      
+      i {
+        float: none;
+        padding-right: 2px;
+      }
+    }
+  }
+}

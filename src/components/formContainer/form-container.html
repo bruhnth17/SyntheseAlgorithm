@@ -1,14 +1,14 @@
 <template>
   <div class="content">
-      <h2>${headline}</h2>
-      <h3>Anzahl Attribute</h3>
+      <h2>Step 1</h2>
+      <h3>Number of Attributes</h3>
       <form action="">
         <label repeat.for="num of numAttr">
             <input model.bind="num" checked.bind="$parent.selectedAttr" type="radio" name="numAttr">
             <span>${num.label}</span>
         </label>
       </form>
-      <h3>Anzahl Abhängigkeiten</h3>
+      <h3>Number of Dependencies</h3>
       <form action="">
         <label repeat.for="dep of numDep">
               <input  model.bind="dep" checked.bind="$parent.selectedDep" type="radio" name="numDep">
@@ -18,7 +18,7 @@
       <form>
       <nav>
         <button type="Submit" disabled.bind="(!selectedDep) || (!selectedAttr)"
-                click.delegate="rotate()">Weiter</button>
+                click.delegate="rotate()">Next <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>
       </nav>
       </form>
   </div>

@@ -30,11 +30,17 @@ body {
 h2 {
   font-family: $font-headline;
   font-size: 22px;
-  padding-left: 0.5rem;
-  padding-bottom: 1rem;
+  padding-left: $tiny;
+  padding-bottom: $medium;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: $red;
+}
+
+h3 {
+  margin: $tiny 0;
+  margin-left: $medium;
+  font-size: 14px;
 }
 
 main {
@@ -182,6 +188,18 @@ button {
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(255, 255, 255, 0.4);
     border-bottom-width: 1px;
     transition: 0.1s ease;
+  }
+
+  .fa {
+    font-size: 14px;
+  }
+
+  .fa-chevron-left {
+    padding-right: 5px;
+  }
+
+  .fa-chevron-right {
+    padding-left: 5px;
   }
 }
 

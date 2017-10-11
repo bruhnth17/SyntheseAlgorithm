@@ -1,16 +1,63 @@
 <template>
-  <h2>Einleitung</h2>
+  <h2>Introduction</h2>
   <article> 
     <p>
-        Dieser Algorithmus findet zu einer gegebenen Menge von funktionalen
-        Abhängigkeiten (engl. functional dependencies)
-        eine kanonische Überdeckung.
+      This algorithm finds the canonical cover for a given set of 
+      functional dependencies.
     </p>
-    <ul>
-      <li>Eine kanonische Überdeckung ist eine kleinst- mögliche äquivalente Menge zu einer Menge von FDs</li>
-      <li>Dies geschieht mit Hilfe dieses Algorithmus, der aus 4 Schritten besteht. Diese Schritte werden später näher erläutert</li>
-      <li>Zuerst muss nun aber eine Menge von FDs er- stellt werden, zu der eine kanonische Überdek- kung gefunden werden soll.</li>
-      <li>Legen Sie dazu im Fenster rechts fest, wieviele Attribute Ihre Relation enthält, und aus wievie- len FDs Ihre Menge bestehen soll. </li>
-    </ul>
+    <br />
+    <p>
+      <strong>
+        Insert the number of attributes and define the dependencies on the right side.
+        After that you can watch the algorithm do it's magic!     
+        </strong>
+    </p>
+    <h3>The algorithm in theory</h3>
+    <ol>
+      <li>
+        Left Reduction:
+        <ul>
+          <li><i class="fa fa-angle-right" aria-hidden="true"></i> For all functional dependencies (FD) <strong>α → β ∈ F</strong></li>
+          <ul>
+            <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> Check for all <strong>A ∈ α</strong> if <strong>β ⊆ AttrHülle(F, α−A)</strong>
+              <br /> <span> //Human language: Can you still get all <strong>B's</strong> from <strong>β</strong> if you can use all FD's, start with <strong>α</strong> and <strong>A</strong> isn't in <strong>α</strong> anymore?</span> 
+            </li> 
+            <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> If YES, substitude <strong>α → β</strong> with <strong>( α − A ) → β</strong>
+          </ul>
+        </ul>
+      </li>
+      <li>Right Reduction:       
+        <ul>
+            <li><i class="fa fa-angle-right" aria-hidden="true"></i> For all FD <strong> α → β ∈ F</strong></li>
+            <ul>
+              <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> Check for all <strong>B ∈ β</strong> if <br /><strong>B ∈ AttrHülle(F − (α → β) ∪ (α → (b−B)), α)</strong>
+              <br /> <span> //Is <strong>B</strong> still accessible from <strong>α</strong> if you can use all FD's but <strong>B</strong> isn't in <strong>β</strong> anymore?</span>
+              </li> 
+              <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> If YES, substitude <strong>α → β</strong> with <strong>( α − A ) → β</strong>
+            </ul>
+        </ul>
+      </li>
+      <li>
+        Conflate: 
+        <ul>
+            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Für alle Funktionalen Abhängigkeiten <strong>α → β ∈ F</strong></li>
+            <ul>
+              <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> prüfe für alle <strong>B ∈ β</strong> ob <br /><strong>B ∈ AttrHülle(F − (α → β) ∪ (α → (b−B)), α)</strong>
+              <br /> <span> //prüfe ob du all B's bla bla bla, weiß ich grade selber nicht...</span>
+              </li> 
+              <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> Falls ja, ersetze <strong>α → β</strong> durch <strong>( α − A ) → β</strong>
+            </ul>
+        </ul>
+      </li>
+      <li>       
+        Eliminate: 
+        <ul>
+            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Für alle Funktionalen Abhängigkeiten <strong>α → β ∈ F</strong></li>
+            <ul>
+              <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> prüfe für alle <strong>B ∈ β</strong> ob <br /><strong>B ∈ AttrHülle(F − (α → β) ∪ (α → (b−B)), α)</strong></li>
+            </ul>
+        </ul>
+      </li>
+    </ol>
   </article>
 </template>

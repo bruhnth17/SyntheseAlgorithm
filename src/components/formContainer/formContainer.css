@@ -1,7 +1,3 @@
-form-container h3 {
-  margin-top: 0.5rem;
-  margin-left: 2rem;
-  font-size: 14px; }
 form-container .content > form {
   display: -webkit-flex;
   display: flex;
@@ -10,7 +6,7 @@ form-container .content > form {
   -webkit-justify-content: center;
   justify-content: center; }
 form-container label {
-  color: #e8e9eb;
+  color: #c1c0b8;
   cursor: pointer;
   margin-bottom: 1rem;
   margin-top: 0.5rem; }
@@ -23,6 +19,6 @@ form-container label {
     form-container label input:checked + span {
       color: #313638; }
     form-container label input:not(:checked):hover + span {
-      color: #c1c0b8; }
+      color: #e8e9eb; }
 
 /*# sourceMappingURL=formContainer.css.map */

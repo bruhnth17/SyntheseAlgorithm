@@ -1,11 +1,6 @@
 @import '../../resources/styles/_var.scss';
 
 form-container {
-  h3 {
-    margin-top: $tiny;
-    margin-left: $medium;
-    font-size: 14px;
-  }
 
   .content > form {
     display: -webkit-flex;
@@ -17,7 +12,7 @@ form-container {
   }
   
   label {
-    color: $lightgrey;
+    color: $grey;
     cursor: pointer;
     margin-bottom: $small;
     margin-top: $tiny;
@@ -36,7 +31,7 @@ form-container {
       }
 
       &:not(:checked):hover + span {
-        color: $grey;
+        color: $lightgrey;
       }
     }
   }

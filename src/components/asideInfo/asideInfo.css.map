@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,UAAW;EACT,SAAS,EAAE,IAAI;EACf,aAAG;IACD,WAAW,EAAE,GAAG;IAChB,gBAAG;MACD,WAAW,EAAE,GAAG;MAChB,aAAa,EAAE,GAAG;MAElB,eAAe,EAAE,IAAI;MACrB,YAAY,EAAE,IAAI;MAClB,OAAO,EAAE,KAAK;MAEd,kBAAE;QACA,KAAK,EAAE,IAAI;QACX,aAAa,EAAE,GAAG",
+"sources": ["asideInfo.scss"],
 "names": [],
 "file": "asideInfo.css"
 }

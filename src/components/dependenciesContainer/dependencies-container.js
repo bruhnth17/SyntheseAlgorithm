@@ -1,12 +1,17 @@
 import {inject} from 'aurelia-framework';
 import {EventAggregator} from 'aurelia-event-aggregator';
+import {DataStorage} from '../dataStorageContainer/data-storage';
+import {Router} from 'aurelia-router';
 
-@inject(EventAggregator)
+
+@inject(EventAggregator, DataStorage, Router)
 export class DependenciesContainer {
-  constructor(eventAggregator) {
+  constructor(eventAggregator, dataStorage, router) {
     this.numAttributes;
     this.numDependencies;
     this.ea = eventAggregator;
+    this.ds = dataStorage;
+    this.r = router;
     this.subscribe();
   }
 
@@ -67,11 +72,11 @@ export class DependenciesContainer {
       'dependencies': {}
     };
     let dependencies = document.getElementsByClassName('dependency');
-    
+
     for (let i = 0, lenght1 = this.numDependencies; i < lenght1; i++) {
       let arrayLeft = [];
       let arrayRight = [];
-      
+
       let leftInputs = dependencies[i].firstChild.childNodes;
       for (let j = 0, lenght2 = leftInputs.length; j < lenght2; j++) {
         if (leftInputs[j].firstChild.checked) {
@@ -95,12 +100,14 @@ export class DependenciesContainer {
       result.dependencies[i.toString()] = {'left': arrayLeft, 'right': arrayRight};
       result.numAttributes = this.numAttributes;
     }
-    console.log(result);
+    //console.log(result);
     if (error) {
       document.getElementsByClassName('errormsg DC')[0].style.display = 'block';
     } else {
       document.getElementsByClassName('errormsg DC')[0].style.display = 'none';
-      this.ea.publish('evaluateDependencies', result);
+      //this.ea.publish('evaluateDependencies', result);
+      this.ds.setData(result);
+      this.r.navigateToRoute('algorithm');
     }
     //window.dependencyJson = result;
   }

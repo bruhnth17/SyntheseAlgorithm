@@ -1,3 +1,10 @@
+.about img {
+  float: left; }
+.about ul {
+  margin: 0 10rem; }
+  .about ul li {
+    margin-left: .5rem; }
+
 form-container .content > form {
   display: -webkit-flex;
   display: flex;
@@ -94,7 +101,10 @@ dependencies-container nav {
   margin: 0; }
 
 body {
-  background: #e8e9eb; }
+  background: #e8e9eb;
+  font-family: "Inter UI";
+  font-size: 16px;
+  color: #313638; }
   body:after {
     content: "";
     background: white;
@@ -104,6 +114,17 @@ body {
     left: 50%;
     right: 0;
     z-index: -1; }
+
+nav {
+  font-family: "Wombi", sans-serif;
+  text-transform: uppercase;
+  margin: 0.5rem 2rem;
+  position: absolute; }
+  nav a {
+    margin-bottom: 0.5rem;
+    color: white;
+    font-weight: 700;
+    text-decoration: none; }
 
 h2 {
   font-family: "Wombi", sans-serif;
@@ -126,9 +147,6 @@ main {
   flex-direction: row;
   -webkit-justify-content: center;
   justify-content: center;
-  font-family: "Inter UI";
-  font-size: 16px;
-  color: #313638;
   margin-top: 2rem; }
   @media screen and (max-width: 875px) {
     main {
@@ -147,6 +165,7 @@ main {
 
 section {
   margin: 2rem;
+  margin-top: 0;
   padding: 2rem;
   width: 45%;
   max-width: 560px;

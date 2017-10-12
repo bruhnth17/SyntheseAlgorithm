@@ -1,7 +1,10 @@
-import {EventAggregator} from 'aurelia-event-aggregator';
+import {DataStorage} from '../dataStorageContainer/data-storage';
+import {inject} from 'aurelia-framework';
 
-@inject(EventAggregator)
+@inject(DataStorage)
 export class AlgorithmContainer {
-  constructor() {
+  constructor(dataStorage) {
+    this.json = dataStorage.getData();
+    console.log(this.json);
   }
 }

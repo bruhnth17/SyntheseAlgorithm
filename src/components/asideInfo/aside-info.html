@@ -9,7 +9,7 @@
     <p>
       <strong>
         Insert the number of attributes and define the dependencies on the right side.
-        After that you can watch the algorithm do it's magic!     
+        After that you can watch the algorithm do its magic!     
         </strong>
     </p>
     <h3>The algorithm in theory</h3>
@@ -20,7 +20,7 @@
           <li><i class="fa fa-angle-right" aria-hidden="true"></i> For all functional dependencies (FD) <strong>α → β ∈ F</strong></li>
           <ul>
             <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> Check for all <strong>A ∈ α</strong> if <strong>β ⊆ AttrHülle(F, α−A)</strong>
-              <br /> <span> //Human language: Can you still get all <strong>B's</strong> from <strong>β</strong> if you can use all FD's, start with <strong>α</strong> and <strong>A</strong> isn't in <strong>α</strong> anymore?</span> 
+              <br /> <span> //Human language: Can you still get all <strong>Bs</strong> from <strong>β</strong> if you can use all FDs, start with <strong>α</strong> and <strong>A</strong> isn't in <strong>α</strong> anymore?</span> 
             </li> 
             <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> If YES, substitude <strong>α → β</strong> with <strong>( α − A ) → β</strong>
           </ul>
@@ -31,7 +31,7 @@
             <li><i class="fa fa-angle-right" aria-hidden="true"></i> For all FD <strong> α → β ∈ F</strong></li>
             <ul>
               <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> Check for all <strong>B ∈ β</strong> if <br /><strong>B ∈ AttrHülle(F − (α → β) ∪ (α → (b−B)), α)</strong>
-              <br /> <span> //Is <strong>B</strong> still accessible from <strong>α</strong> if you can use all FD's but <strong>B</strong> isn't in <strong>β</strong> anymore?</span>
+              <br /> <span> //Is <strong>B</strong> still accessible from <strong>α</strong> if you can use all FDs but <strong>B</strong> isnt in <strong>β</strong> anymore?</span>
               </li> 
               <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> If YES, substitude <strong>α → β</strong> with <strong>( α − A ) → β</strong>
             </ul>

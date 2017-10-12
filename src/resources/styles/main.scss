@@ -1,3 +1,4 @@
+@import '../../components/about/about';
 @import '../../components/formContainer/formContainer';
 @import '../../components/asideInfo/asideInfo';
 @import '../../components/dependenciesContainer/dependenciesContainer';
@@ -14,6 +15,9 @@ $break-small: 875px;
 
 body {
   background: $lightgrey;
+  font-family: $font-text;
+  font-size: 16px;  //TODO: Make this generall
+  color: $black;
 
   &:after {
     content: "";
@@ -24,6 +28,20 @@ body {
     left: 50%;
     right: 0;
     z-index: -1;
+  }
+}
+
+nav {
+  font-family: $font-headline;
+  text-transform: uppercase;
+  margin: $tiny $medium;
+  position: absolute;
+  
+  a {
+    margin-bottom: $tiny;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
   }
 }
 
@@ -50,9 +68,6 @@ main {
   flex-direction: row;
   -webkit-justify-content: center;
   justify-content: center;
-  font-family: $font-text;
-  font-size: 16px;  //TODO: Make this generall
-  color: $black;
   margin-top: $medium;
 
   @media screen and (max-width: $break-small) {
@@ -79,6 +94,7 @@ main {
 
 section {
   margin: $medium;
+  margin-top: 0;
   padding: $medium;
   width:45%;
   max-width: 560px;

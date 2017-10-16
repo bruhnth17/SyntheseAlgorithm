@@ -2,6 +2,7 @@
 @import '../../components/formContainer/formContainer';
 @import '../../components/asideInfo/asideInfo';
 @import '../../components/dependenciesContainer/dependenciesContainer';
+@import '../../components/algorithmContainer/algorithmContainer';
 
 @import '../styles/_var.scss';
 
@@ -35,7 +36,6 @@ nav {
   font-family: $font-headline;
   text-transform: uppercase;
   margin: $tiny $medium;
-  position: absolute;
   
   a {
     margin-bottom: $tiny;

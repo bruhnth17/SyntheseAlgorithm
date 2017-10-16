@@ -69,7 +69,7 @@ export class DependenciesContainer {
     let error = false;
     let result = {
       'numAttributes': '',
-      'dependencies': {}
+      'dependencies': []
     };
     let dependencies = document.getElementsByClassName('dependency');
 
@@ -97,7 +97,7 @@ export class DependenciesContainer {
         error = true;
       }
 
-      result.dependencies[i.toString()] = {'left': arrayLeft, 'right': arrayRight};
+      result.dependencies[i.toString()] = [arrayLeft, arrayRight];
       result.numAttributes = this.numAttributes;
     }
     //console.log(result);

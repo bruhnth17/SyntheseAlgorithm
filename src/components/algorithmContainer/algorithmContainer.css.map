@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEI,oCAAY;EACV,OAAO,EAAE,YAAY;EACrB,OAAO,EAAE,IAAI;EACb,sBAAsB,EAAE,GAAG;EAC3B,cAAc,EAAE,GAAG;EACnB,uBAAuB,EAAE,MAAM;EAC/B,eAAe,EAAE,MAAM;EACvB,MAAM,EAAE,IAAI;EACZ,2CAAO;IACL,SAAS,EAAE,IAAI;IACf,OAAO,EAAE,KAAK;IACd,MAAM,EAAE,OAAO;IACf,+CAAI;MACF,SAAS,EAAE,IAAI",
+"sources": ["algorithmContainer.scss"],
+"names": [],
+"file": "algorithmContainer.css"
+}

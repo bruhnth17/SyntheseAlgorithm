@@ -91,9 +91,43 @@ dependencies-container nav {
   -webkit-flex-direction: row;
   flex-direction: row;
   -webkit-justify-content: center;
-  justify-content: center; }
+  justify-content: center;
+  height: 95px; }
   dependencies-container nav button {
     margin-top: 2rem; }
+
+.algorithm .dependencies form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem; }
+  .algorithm .dependencies form span {
+    color: #313638;
+    font-size: 25px;
+    padding: 0 1px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0 2px; }
+  .algorithm .dependencies form .middle {
+    padding: 0 0.5rem;
+    font-weight: bold; }
+  .algorithm .dependencies form .current-attribute {
+    color: #f09d51; }
+.algorithm .dependencies nav.buttons {
+  margin-top: 2rem;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 40px; }
+  .algorithm .dependencies nav.buttons button {
+    font-size: 11px;
+    padding: .5rem;
+    margin: 0 .2rem; }
+    .algorithm .dependencies nav.buttons button .fa {
+      font-size: 11px; }
 
 * {
   box-sizing: border-box;
@@ -118,8 +152,7 @@ body {
 nav {
   font-family: "Wombi", sans-serif;
   text-transform: uppercase;
-  margin: 0.5rem 2rem;
-  position: absolute; }
+  margin: 0.5rem 2rem; }
   nav a {
     margin-bottom: 0.5rem;
     color: white;

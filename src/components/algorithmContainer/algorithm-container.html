@@ -1,5 +1,7 @@
 <template>
+  <require from="./algorithm/algorithm"></require>
   <main class="algorithm">
+    <algorithm></algorithm>
     <section class="dependencies">
       <h2>Dependencies</h2>
       <form repeat.for="dependency of json.dependencies" class="dependency">
@@ -21,7 +23,7 @@
     <section class="status">
       <h2>Status & Explanation</h2>
       <div class="status">
-          <progress id="progressbar" value="0" max="400" after-render.call="init()"></progress>
+          <progress id="progressbar" value="0" max="400"></progress>
           <h3>Left reduction</h3>
       </div>
       <div class="description">

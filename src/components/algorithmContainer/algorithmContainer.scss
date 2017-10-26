@@ -1,12 +1,18 @@
 .algorithm {
 
   .dependencies {
+    .current-attribute,
+    .current-attribute > div > span {
+      color : $orange !important;
+    }
+
     form {
       width: 100%;
       display: flex;
       justify-content: center;
       margin-bottom: $tiny;
-  
+
+      
       span {
         color: $black;
         font-size: 25px;
@@ -15,14 +21,10 @@
         font-size: 20px;
         padding: 0 2px;
       }
-
+      
       .middle {
         padding: 0 $tiny;
         font-weight: bold;
-      }
-
-      .current-attribute {
-        color : $orange;
       }
     }
 

@@ -1,22 +1,26 @@
 /*
-Error: Undefined variable: "$tiny".
-        on line 8 of src/components/algorithmContainer/algorithmContainer.scss
+Error: Undefined variable: "$orange".
+        on line 6 of src/components/algorithmContainer/algorithmContainer.scss
 
+1: .algorithm {
+2: 
 3:   .dependencies {
-4:     form {
-5:       width: 100%;
-6:       display: flex;
-7:       justify-content: center;
-8:       margin-bottom: $tiny;
-9:   
-10:       span {
-11:         color: $black;
-12:         font-size: 25px;
-13:         padding: 0 1px;
+4:     .current-attribute,
+5:     .current-attribute > div > span {
+6:       color : $orange !important;
+7:     }
+8: 
+9:     form {
+10:       width: 100%;
+11:       display: flex;
 
 Backtrace:
-src/components/algorithmContainer/algorithmContainer.scss:8
+src/components/algorithmContainer/algorithmContainer.scss:6
 /usr/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/script/tree/variable.rb:49:in `_perform'
+/usr/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/script/tree/node.rb:50:in `perform'
+/usr/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
+/usr/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/script/tree/list_literal.rb:75:in `map'
+/usr/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/script/tree/list_literal.rb:75:in `_perform'
 /usr/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/script/tree/node.rb:50:in `perform'
 /usr/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
 /usr/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
@@ -91,4 +95,4 @@ src/components/algorithmContainer/algorithmContainer.scss:8
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$tiny\".\A         on line 8 of src/components/algorithmContainer/algorithmContainer.scss\A \A 3:   .dependencies {\A 4:     form {\A 5:       width: 100%;\A 6:       display: flex;\A 7:       justify-content: center;\A 8:       margin-bottom: $tiny;\A 9:   \A 10:       span {\A 11:         color: $black;\A 12:         font-size: 25px;\A 13:         padding: 0 1px;"; }
+  content: "Error: Undefined variable: \"$orange\".\A         on line 6 of src/components/algorithmContainer/algorithmContainer.scss\A \A 1: .algorithm {\A 2: \A 3:   .dependencies {\A 4:     .current-attribute,\A 5:     .current-attribute > div > span {\A 6:       color : $orange !important;\A 7:     }\A 8: \A 9:     form {\A 10:       width: 100%;\A 11:       display: flex;"; }

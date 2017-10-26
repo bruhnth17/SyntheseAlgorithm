@@ -96,6 +96,9 @@ dependencies-container nav {
   dependencies-container nav button {
     margin-top: 2rem; }
 
+.algorithm .dependencies .current-attribute,
+.algorithm .dependencies .current-attribute > div > span {
+  color: #f09d51 !important; }
 .algorithm .dependencies form {
   width: 100%;
   display: flex;
@@ -111,8 +114,6 @@ dependencies-container nav {
   .algorithm .dependencies form .middle {
     padding: 0 0.5rem;
     font-weight: bold; }
-  .algorithm .dependencies form .current-attribute {
-    color: #f09d51; }
 .algorithm .dependencies nav.buttons {
   margin-top: 2rem;
   display: -webkit-flex;

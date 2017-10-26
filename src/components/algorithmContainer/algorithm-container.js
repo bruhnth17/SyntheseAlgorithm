@@ -1,11 +1,13 @@
 import {DataStorage} from '../dataStorageContainer/data-storage';
+import {Algorithm} from './algorithm/algorithm';
 import {inject} from 'aurelia-framework';
 
-@inject(DataStorage)
+@inject(DataStorage, Algorithm)
 export class AlgorithmContainer {
-  constructor(dataStorage) {
+  constructor(dataStorage, algorithm) {
     this.count; //I know its ugly, but I don't care right now
     this.current; //current DomElement that is used in Algorithm
+    this.algorithm = algorithm;
     this.stepsLR = 0;
     this.stepsRR = 0;
     this.stepsEL = 0;
@@ -17,9 +19,9 @@ export class AlgorithmContainer {
       ELIMINATE: 3,
       CONFLATE: 4
     };
-    //this.json = dataStorage.getData();
-    this.json = {"numAttributes":4,"dependencies":[[["A"],["A","D"]],[["B"],["B","C"]],[["B","C","D"],["B","C"]],[["A","B","C"],["C","D"]]]}
-    this.log = {};
+    this.json = dataStorage.getData();
+    //this.json = /*DUMMYDATA*/ {"numAttributes":4,"dependencies":[[["A"],["A","D"]],[["B"],["B","C"]],[["B","C","D"],["B","C"]],[["A","B","C"],["C","D"]]]}
+
 
     /**
      * gets current Attribute with the count
@@ -55,20 +57,44 @@ export class AlgorithmContainer {
           }
         }
       }
+
+      if (this.algoStep === this.AlgoStepEnum.ELIMINATE) {
+        let count = this.count - this.stepsLR - this.stepsRR;
+        for (let i = 0; i < forms.length; i++) {
+          if (count !== step) {
+            step += 1;
+          } else {
+            return forms[i];
+          }
+        }
+      }
+    };
+
+    this.changeClassOldAttribute = function() {
+      if (this.current !== undefined) {
+        if (this.current.className.includes('dependency')) {
+          if (this.current.className.includes('deleted')) {
+            this.current.className = 'dependency deleted';
+          } else {
+            this.current.className = 'dependency';
+          }
+        } else {
+          this.current.className = '';
+        }
+      }
     };
 
     this.stepForward = function() {
-      if (this.current !== undefined) {
-        this.current.className = '';
-      }
+      this.changeClassOldAttribute();
       this.current = this.getAttribute();
-      this.current.className = 'current-attribute';
+      this.current.className += ' current-attribute';
+      this.algorithm.do(this.algoStep, this.current);
     };
 
     this.stepBack = function() {
-      this.current.className = '';
+      this.changeClassOldAttribute();
       this.current = this.getAttribute();
-      this.current.className = 'current-attribute';
+      this.current.className += ' current-attribute';
     };
 
 
@@ -89,6 +115,8 @@ export class AlgorithmContainer {
         }
         this.stepsEL += 1;
       }
+      let sum = this.stepsLR+this.stepsRR+this.stepsEL;
+      document.getElementById('progressbar').setAttribute('max', sum.toString());
     };
 
     /**
@@ -96,10 +124,13 @@ export class AlgorithmContainer {
      * the algorithm it is in
      */
     this.updateState = function() {
+      document.getElementById('progressbar').setAttribute('value', this.count.toString());
       if (this.count < this.stepsLR) {
         this.algoStep = 1; //LEFTREDUCTION
       } else if (this.count < (this.stepsRR + this.stepsLR)) {
         this.algoStep = 2; //RIGHTREDUCTION
+      } else if (this.count < (this.stepsRR + this.stepsLR + this.stepsEL)) {
+        this.algoStep = 3;
       }
     };
   }

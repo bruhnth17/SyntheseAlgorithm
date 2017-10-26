@@ -1,18 +1,18 @@
 /*
-Error: Undefined variable: "$orange".
+Error: Undefined variable: "$grey".
         on line 6 of src/components/algorithmContainer/algorithmContainer.scss
 
 1: .algorithm {
 2: 
 3:   .dependencies {
-4:     .current-attribute,
-5:     .current-attribute > div > span {
-6:       color : $orange !important;
+4:     .deleted,
+5:     .deleted > div > span {
+6:       color : $grey !important;
 7:     }
-8: 
-9:     form {
-10:       width: 100%;
-11:       display: flex;
+8:     .current-attribute,
+9:     .current-attribute > div > span {
+10:       color : $orange !important;
+11:     }
 
 Backtrace:
 src/components/algorithmContainer/algorithmContainer.scss:6
@@ -95,4 +95,4 @@ src/components/algorithmContainer/algorithmContainer.scss:6
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$orange\".\A         on line 6 of src/components/algorithmContainer/algorithmContainer.scss\A \A 1: .algorithm {\A 2: \A 3:   .dependencies {\A 4:     .current-attribute,\A 5:     .current-attribute > div > span {\A 6:       color : $orange !important;\A 7:     }\A 8: \A 9:     form {\A 10:       width: 100%;\A 11:       display: flex;"; }
+  content: "Error: Undefined variable: \"$grey\".\A         on line 6 of src/components/algorithmContainer/algorithmContainer.scss\A \A 1: .algorithm {\A 2: \A 3:   .dependencies {\A 4:     .deleted,\A 5:     .deleted > div > span {\A 6:       color : $grey !important;\A 7:     }\A 8:     .current-attribute,\A 9:     .current-attribute > div > span {\A 10:       color : $orange !important;\A 11:     }"; }

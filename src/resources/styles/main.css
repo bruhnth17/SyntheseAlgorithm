@@ -96,6 +96,9 @@ dependencies-container nav {
   dependencies-container nav button {
     margin-top: 2rem; }
 
+.algorithm .dependencies .deleted,
+.algorithm .dependencies .deleted > div > span {
+  color: #c1c0b8 !important; }
 .algorithm .dependencies .current-attribute,
 .algorithm .dependencies .current-attribute > div > span {
   color: #f09d51 !important; }

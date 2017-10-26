@@ -1,10 +1,15 @@
 .algorithm {
 
   .dependencies {
+    .deleted,
+    .deleted > div > span {
+      color : $grey !important;
+    }
     .current-attribute,
     .current-attribute > div > span {
       color : $orange !important;
     }
+
 
     form {
       width: 100%;

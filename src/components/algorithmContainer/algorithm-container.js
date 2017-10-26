@@ -79,7 +79,11 @@ export class AlgorithmContainer {
             this.current.className = 'dependency';
           }
         } else {
-          this.current.className = '';
+          if (this.current.className.includes('deleted')) {
+            this.current.className = 'deleted';
+          } else {
+            this.current.className = '';
+          }
         }
       }
     };
@@ -88,7 +92,11 @@ export class AlgorithmContainer {
       this.changeClassOldAttribute();
       this.current = this.getAttribute();
       this.current.className += ' current-attribute';
-      this.algorithm.do(this.algoStep, this.current);
+      let remove = this.algorithm.do(this.algoStep, this.current);
+      console.log('remove', remove);
+      if(remove) {
+        this.current.className += ' deleted';
+      }
     };
 
     this.stepBack = function() {

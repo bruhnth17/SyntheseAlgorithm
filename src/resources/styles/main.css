@@ -132,6 +132,17 @@ dependencies-container nav {
     margin: 0 .2rem; }
     .algorithm .dependencies nav.buttons button .fa {
       font-size: 11px; }
+.algorithm .status .progress-outer {
+  width: 40%;
+  height: 15px;
+  background-color: #e8e9eb;
+  border-radius: 5px; }
+  .algorithm .status .progress-outer .progress-inner {
+    width: 0%;
+    height: inherit;
+    border-radius: inherit;
+    background-color: #f06543;
+    transition: width .06s ease-in; }
 
 * {
   box-sizing: border-box;

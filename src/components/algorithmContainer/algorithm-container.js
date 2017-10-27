@@ -5,6 +5,7 @@ import {inject} from 'aurelia-framework';
 @inject(DataStorage, Algorithm)
 export class AlgorithmContainer {
   constructor(dataStorage, algorithm) {
+    this.stepHeadline = "Leftreduction";
     this.count; //I know its ugly, but I don't care right now
     this.current; //current DomElement that is used in Algorithm
     this.algorithm = algorithm;
@@ -19,8 +20,11 @@ export class AlgorithmContainer {
       ELIMINATE: 3,
       CONFLATE: 4
     };
-    this.json = dataStorage.getData();
-    //this.json = /*DUMMYDATA*/ {"numAttributes":4,"dependencies":[[["A"],["A","D"]],[["B"],["B","C"]],[["B","C","D"],["B","C"]],[["A","B","C"],["C","D"]]]}
+    //this.json = dataStorage.getData(); //TODO: change name… not actually json
+    //console.log(JSON.stringify(this.json));
+    this.json = /*DUMMYDATA*/ {"numAttributes":6,"dependencies":[[["D"],["B","C","D","F"]],[["B","C"],["A","E"]],[["A","D","E"],["B","C"]],[["B","F"],["A","D"]],[["E"],["F"]]]};
+    
+            
 
 
     /**
@@ -93,7 +97,6 @@ export class AlgorithmContainer {
       this.current = this.getAttribute();
       this.current.className += ' current-attribute';
       let remove = this.algorithm.do(this.algoStep, this.current);
-      console.log('remove', remove);
       if(remove) {
         this.current.className += ' deleted';
       }
@@ -124,7 +127,7 @@ export class AlgorithmContainer {
         this.stepsEL += 1;
       }
       let sum = this.stepsLR+this.stepsRR+this.stepsEL;
-      document.getElementById('progressbar').setAttribute('max', sum.toString());
+      document.getElementById('progress-outer').setAttribute('data-max', sum.toString());
     };
 
     /**
@@ -132,13 +135,16 @@ export class AlgorithmContainer {
      * the algorithm it is in
      */
     this.updateState = function() {
-      document.getElementById('progressbar').setAttribute('value', this.count.toString());
+      let progressbarMax = parseInt(document.getElementById('progress-outer').getAttribute("data-max"));
+      document.getElementById('progress-inner').style.width = ((this.count / progressbarMax)*100).toString() + '%';
       if (this.count < this.stepsLR) {
         this.algoStep = 1; //LEFTREDUCTION
       } else if (this.count < (this.stepsRR + this.stepsLR)) {
-        this.algoStep = 2; //RIGHTREDUCTION
+        this.algoStep = 2;
+        this.stepHeadline = "Rightreduction"
       } else if (this.count < (this.stepsRR + this.stepsLR + this.stepsEL)) {
         this.algoStep = 3;
+        this.stepHeadline = "Elemination"
       }
     };
   }

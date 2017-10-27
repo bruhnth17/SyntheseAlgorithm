@@ -52,4 +52,22 @@
       }
     }
   }
+
+  .status {
+   .progress-outer {
+     width: 40%;
+     height: 15px;
+     background-color: $lightgrey;
+     border-radius: 5px;
+
+     .progress-inner {
+       width: 0%;
+       height: inherit;
+       border-radius: inherit;
+       background-color: $red;
+       transition: width .06s ease-in;
+     }
+   }
+
+  }
 }

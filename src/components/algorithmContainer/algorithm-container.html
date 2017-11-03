@@ -1,4 +1,5 @@
 <template>
+    <require from="./answer-format"></require>
   <require from="./algorithm/algorithm"></require>
   <main class="algorithm">
     <algorithm></algorithm>
@@ -20,13 +21,15 @@
         <button class="back">end</button>
       </nav>
     </section>
-    <section class="status">
+    <section class="statusandexpl">
       <h2>Status & Explanation</h2>
       <div class="status">
-        <h3>${stepHeadline}</h3>
         <div class="progress-outer" id="progress-outer">
           <div class="progress-inner" id="progress-inner"></div>
         </div> 
+        <h3>${stepHeadline}: </h3>
+        <p innerHTML.bind="question">${question}</p>
+        <p class="answer">${answer}</p>
       </div>
       <div class="description">
         <ul>

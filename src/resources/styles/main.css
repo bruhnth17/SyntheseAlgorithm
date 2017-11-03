@@ -39,10 +39,12 @@ aside-info {
     list-style-type: none;
     color: #e8e9eb;
     background-color: #313638;
-    padding: 1rem;
+    padding: 2rem 1rem;
     border-radius: 5px;
     font-size: 13px;
     font-weight: 700; }
+    aside-info ol li {
+      padding: 2px 0; }
     aside-info ol ul {
       font-weight: 500;
       border-radius: 2px;
@@ -68,6 +70,8 @@ dependencies-container .middle {
   padding: 0 0.5rem;
   margin-top: .45rem;
   font-weight: bold; }
+dependencies-container .answer {
+  color: #f09d51; }
 dependencies-container label {
   color: #c1c0b8;
   cursor: pointer;
@@ -92,9 +96,7 @@ dependencies-container nav {
   flex-direction: row;
   -webkit-justify-content: center;
   justify-content: center;
-  height: 95px; }
-  dependencies-container nav button {
-    margin-top: 2rem; }
+  height: 75px; }
 
 .algorithm .dependencies .deleted,
 .algorithm .dependencies .deleted > div > span {
@@ -125,24 +127,29 @@ dependencies-container nav {
   flex-direction: row;
   -webkit-justify-content: center;
   justify-content: center;
-  height: 40px; }
+  height: 75px; }
   .algorithm .dependencies nav.buttons button {
-    font-size: 11px;
-    padding: .5rem;
-    margin: 0 .2rem; }
-    .algorithm .dependencies nav.buttons button .fa {
-      font-size: 11px; }
-.algorithm .status .progress-outer {
-  width: 40%;
-  height: 15px;
-  background-color: #e8e9eb;
-  border-radius: 5px; }
-  .algorithm .status .progress-outer .progress-inner {
-    width: 0%;
-    height: inherit;
-    border-radius: inherit;
-    background-color: #f06543;
-    transition: width .06s ease-in; }
+    margin: 1rem 0.25rem; }
+.algorithm .status {
+  border-radius: 5px;
+  border: 3px solid #c1c0b8;
+  color: #313638;
+  padding: 1rem; }
+  .algorithm .status h3 {
+    margin-left: 1rem; }
+  .algorithm .status .answer {
+    padding-top: 0.5rem;
+    font-weight: 700; }
+  .algorithm .status .progress-outer {
+    height: 15px;
+    background-color: #e8e9eb;
+    border-radius: 5px; }
+    .algorithm .status .progress-outer .progress-inner {
+      width: 0%;
+      height: inherit;
+      border-radius: inherit;
+      background-color: #f06543;
+      transition: width .06s ease-in; }
 
 * {
   box-sizing: border-box;
@@ -164,15 +171,20 @@ body {
     right: 0;
     z-index: -1; }
 
-nav {
+nav.nav {
   font-family: "Wombi", sans-serif;
-  text-transform: uppercase;
   margin: 0.5rem 2rem; }
-  nav a {
+  nav.nav a {
     margin-bottom: 0.5rem;
     color: white;
     font-weight: 700;
     text-decoration: none; }
+
+footer img {
+  position: absolute;
+  bottom: -60px;
+  right: 5%;
+  height: 50%; }
 
 h2 {
   font-family: "Wombi", sans-serif;
@@ -194,8 +206,7 @@ main {
   -webkit-flex-direction: row;
   flex-direction: row;
   -webkit-justify-content: center;
-  justify-content: center;
-  margin-top: 2rem; }
+  justify-content: center; }
   @media screen and (max-width: 875px) {
     main {
       flex-direction: column-reverse;

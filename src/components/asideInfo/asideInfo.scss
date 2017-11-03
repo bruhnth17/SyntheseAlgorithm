@@ -11,10 +11,15 @@ aside-info {
     list-style-type: none;
     color: $lightgrey;
     background-color: $black;
-    padding: $small;
+    padding: $medium $small;
     border-radius: 5px;
     font-size: 13px;
     font-weight: 700;
+
+    li {
+      padding: 2px 0;
+    }
+
     ul {
       font-weight: 500;
       border-radius: 2px;

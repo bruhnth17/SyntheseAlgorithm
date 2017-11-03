@@ -41,21 +41,29 @@
       flex-direction: row;
       -webkit-justify-content: center;
       justify-content: center;
-      height: 40px;
+      height: 75px;
       button {
-        font-size: 11px;
-        padding: .5rem;
-        margin: 0 .2rem;
-        .fa {
-          font-size: 11px;
-        }
+        margin: 1rem .25rem
       }
     }
   }
 
   .status {
+    border-radius: 5px;
+    border: 3px solid $grey;
+    color: $black;
+    padding: $small;
+
+    h3 {
+      margin-left: $small;
+    }
+
+    .answer {
+      padding-top: $tiny;
+      font-weight: 700;
+    }
+
    .progress-outer {
-     width: 40%;
      height: 15px;
      background-color: $lightgrey;
      border-radius: 5px;

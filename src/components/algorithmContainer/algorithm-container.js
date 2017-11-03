@@ -5,7 +5,9 @@ import {inject} from 'aurelia-framework';
 @inject(DataStorage, Algorithm)
 export class AlgorithmContainer {
   constructor(dataStorage, algorithm) {
-    this.stepHeadline = "Leftreduction";
+    this.stepHeadline = 'Leftreduction';
+    this.question = '';
+    this.answer = '';
     this.count; //I know its ugly, but I don't care right now
     this.current; //current DomElement that is used in Algorithm
     this.algorithm = algorithm;
@@ -23,13 +25,11 @@ export class AlgorithmContainer {
     //this.json = dataStorage.getData(); //TODO: change name… not actually json
     //console.log(JSON.stringify(this.json));
     this.json = /*DUMMYDATA*/ {"numAttributes":6,"dependencies":[[["D"],["B","C","D","F"]],[["B","C"],["A","E"]],[["A","D","E"],["B","C"]],[["B","F"],["A","D"]],[["E"],["F"]]]};
-    
-            
-
 
     /**
      * gets current Attribute with the count
      * as reference.
+     * @return {DomObject} current attribute
      */
     this.getAttribute = function() {
       let step = 0;
@@ -74,6 +74,7 @@ export class AlgorithmContainer {
       }
     };
 
+    //changes class of previous attribute, to not highlight it anymore
     this.changeClassOldAttribute = function() {
       if (this.current !== undefined) {
         if (this.current.className.includes('dependency')) {
@@ -100,20 +101,40 @@ export class AlgorithmContainer {
       if(remove) {
         this.current.className += ' deleted';
       }
+      this.question = this.algorithm.log.steps.last().question;
+      this.answer = this.algorithm.log.steps.last().removed;
     };
 
     this.stepBack = function() {
+      console.log(this.algorithm.log);
       this.changeClassOldAttribute();
       this.current = this.getAttribute();
+      let lastStep = this.algorithm.log.steps.last();
+      let oldDomElem = lastStep.domElem;
+      if(lastStep.removed) {
+        console.log('was removed', oldDomElem);
+        oldDomElem.className = oldDomElem.className.replace('deleted', '');
+      }
+      this.algorithm.log.steps.splice(-1,1);
+      this.question = this.algorithm.log.steps.last().question;
+      this.answer = this.algorithm.log.steps.last().removed;
       this.current.className += ' current-attribute';
     };
 
 
     /**
-     * Counts the number of steps needed for each State in the Algorithm
+     * Counts the number of steps needed for each state in the algorithm
+     * and sets right value for progressbar
      * gets called when Class is created
      */
     this.init = function() {
+
+      if (!Array.prototype.last){
+        Array.prototype.last = function(){
+            return this[this.length - 1];
+        };
+      };
+
       let forms = document.getElementsByClassName('dependency');
       for (let i = 0; i < forms.length; i++) {
         let left = forms[i].firstChild.childNodes;
@@ -131,8 +152,8 @@ export class AlgorithmContainer {
     };
 
     /**
-     * Checks with the help of count, which state of
-     * the algorithm it is in
+     * Checks which step of the algorithm it is in
+     * Changes Headline if new step
      */
     this.updateState = function() {
       let progressbarMax = parseInt(document.getElementById('progress-outer').getAttribute("data-max"));

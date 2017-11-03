@@ -32,9 +32,8 @@ body {
   }
 }
 
-nav {
+nav.nav {
   font-family: $font-headline;
-  text-transform: uppercase;
   margin: $tiny $medium;
   
   a {
@@ -42,6 +41,15 @@ nav {
     color: white;
     font-weight: 700;
     text-decoration: none;
+  }
+}
+
+footer {
+  img {
+    position: absolute;
+    bottom: -60px;
+    right: 5%;
+    height: 50%
   }
 }
 
@@ -68,7 +76,6 @@ main {
   flex-direction: row;
   -webkit-justify-content: center;
   justify-content: center;
-  margin-top: $medium;
 
   @media screen and (max-width: $break-small) {
     flex-direction: column-reverse;

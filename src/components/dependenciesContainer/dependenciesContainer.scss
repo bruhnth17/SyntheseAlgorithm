@@ -16,6 +16,10 @@ dependencies-container {
     font-weight: bold;
   }
 
+  .answer{
+    color: $orange;
+  }  
+
   label {
 
     color: $grey;
@@ -53,11 +57,7 @@ dependencies-container {
     flex-direction: row;
     -webkit-justify-content: center;
     justify-content: center;
-    height: 95px;
-
-    button {
-      margin-top: $medium;
-    }
+    height: 75px;
   }
 }
 

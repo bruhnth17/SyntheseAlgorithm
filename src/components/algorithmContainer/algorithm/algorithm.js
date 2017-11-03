@@ -3,7 +3,7 @@ export class Algorithm {
   constructor() {
     this.domElem;
     this.explainText = [];
-    this.log = {};
+    this.log = {"steps" : []};
     this.stepBack = function() {};
     this.do = function(step, domElem) {
       this.domElem = domElem;
@@ -28,10 +28,11 @@ export class Algorithm {
      * @return Array of Objects {left: [], right: []} – Each Object represents dependencies
      */
     this.traverseDomTree = function(callback) {
-      let forms = document.getElementsByClassName('dependency');
-      let domObj = [];
-      let l = [];
-      let r = [];
+      let forms = document.getElementsByClassName('dependency'),
+          domObj = [],
+          l = [],
+          r = [];
+
       for (let i = 0; i < forms.length; i++) {
         let left = forms[i].firstChild.childNodes;
         for (let j = 0; j < left.length - 1; j++) {
@@ -75,11 +76,12 @@ export class Algorithm {
      * @return {bool} true when span can be removed
      */
     this.leftReduction = function(span) {
-      let startingElements = [];
-      let elementsToFind = [];
-      let modifiedDom = this.traverseDomTree(function(a) {
-        return true;
-      });
+      let startingElements = [],
+          elementsToFind = [],
+          question = '',
+          modifiedDom = this.traverseDomTree(function(a) {
+            return true;
+          });
 
       //startingElements are siblings of the span
       let siblingsDom = span.parentNode.childNodes;
@@ -89,39 +91,55 @@ export class Algorithm {
           startingElements.push(siblingsDom[i].innerHTML);
         }
       }
+
       //elementsToFind are right side of dependency
       let elementsToFindDom = span.parentNode.parentNode.lastChild.childNodes;
       for (let i = 0; i < elementsToFindDom.length - 1; i++) {
         elementsToFind.push(elementsToFindDom[i].innerHTML);
       }
-      //If there are no starting elements, left reduction is not possible
-      if (startingElements === []) {
-        return false;
+
+      if(startingElements.length === 0) {
+        question = 'Can <b>' + elementsToFind.join(',') + '</b> be found with <b>∅</b>?';
+      } else {
+        question = 'Can <b>' + elementsToFind.join(',') + '</b> be found with <b>' + startingElements.join(',') + '</b>?';
       }
 
+      let text = [];
       let addedSomethingNew;
       do {
         addedSomethingNew = false;
         for(var i = 0; i < modifiedDom.length; i++) {
           let left = modifiedDom[i].left;
           if (startingElements.sort().join(',').includes(left.sort().join(','))) {
-            //console.log("can do smth with: ", left.join(','));
+            let tempAttr = [];
             for(let l = 0; l < modifiedDom[i].right.length; l++) {
               if(!startingElements.includes(modifiedDom[i].right[l])) {
-                //console.log("You can reach Attribute " + modifiedDom[i].right[l] + " with Atribute/s "+ left + " from the " + (i+1) +". Dependency." )
                 startingElements.push(modifiedDom[i].right[l]);
-                //console.log("elements to find", elementsToFind.sort().join(','));
-                //console.log("starting elem", startingElements.sort().join(','));
+                tempAttr.push(modifiedDom[i].right[l]);
                 if(this.containsOtherArray(startingElements, elementsToFind)) {
+                  text.push('You can reach Attribute/s ' + tempAttr + ' with Attribute/s '+ left + ' from the '+ (i+1) +'. Dependency.');
+                  this.log.steps.push({
+                    'domElem': span,
+                    'question' : question,
+                    'removed': true,
+                    'reachMessage' : text,
+                  });
+                  console.log(text);
                   return true;
                 } else {
                   addedSomethingNew = true;
                 }
               }
             }
+            text.push('You can reach Attribute ' + tempAttr.join(', ') + ' with Attribute/s '+ left + ' from the '+ (i+1) +'. Dependency.');
           }
         }
       } while(addedSomethingNew);
+      this.log.steps.push({
+        'domElem': span,
+        'removed': false,
+        'question': question,
+      });
       return false;   
     };
 
@@ -131,14 +149,15 @@ export class Algorithm {
      * @return {bool} true when span can be removed
      */
     this.rightReduction = function(span) {
-      let startingElements = [];
-      let elementToFind = span.innerHTML;
-      let modifiedDom = this.traverseDomTree(function(a) {
-        if(span === a) {
-          return false;
-        }
-        return true;
-      });
+      let startingElements = [],
+          elementToFind = span.innerHTML,
+          question = '',
+          modifiedDom = this.traverseDomTree(function(a) {
+            if(span === a) {
+              return false;
+            }
+            return true;
+          });
 
       //starting elements are left side of dependency
       let startingElementsDom = span.parentNode.parentNode.firstChild.childNodes;
@@ -148,34 +167,67 @@ export class Algorithm {
         }
       }
 
-      if(startingElements.includes(elementToFind)) {
-        return true;
+      let oldRightSide = [];
+      for (let i = 0; i < span.parentNode.childNodes.length - 1; i++) {
+        if(!span.parentNode.childNodes[i].className.includes('deleted')) {
+          oldRightSide.push(span.parentNode.childNodes[i].innerHTML);
+        }
+      }
+      console.log(oldRightSide, span);
+      let newRightSide = [];
+      for (let i = 0; i < span.parentNode.childNodes.length - 1; i++) {
+        if(span.parentNode.childNodes[i].innerHTML !== span.innerHTML && !span.parentNode.childNodes[i].className.includes('deleted')) {
+          console.log(span.parentNode.childNodes.innerHTML, span.innerHTML);
+          newRightSide.push(span.parentNode.childNodes[i].innerHTML);
+        }
+      }
+      
+      console.log(newRightSide);
+      if(startingElementsDom.length === 0) {
+        question = question = 'Can <b>' + elementToFind + '</b> still be reached with ' + '</b>∅ -> ' + newRightSide.join(',') + '</b> instead of <b>' + startingElements.join(',') + ' -> ' + oldRightSide.join(',') + '</b> when you start with <b>' + startingElements.join(',') + '</b>?';
+      } else if(oldRightSide.length === 1) {
+        question = 'Can <b>' + elementToFind + '</b> still be reached with ' + '<b>' + startingElements.join(',') + ' -> ∅</b>  instead of <b>' + startingElements.join(',') + ' -> ' + oldRightSide.join(',') + '</b> when you start with <b>' + startingElements.join(',') + '</b>?';
+      } else {
+        question = 'Can <b>' + elementToFind + '</b> still be reached with ' + '<b>' + startingElements.join(',') + ' ->' + newRightSide.join(',') + '</b> instead of <b>' + startingElements.join(',') + ' -> ' + oldRightSide.join(',') + '</b> when you start with <b>' + startingElements.join(',') + '</b>?';
       }
 
+      let text = [];
       let addedSomethingNew;
       do {
         addedSomethingNew = false;
         for(var i = 0; i < modifiedDom.length; i++) {
           let left = modifiedDom[i].left;
-          console.log('left', left.join(','));
-          console.log('st', startingElements.join(','));
           if (this.containsOtherArray(startingElements, left)) {
-            console.log('can do something with' + left.join(','))
+            let tempAttr = [];
             for(let l = 0; l < modifiedDom[i].right.length; l++) {
               if(!startingElements.includes(modifiedDom[i].right[l])) {
-                console.log("You can reach Attribute " + modifiedDom[i].right[l] + " with the Attribute/s " + modifiedDom[i].left.join(',') + " from the " + (i+1) + ". Dependency" );
                 startingElements.push(modifiedDom[i].right[l]);
+                tempAttr.push(modifiedDom[i].right[l]);
                 if(startingElements.includes(elementToFind)) {
+                  text.push('You can reach Attribute ' + tempAttr.join(', ') + ' with Attribute/s '+ left + ' from the '+ (i+1) +'. Dependency.');
+                  console.log(text);
+                  this.log.steps.push({
+                    'domElem': span,
+                    'question': question,
+                    'removed': true,
+                    'reachMessage' : text,
+                  });
                   return true;
                 } else {
                   addedSomethingNew = true;
                 }
               }
             }
+            text.push('You can reach Attribute ' + tempAttr.join(', ') + ' with Attribute/s '+ left + ' from the '+ (i+1) +'. Dependency.');
           }
         }
       } while(addedSomethingNew);
 
+      this.log.steps.push({
+        'domElem': span,
+        'question': question,
+        'removed': false
+      });
       return false;
     };
 
@@ -191,10 +243,19 @@ export class Algorithm {
       for(let i = 0; i < rightChildren.length -1; i++) {
         if (!rightChildren[i].className.includes('deleted')) {
           console.log('false');
+          this.log.steps.push({
+            'domElem': form,
+            'removed': false
+          });
           return false;
         }
       }
       console.log('true');
+      this.log.steps.push({
+        'domElem': form,
+        'removed': true,
+        'reachMessage' : 'Dependency has no more Attributes on the right side'
+      });
       return true;
 
     };

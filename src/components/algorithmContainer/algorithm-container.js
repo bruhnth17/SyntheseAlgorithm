@@ -5,10 +5,10 @@ import {inject} from 'aurelia-framework';
 @inject(DataStorage, Algorithm)
 export class AlgorithmContainer {
   constructor(dataStorage, algorithm) {
-    this.stepHeadline = 'Leftreduction';
+    this.stepHeadline = 'Leftreduction: Check for all A ∈ α if β ⊆ AttrHülle(F, α−A)';
     this.question = '';
     this.answer = '';
-    this.count; //I know its ugly, but I don't care right now
+    this.count; 
     this.current; //current DomElement that is used in Algorithm
     this.algorithm = algorithm;
     this.stepsLR = 0;
@@ -106,13 +106,11 @@ export class AlgorithmContainer {
     };
 
     this.stepBack = function() {
-      console.log(this.algorithm.log);
       this.changeClassOldAttribute();
       this.current = this.getAttribute();
       let lastStep = this.algorithm.log.steps.last();
       let oldDomElem = lastStep.domElem;
       if(lastStep.removed) {
-        console.log('was removed', oldDomElem);
         oldDomElem.className = oldDomElem.className.replace('deleted', '');
       }
       this.algorithm.log.steps.splice(-1,1);
@@ -128,7 +126,6 @@ export class AlgorithmContainer {
      * gets called when Class is created
      */
     this.init = function() {
-
       if (!Array.prototype.last){
         Array.prototype.last = function(){
             return this[this.length - 1];
@@ -159,13 +156,14 @@ export class AlgorithmContainer {
       let progressbarMax = parseInt(document.getElementById('progress-outer').getAttribute("data-max"));
       document.getElementById('progress-inner').style.width = ((this.count / progressbarMax)*100).toString() + '%';
       if (this.count < this.stepsLR) {
-        this.algoStep = 1; //LEFTREDUCTION
+        this.algoStep = 1;
+        this.stepHeadline = 'Leftreduction:';
       } else if (this.count < (this.stepsRR + this.stepsLR)) {
         this.algoStep = 2;
-        this.stepHeadline = "Rightreduction"
+        this.stepHeadline = 'Rightreduction:'; 
       } else if (this.count < (this.stepsRR + this.stepsLR + this.stepsEL)) {
         this.algoStep = 3;
-        this.stepHeadline = "Elemination"
+        this.stepHeadline = 'Elemination:';
       }
     };
   }
@@ -187,6 +185,7 @@ export class AlgorithmContainer {
     if (this.count !== undefined) {
       if (this.count > 0) {
         this.count -= 1;
+        console.log(this.count);
         this.updateState();
         this.stepBack();
       }

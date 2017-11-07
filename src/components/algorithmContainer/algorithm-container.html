@@ -1,6 +1,6 @@
 <template>
-    <require from="./answer-format"></require>
   <require from="./algorithm/algorithm"></require>
+  <require from="./boolean-format"></require>
   <main class="algorithm">
     <algorithm></algorithm>
     <section class="dependencies">
@@ -27,13 +27,16 @@
         <div class="progress-outer" id="progress-outer">
           <div class="progress-inner" id="progress-inner"></div>
         </div> 
-        <h3>${stepHeadline}: </h3>
-        <p innerHTML.bind="question">${question}</p>
-        <p class="answer">${answer}</p>
+        <h3>${stepHeadline}</h3>
+        <p innerHTML.bind="question" style="height:40px">${question}</p>
+        <p class="answer">${answer | booleanFormat}</p>
       </div>
       <div class="description">
         <ul>
-
+          <li repeat.for="step of algorithm.log.steps" if.bind="step.removed">
+            <span><b>Step ${$index +1} : Removed ${step.domElem.innerHTML}<b></span>
+            <p repeat.for="message of step.reachMessage" if.bind="step.removed">${message}</p>
+          </li>
         </ul>
       </div>
     </section>

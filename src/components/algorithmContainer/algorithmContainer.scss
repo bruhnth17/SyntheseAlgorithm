@@ -55,7 +55,8 @@
     padding: $small;
 
     h3 {
-      margin-left: $small;
+      margin: $tiny 0;
+      padding: 0 $tiny;
     }
 
     .answer {
@@ -77,5 +78,33 @@
      }
    }
 
+  }
+
+  .description {
+    height: 400px;
+    overflow-y: auto;
+    margin-top: $small;
+
+    ul {
+      display: flex;
+      flex-direction: column-reverse;
+
+      li {
+        list-style: none;
+        margin-bottom: $tiny;
+        height: auto;
+        padding: $small;
+        border-radius: 5px;
+        background-color: $lightgrey;
+        flex: 0 0 auto;
+        transition: all 0.4s ease-out;
+        opacity: 1;
+        font-size: 14px;
+
+        &::first-child {
+          background-color: green;
+        }
+      }
+    }
   }
 }

@@ -136,7 +136,8 @@ dependencies-container nav {
   color: #313638;
   padding: 1rem; }
   .algorithm .status h3 {
-    margin-left: 1rem; }
+    margin: 0.5rem 0;
+    padding: 0 0.5rem; }
   .algorithm .status .answer {
     padding-top: 0.5rem;
     font-weight: 700; }
@@ -150,6 +151,26 @@ dependencies-container nav {
       border-radius: inherit;
       background-color: #f06543;
       transition: width .06s ease-in; }
+.algorithm .description {
+  height: 400px;
+  overflow-y: auto;
+  margin-top: 1rem; }
+  .algorithm .description ul {
+    display: flex;
+    flex-direction: column-reverse; }
+    .algorithm .description ul li {
+      list-style: none;
+      margin-bottom: 0.5rem;
+      height: auto;
+      padding: 1rem;
+      border-radius: 5px;
+      background-color: #e8e9eb;
+      flex: 0 0 auto;
+      transition: all 0.4s ease-out;
+      opacity: 1;
+      font-size: 14px; }
+      .algorithm .description ul li::first-child {
+        background-color: green; }
 
 * {
   box-sizing: border-box;

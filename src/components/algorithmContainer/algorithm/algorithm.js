@@ -239,12 +239,11 @@ export class Algorithm {
      */
     this.eliminate = function(form) {
       let rightChildren = form.lastChild.childNodes;
-      console.log(rightChildren);
       for(let i = 0; i < rightChildren.length -1; i++) {
         if (!rightChildren[i].className.includes('deleted')) {
-          console.log('false');
           this.log.steps.push({
             'domElem': form,
+            'question': "Are there no Attributes on the right side?",
             'removed': false
           });
           return false;
@@ -253,12 +252,18 @@ export class Algorithm {
       console.log('true');
       this.log.steps.push({
         'domElem': form,
+        'question': "Are there no Attributes on the right side?",
         'removed': true,
         'reachMessage' : 'Dependency has no more Attributes on the right side'
       });
       return true;
 
     };
-    this.confluate = function(form) {};
+    this.confluate = function(form) {
+      let leftChildren = form.firstChild.childNodes;
+      //traverse leftchildren of domtree except own
+      //if a.leftchidren == b.leftchidren
+      //delete b, and add b.rightchildren to a.rightchildren
+    };
   }
 }

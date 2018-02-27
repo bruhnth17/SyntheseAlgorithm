@@ -28,24 +28,25 @@ export class Algorithm {
      * @return Array of Objects {left: [], right: []} – Each Object represents dependencies
      */
     this.traverseDomTree = function(callback) {
-      let forms = document.getElementsByClassName('dependency'),
-          domObj = [],
+      const forms = document.getElementsByClassName('dependency');
+      let domObj = [],
           l = [],
           r = [];
 
       for (let i = 0; i < forms.length; i++) {
-        let left = forms[i].firstChild.childNodes;
-        for (let j = 0; j < left.length - 1; j++) {
-          let deleted = left[j].className.includes('deleted');
-          if (callback(left[j]) && !deleted) {
-            l.push(left[j].innerHTML);
+
+        const leftSide = forms[i].firstChild.childNodes;
+        for (let j = 0; j < leftSide.length - 1; j++) {
+          let deleted = leftSide[j].className.includes('deleted');
+          if (callback(leftSide[j]) && !deleted) {
+            l.push(leftSide[j].innerHTML);
           }
         }
-        let right = forms[i].lastChild.childNodes;
-        for (let j = 0; j < right.length - 1; j++) {
-          let deleted = right[j].className.includes('deleted');
-          if (callback(right[j]) && !deleted) {
-            r.push(right[j].innerHTML);
+        const rightSide = forms[i].lastChild.childNodes;
+        for (let j = 0; j < rightSide.length - 1; j++) {
+          let deleted = rightSide[j].className.includes('deleted');
+          if (callback(rightSide[j]) && !deleted) {
+            r.push(rightSide[j].innerHTML);
           }
         }
         domObj.push({'left': l, 'right': r});
@@ -62,13 +63,14 @@ export class Algorithm {
      * @return {bool} true if all values from arr2 are in arr1  
      */
     this.containsOtherArray = function(arr1, arr2) {
-      if (0 === arr2.length) {
+      if (0 === arr2.length || 0 == arr1.length) {
         return false;
       }
       return arr2.every(function (value) {
         return (arr1.indexOf(value) >= 0);
       });
-    }
+    };
+
 
     /**
      * Function for left reduction
@@ -173,16 +175,15 @@ export class Algorithm {
           oldRightSide.push(span.parentNode.childNodes[i].innerHTML);
         }
       }
-      console.log(oldRightSide, span);
+
       let newRightSide = [];
       for (let i = 0; i < span.parentNode.childNodes.length - 1; i++) {
         if(span.parentNode.childNodes[i].innerHTML !== span.innerHTML && !span.parentNode.childNodes[i].className.includes('deleted')) {
-          console.log(span.parentNode.childNodes.innerHTML, span.innerHTML);
+          // console.log(span.parentNode.childNodes.innerHTML, span.innerHTML);
           newRightSide.push(span.parentNode.childNodes[i].innerHTML);
         }
       }
       
-      console.log(newRightSide);
       if(startingElementsDom.length === 0) {
         question = question = 'Can <b>' + elementToFind + '</b> still be reached with ' + '</b>∅ -> ' + newRightSide.join(',') + '</b> instead of <b>' + startingElements.join(',') + ' -> ' + oldRightSide.join(',') + '</b> when you start with <b>' + startingElements.join(',') + '</b>?';
       } else if(oldRightSide.length === 1) {
@@ -249,12 +250,11 @@ export class Algorithm {
           return false;
         }
       }
-      console.log('true');
       this.log.steps.push({
         'domElem': form,
         'question': "Are there no Attributes on the right side?",
         'removed': true,
-        'reachMessage' : 'Dependency has no more Attributes on the right side'
+        'reachMessage' : ['Dependency has no more Attributes on the right side']
       });
       return true;
 

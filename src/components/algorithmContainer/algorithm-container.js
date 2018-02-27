@@ -4,12 +4,18 @@ import {inject} from 'aurelia-framework';
 
 @inject(DataStorage, Algorithm)
 export class AlgorithmContainer {
+
+  /**
+   * 
+   * @param {*} dataStorage 
+   * @param {*} algorithm 
+   */
   constructor(dataStorage, algorithm) {
-    this.stepHeadline = 'Leftreduction: Check for all A ∈ α if β ⊆ AttrHülle(F, α−A)';
+    this.stepHeadline = 'Leftreduction:';
     this.question = '';
-    this.answer = '';
+    this.answer;
     this.count; 
-    this.current; //current DomElement that is used in Algorithm
+    this.current;
     this.algorithm = algorithm;
     this.stepsLR = 0;
     this.stepsRR = 0;
@@ -97,7 +103,8 @@ export class AlgorithmContainer {
       this.changeClassOldAttribute();
       this.current = this.getAttribute();
       this.current.className += ' current-attribute';
-      let remove = this.algorithm.do(this.algoStep, this.current);
+      
+      const remove = this.algorithm.do(this.algoStep, this.current);
       if(remove) {
         this.current.className += ' deleted';
       }
@@ -108,8 +115,9 @@ export class AlgorithmContainer {
     this.stepBack = function() {
       this.changeClassOldAttribute();
       this.current = this.getAttribute();
-      let lastStep = this.algorithm.log.steps.last();
-      let oldDomElem = lastStep.domElem;
+      const lastStep = this.algorithm.log.steps.last();
+      const oldDomElem = lastStep.domElem;
+      
       if(lastStep.removed) {
         oldDomElem.className = oldDomElem.className.replace('deleted', '');
       }
@@ -134,12 +142,12 @@ export class AlgorithmContainer {
 
       let forms = document.getElementsByClassName('dependency');
       for (let i = 0; i < forms.length; i++) {
-        let left = forms[i].firstChild.childNodes;
-        for (let j = 0; j < left.length - 1; j++) {
+        let lengthLeft = forms[i].firstChild.childNodes.length -1;
+        for (let j = 0; j < lengthLeft; j++) {
           this.stepsLR += 1;
         }
-        let right = forms[i].lastChild.childNodes;
-        for (let j = 0; j < right.length - 1; j++) {
+        let lengthRight = forms[i].lastChild.childNodes.length -1;
+        for (let j = 0; j < lengthRight; j++) {
           this.stepsRR += 1;
         }
         this.stepsEL += 1;
@@ -153,31 +161,34 @@ export class AlgorithmContainer {
      * Changes Headline if new step
      */
     this.updateState = function() {
-      let progressbarMax = parseInt(document.getElementById('progress-outer').getAttribute("data-max"));
+      const progressbarMax = parseInt(document.getElementById('progress-outer').getAttribute("data-max"));
       document.getElementById('progress-inner').style.width = ((this.count / progressbarMax)*100).toString() + '%';
+      
       if (this.count < this.stepsLR) {
         this.algoStep = 1;
-        this.stepHeadline = 'Leftreduction:';
+        this.stepHeadline = 'Leftreduction';
       } else if (this.count < (this.stepsRR + this.stepsLR)) {
         this.algoStep = 2;
-        this.stepHeadline = 'Rightreduction:'; 
+        this.stepHeadline = 'Rightreduction'; 
       } else if (this.count < (this.stepsRR + this.stepsLR + this.stepsEL)) {
         this.algoStep = 3;
-        this.stepHeadline = 'Elemination:';
+        this.stepHeadline = 'Elemination';
       }
     };
   }
 
   //Executed when NextBtn is pressed
   nextPressed() {
-    if (this.count !== undefined) {
-      this.count += 1;
-    } else {
-      this.init();
-      this.count = 0;
-    }
+    this.init();
+    this.count = 0;
     this.updateState();
     this.stepForward();
+
+    this.nextPressed = function() {
+      this.count++;
+      this.updateState();
+      this.stepForward();
+    }
   }
 
   //Executed when BackBtn is pressed

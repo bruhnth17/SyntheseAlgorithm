@@ -59,7 +59,14 @@
       padding: 0 $tiny;
     }
 
+    p {
+      height: 40px;
+      display: table-cell;
+      vertical-align: middle;
+    }
+
     .answer {
+      display: block;
       padding-top: $tiny;
       font-weight: 700;
     }

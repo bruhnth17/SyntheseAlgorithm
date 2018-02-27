@@ -1,8 +1,14 @@
 export class BooleanFormatValueConverter {
   toView(value) {
-    if(value) {
-      return "Yes"
+    let answer = '';
+    console.log(answer);
+    if(typeof value !== 'undefined') {
+      if(value) {
+        answer = 'Yes';
+      } else {
+        answer = 'No';
+      }
     }
-    return "No"
+    return answer;
   }
 }

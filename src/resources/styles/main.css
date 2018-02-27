@@ -138,7 +138,12 @@ dependencies-container nav {
   .algorithm .status h3 {
     margin: 0.5rem 0;
     padding: 0 0.5rem; }
+  .algorithm .status p {
+    height: 40px;
+    display: table-cell;
+    vertical-align: middle; }
   .algorithm .status .answer {
+    display: block;
     padding-top: 0.5rem;
     font-weight: 700; }
   .algorithm .status .progress-outer {

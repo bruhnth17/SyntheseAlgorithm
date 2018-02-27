@@ -2,10 +2,9 @@
   <require from="./algorithm/algorithm"></require>
   <require from="./boolean-format"></require>
   <main class="algorithm">
-    <algorithm></algorithm>
     <section class="dependencies">
       <h2>Dependencies</h2>
-      <form repeat.for="dependency of json.dependencies" class="dependency">
+      <form repeat.for="dependency of json.dependencies" class="dependency" id="${$index + 1}. Dependency">
           <div class="left">
             <span repeat.for="char of dependency[0]">${char}</span>
           </div>
@@ -28,14 +27,17 @@
           <div class="progress-inner" id="progress-inner"></div>
         </div> 
         <h3>${stepHeadline}</h3>
-        <p innerHTML.bind="question" style="height:40px">${question}</p>
+        <p innerHTML.bind="question">${question}</p>
         <p class="answer">${answer | booleanFormat}</p>
       </div>
       <div class="description">
         <ul>
           <li repeat.for="step of algorithm.log.steps" if.bind="step.removed">
-            <span><b>Step ${$index +1} : Removed ${step.domElem.innerHTML}<b></span>
-            <p repeat.for="message of step.reachMessage" if.bind="step.removed">${message}</p>
+            <span>
+              <b if.bind="step.domElem.nodeName==='FORM'">Step ${$index +1}: Removed ${step.domElem.id}</b>  
+              <b if.bind="step.domElem.nodeName==='SPAN'">Step ${$index +1}: Removed ${step.domElem.innerHTML} from  ${step.domElem.parentNode.parentNode.id}<b>
+            </span>
+            <p repeat.for="message of step.reachMessage">${message}</p>
           </li>
         </ul>
       </div>

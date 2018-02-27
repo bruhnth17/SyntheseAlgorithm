@@ -61,6 +61,16 @@ export class DependenciesContainer {
   }
 
   /**
+   * Reset all radiobuttons
+   */
+  resetInput() {
+    const attributes = document.getElementsByClassName('attribute');
+    for(let i=0, length = attributes.length; i < length; i++) {
+      attributes[i].checked = false;
+    }
+  }
+
+  /**
    * Create JSON Object with the filled in Dependencies
    * Example:
    * AEH -> BD :: {id : {left: ['A', 'E', 'H'], right: ['B', 'D'] }}
@@ -71,7 +81,7 @@ export class DependenciesContainer {
       'numAttributes': '',
       'dependencies': []
     };
-    let dependencies = document.getElementsByClassName('dependency');
+    const dependencies = document.getElementsByClassName('dependency');
 
     for (let i = 0, lenght1 = this.numDependencies; i < lenght1; i++) {
       let arrayLeft = [];
@@ -100,15 +110,12 @@ export class DependenciesContainer {
       result.dependencies[i.toString()] = [arrayLeft, arrayRight];
       result.numAttributes = this.numAttributes;
     }
-    //console.log(result);
     if (error) {
       document.getElementsByClassName('errormsg DC')[0].style.display = 'block';
     } else {
       document.getElementsByClassName('errormsg DC')[0].style.display = 'none';
-      //this.ea.publish('evaluateDependencies', result);
       this.ds.setData(result);
       this.r.navigateToRoute('algorithm');
     }
-    //window.dependencyJson = result;
   }
 }

@@ -11,7 +11,7 @@ export class AlgorithmContainer {
    * @param {*} algorithm 
    */
   constructor(dataStorage, algorithm) {
-    this.stepHeadline = 'Leftreduction:';
+    this.stepHeadline = 'Leftreduction';
     this.question = '';
     this.answer;
     this.count; 
@@ -200,6 +200,12 @@ export class AlgorithmContainer {
         this.updateState();
         this.stepBack();
       }
+    }
+  }
+
+  resetPressed() {
+    while(this.count > 0) {
+      this.backPressed(); //genius
     }
   }
 

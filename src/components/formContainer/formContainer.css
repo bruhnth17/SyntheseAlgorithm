@@ -5,6 +5,14 @@ form-container .content > form {
   flex-direction: row;
   -webkit-justify-content: center;
   justify-content: center; }
+form-container nav {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 75px; }
 form-container label {
   color: #c1c0b8;
   cursor: pointer;

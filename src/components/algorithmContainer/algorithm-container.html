@@ -1,43 +1,48 @@
 <template>
-  <require from="./algorithm/algorithm"></require>
   <require from="./boolean-format"></require>
   <main class="algorithm">
     <section class="dependencies">
       <h2>Dependencies</h2>
       <form repeat.for="dependency of json.dependencies" class="dependency" id="${$index + 1}. Dependency">
-          <div class="left">
-            <span repeat.for="char of dependency[0]">${char}</span>
-          </div>
-          <div class="middle">-></div>
-          <div class="right">
-            <span repeat.for="char of dependency[1]">${char}</span>
-          </div>
+        <div class="left">
+          <span repeat.for="char of dependency[0]">${char}</span>
+        </div>
+        <div class="middle">-></div>
+        <div class="right">
+          <span repeat.for="char of dependency[1]">${char}</span>
+        </div>
       </form>
-      <nav class="buttons">
-        <button click.delegate="resetPressed()" class="back">reset</button>
-        <button click.delegate="backPressed()"><i class="fa fa-chevron-left" aria-hidden="true"></i>previous</button>
-        <button click.delegate="nextPressed()">next<i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-        <button class="back">end</button>
+      <nav class="buttons" id="buttons">
+        <button click.delegate="resetPressed()" class="back">Reset</button>
+        <button click.delegate="backPressed()"><i class="fa fa-chevron-left" aria-hidden="true"></i>Previous</button>
+        <button click.delegate="nextPressed()">Next<i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+        <button click.delegate="endPressed()" class="back">End</button>
       </nav>
     </section>
     <section class="statusandexpl">
       <h2>Status & Explanation</h2>
       <div class="status">
+        <h3>Step ${stepHeadline}</h3>
         <div class="progress-outer" id="progress-outer">
           <div class="progress-inner" id="progress-inner"></div>
-        </div> 
-        <h3>${stepHeadline}</h3>
+        </div>
         <p innerHTML.bind="question">${question}</p>
         <p class="answer">${answer | booleanFormat}</p>
       </div>
       <div class="description">
-        <ul>
-          <li repeat.for="step of algorithm.log.steps" if.bind="step.removed">
-            <span>
-              <b if.bind="step.domElem.nodeName==='FORM'">Step ${$index +1}: Removed ${step.domElem.id}</b>  
-              <b if.bind="step.domElem.nodeName==='SPAN'">Step ${$index +1}: Removed ${step.domElem.innerHTML} from  ${step.domElem.parentNode.parentNode.id}<b>
-            </span>
-            <p repeat.for="message of step.reachMessage">${message}</p>
+        <ul class="description-list">
+          <li repeat.for="step of algorithm.log.steps" if.bind="step.removed" class="message" id="message-${$index}">
+            <p class="message-head" click.delegate="toggleDescription($index)">
+              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              <b if.bind="step.domElem.nodeName==='FORM'">Removed ${step.domElem.id}</b>
+              <b if.bind="step.domElem.nodeName==='SPAN'">Removed ${step.domElem.innerHTML} from  ${step.domElem.parentNode.parentNode.id}<b>
+              <b if.bind="step.conflate">Conflated</b>
+            </p>
+            <ul class="message-body">
+              <li repeat.for="message of step.reachMessage">
+                <i class="fa fa-angle-right" aria-hidden="true"></i> ${message}
+              </li>
+            </ul>
           </li>
         </ul>
       </div>

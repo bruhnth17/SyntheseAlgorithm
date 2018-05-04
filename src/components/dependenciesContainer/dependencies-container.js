@@ -1,16 +1,14 @@
-import {inject} from 'aurelia-framework';
-import {EventAggregator} from 'aurelia-event-aggregator';
-import {DataStorage} from '../dataStorageContainer/data-storage';
-import {Router} from 'aurelia-router';
+import { inject } from 'aurelia-framework';
+import { EventAggregator } from 'aurelia-event-aggregator';
+import { Router } from 'aurelia-router';
 
 
-@inject(EventAggregator, DataStorage, Router)
+@inject(EventAggregator, Router)
 export class DependenciesContainer {
-  constructor(eventAggregator, dataStorage, router) {
+  constructor(eventAggregator, router) {
     this.numAttributes;
     this.numDependencies;
     this.ea = eventAggregator;
-    this.ds = dataStorage;
     this.r = router;
     this.subscribe();
   }
@@ -43,7 +41,7 @@ export class DependenciesContainer {
 
     for (let i = 0; i < attributes.length; i++) {
       let containsClass = false;
-      attributeArray.forEach(function(c) {
+      attributeArray.forEach(function (c) {
         containsClass = containsClass || attributes[i].classList.contains(c);
       });
 
@@ -65,7 +63,7 @@ export class DependenciesContainer {
    */
   resetInput() {
     const attributes = document.getElementsByClassName('attribute');
-    for(let i=0, length = attributes.length; i < length; i++) {
+    for (let i = 0, length = attributes.length; i < length; i++) {
       attributes[i].checked = false;
     }
   }
@@ -110,12 +108,12 @@ export class DependenciesContainer {
       result.dependencies[i.toString()] = [arrayLeft, arrayRight];
       result.numAttributes = this.numAttributes;
     }
+    
     if (error) {
       document.getElementsByClassName('errormsg DC')[0].style.display = 'block';
     } else {
       document.getElementsByClassName('errormsg DC')[0].style.display = 'none';
-      this.ds.setData(result);
-      this.r.navigateToRoute('algorithm');
+      this.r.navigateToRoute('algorithm', { base64: btoa(JSON.stringify(result)) });
     }
   }
 }

@@ -1,12 +1,13 @@
+
+@import '../styles/_var.scss';
+
+
+
 @import '../../components/about/about';
 @import '../../components/formContainer/formContainer';
 @import '../../components/asideInfo/asideInfo';
 @import '../../components/dependenciesContainer/dependenciesContainer';
 @import '../../components/algorithmContainer/algorithmContainer';
-
-@import '../styles/_var.scss';
-
-$break-small: 875px;
 
 *{
   box-sizing: border-box;
@@ -29,18 +30,34 @@ body {
     left: 50%;
     right: 0;
     z-index: -1;
+    @media screen and (max-width: $break-small) {
+      background: $lightgrey;
+    }
   }
 }
 
-nav.nav {
+nav {
   font-family: $font-headline;
   margin: $tiny $medium;
   
+  ul {
+    text-align: center;
+    li {
+      display: inline-block;
+      margin: 1rem 1.5rem;
+    }
+  }
+  
   a {
+    color: $grey;
     margin-bottom: $tiny;
-    color: white;
     font-weight: 700;
-    text-decoration: none;
+    font-size: 18px;
+    text-decoration: underline;
+    z-index: 5;
+    &.active {
+      color: $black;
+    }
   }
 }
 
@@ -55,12 +72,12 @@ footer {
 
 h2 {
   font-family: $font-headline;
-  font-size: 22px;
+  font-size: 28px;
   padding-left: $tiny;
   padding-bottom: $medium;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: $red;
+  letter-spacing: 2px;
+  color: rgba($red, .8);
 }
 
 h3 {
@@ -107,16 +124,13 @@ section {
   max-width: 560px;
   min-height: 500px;
 
-  @media screen and (max-width: $break-small) {
+  @media screen and (max-width: $break-small) and (min-width: $break-tiny){
     margin: $tiny;
   }
 
-  &.info {
-    
-  }
-
   @media screen and (max-width: $break-small) {
-    width: 70%;
+    width: 100%;
+    margin: $tiny 0;
   }
 }
 
@@ -129,6 +143,11 @@ dependencies-container {
   backface-visibility: hidden;
   background-color: white;
   border-radius: 5px;
+
+  @media screen and (max-width: $break-small) {
+    background-color: $lightgrey;
+  }
+
   div.content {
     transform: translateY(-50%) translateZ(60px) scale(0.94);
     top: 50%;
@@ -197,6 +216,11 @@ button {
   user-select: none;
   transition: 0.2s ease;
 
+  @media screen and (max-width: $break-small) {
+    font-size: 12px;
+    padding: 0.2rem 0.8rem;
+  }
+
   &.back {
     background: $grey;
   }
@@ -215,6 +239,9 @@ button {
 
   .fa {
     font-size: 14px;
+    @media screen and (max-width: $break-medium) {
+      display: none;
+    }
   }
 
   .fa-chevron-left {

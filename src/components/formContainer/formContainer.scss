@@ -1,36 +1,38 @@
 @import '../../resources/styles/_var.scss';
-
 form-container {
-
-  .content > form {
+  .content>form {
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-direction: row; 
+    -webkit-flex-direction: row;
     flex-direction: row;
     -webkit-justify-content: center;
     justify-content: center;
   }
-  
+  nav {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: center;
+    justify-content: center;
+    height: 75px;
+  }
   label {
     color: $grey;
     cursor: pointer;
     margin-bottom: $small;
     margin-top: $tiny;
-
     span {
       font-size: 47px;
       padding: 0 10px;
       font-weight: bold;
     }
-
     input {
       display: none;
-
       &:checked+span {
         color: $black;
       }
-
-      &:not(:checked):hover + span {
+      &:not(:checked):hover+span {
         color: $lightgrey;
       }
     }

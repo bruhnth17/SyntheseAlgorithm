@@ -35,11 +35,6 @@
     "id": "vscode",
     "displayName": "Visual Studio Code"
   },
-  "unitTestRunner": {
-    "id": "karma",
-    "displayName": "Karma",
-    "source": "test/unit/**/*.js"
-  },
   "paths": {
     "root": "src",
     "resources": "resources",
@@ -78,8 +73,10 @@
       ]
     },
     "options": {
-      "minify": "stage & prod",
-      "sourcemaps": "dev & stage"
+      "inject": true,
+      "minify": true,
+      "depCache": true,
+      "rev": true
     },
     "bundles": [
       {

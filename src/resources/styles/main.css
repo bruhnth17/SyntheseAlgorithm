@@ -1,9 +1,34 @@
-.about img {
-  float: left; }
-.about ul {
-  margin: 0 10rem; }
-  .about ul li {
-    margin-left: .5rem; }
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  margin: 0 50px;
+  flex-direction: row; }
+  @media screen and (max-width: 875px) {
+    .about {
+      flex-direction: row;
+      margin: 0.5rem 0; } }
+  .about div.img-container {
+    height: 500px;
+    margin: 0rem 2rem; }
+    @media screen and (max-width: 875px) {
+      .about div.img-container {
+        height: 300px;
+        margin: 0; } }
+    .about div.img-container img {
+      height: inherit; }
+  .about div > a {
+    color: #313638;
+    font-size: 20px;
+    margin: 1rem; }
+    .about div > a:hover {
+      color: #f06543; }
+  .about p {
+    padding: 1rem;
+    max-width: 200px; }
+    .about p a {
+      color: #f06543; }
 
 form-container .content > form {
   display: -webkit-flex;
@@ -12,6 +37,14 @@ form-container .content > form {
   flex-direction: row;
   -webkit-justify-content: center;
   justify-content: center; }
+form-container nav {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 75px; }
 form-container label {
   color: #c1c0b8;
   cursor: pointer;
@@ -37,20 +70,21 @@ aside-info {
     text-transform: uppercase; }
   aside-info ol {
     list-style-type: none;
-    color: #e8e9eb;
+    color: #ffffff;
     background-color: #313638;
     padding: 2rem 1rem;
     border-radius: 5px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700; }
     aside-info ol li {
       padding: 2px 0; }
     aside-info ol ul {
+      font-size: 14px;
       font-weight: 500;
       border-radius: 2px;
       list-style-type: none;
       padding-left: 1rem;
-      padding: .5rem; }
+      padding: .1rem 1rem; }
       aside-info ol ul span {
         color: #f09d51; }
       aside-info ol ul strong {
@@ -69,7 +103,21 @@ dependencies-container form {
 dependencies-container .middle {
   padding: 0 0.5rem;
   margin-top: .45rem;
-  font-weight: bold; }
+  font-weight: bold;
+  text-align: center; }
+  @media screen and (max-width: 418px) {
+    dependencies-container .middle {
+      width: 23px;
+      padding: 0;
+      margin: 0; } }
+  @media screen and (max-width: 875px) and (min-width: 418px) {
+    dependencies-container .middle {
+      width: auto;
+      font-size: 12px;
+      margin: 0; } }
+  @media screen and (max-width: 1125px) and (min-width: 875px) {
+    dependencies-container .middle {
+      width: 40px; } }
 dependencies-container .answer {
   color: #f09d51; }
 dependencies-container label {
@@ -78,9 +126,23 @@ dependencies-container label {
   font-size: 25px;
   padding: 0 1px;
   font-weight: bold; }
+  @media screen and (max-width: 418px) {
+    dependencies-container label {
+      font-size: 14px;
+      padding: 0; } }
+  @media screen and (max-width: 875px) and (min-width: 418px) {
+    dependencies-container label {
+      font-size: 16px;
+      padding: 0 1px; } }
+  @media screen and (max-width: 1125px) and (min-width: 875px) {
+    dependencies-container label {
+      padding: 0; } }
   dependencies-container label span {
     font-size: 20px;
     padding: 0 2px; }
+    @media screen and (max-width: 875px) {
+      dependencies-container label span {
+        font-size: 16px; } }
   dependencies-container label.hidden {
     display: none; }
   dependencies-container label input {
@@ -98,17 +160,27 @@ dependencies-container nav {
   justify-content: center;
   height: 75px; }
 
+@media screen and (max-width: 875px) {
+  .algorithm {
+    -webkit-flex-direction: column;
+    flex-direction: column; }
+    .algorithm section {
+      min-height: 0; } }
 .algorithm .dependencies .deleted,
 .algorithm .dependencies .deleted > div > span {
   color: #c1c0b8 !important; }
-.algorithm .dependencies .current-attribute,
-.algorithm .dependencies .current-attribute > div > span {
+.algorithm .dependencies span.current-attribute {
+  color: #f09d51 !important; }
+.algorithm .dependencies .current-attribute > div.middle,
+.algorithm .dependencies .current-attribute > div > span:not(.deleted) {
   color: #f09d51 !important; }
 .algorithm .dependencies form {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 0.5rem; }
+  .algorithm .dependencies form.hidden {
+    display: none; }
   .algorithm .dependencies form span {
     color: #313638;
     font-size: 25px;
@@ -117,8 +189,8 @@ dependencies-container nav {
     font-size: 20px;
     padding: 0 2px; }
   .algorithm .dependencies form .middle {
-    padding: 0 0.5rem;
-    font-weight: bold; }
+    font-weight: bold;
+    padding: 0 .8rem 0 0.4rem; }
 .algorithm .dependencies nav.buttons {
   margin-top: 2rem;
   display: -webkit-flex;
@@ -131,25 +203,26 @@ dependencies-container nav {
   .algorithm .dependencies nav.buttons button {
     margin: 1rem 0.25rem; }
 .algorithm .status {
-  border-radius: 5px;
-  border: 3px solid #c1c0b8;
-  color: #313638;
-  padding: 1rem; }
+  color: #313638; }
   .algorithm .status h3 {
     margin: 0.5rem 0;
     padding: 0 0.5rem; }
   .algorithm .status p {
     height: 40px;
     display: table-cell;
-    vertical-align: middle; }
+    vertical-align: middle;
+    padding: .5rem; }
   .algorithm .status .answer {
     display: block;
     padding-top: 0.5rem;
     font-weight: 700; }
   .algorithm .status .progress-outer {
-    height: 15px;
+    height: 12px;
     background-color: #e8e9eb;
     border-radius: 5px; }
+    @media screen and (max-width: 875px) {
+      .algorithm .status .progress-outer {
+        background-color: white; } }
     .algorithm .status .progress-outer .progress-inner {
       width: 0%;
       height: inherit;
@@ -157,25 +230,41 @@ dependencies-container nav {
       background-color: #f06543;
       transition: width .06s ease-in; }
 .algorithm .description {
-  height: 400px;
-  overflow-y: auto;
   margin-top: 1rem; }
-  .algorithm .description ul {
+  .algorithm .description .description-list {
     display: flex;
     flex-direction: column-reverse; }
-    .algorithm .description ul li {
-      list-style: none;
-      margin-bottom: 0.5rem;
-      height: auto;
-      padding: 1rem;
-      border-radius: 5px;
+    .algorithm .description .description-list .message .message-head {
+      cursor: pointer;
+      padding: 0.5rem;
+      -webkit-user-select: none;
+      /* Chrome all / Safari all */
+      -moz-user-select: none;
+      /* Firefox all */
+      -ms-user-select: none;
+      /* IE 10+ */
+      user-select: none; }
+    .algorithm .description .description-list .message:not(.details):not(:last-child) .message-head {
+      color: #c1c0b8; }
+    .algorithm .description .description-list .message:not(.details) p > i {
+      transform: rotate(0); }
+    .algorithm .description .description-list .message:not(.details) .message-body {
+      display: none; }
+  .algorithm .description .message {
+    list-style: none;
+    flex: 0 0 auto; }
+    .algorithm .description .message p > i {
+      transform: rotate(90deg);
+      transition: transform ease-in-out .2s;
+      padding: 10px; }
+    .algorithm .description .message .message-body {
+      list-style-type: none;
+      padding: 10px;
+      box-shadow: inset 0px 2px 8px 0px #c1c0b8;
       background-color: #e8e9eb;
-      flex: 0 0 auto;
-      transition: all 0.4s ease-out;
-      opacity: 1;
-      font-size: 14px; }
-      .algorithm .description ul li::first-child {
-        background-color: green; }
+      border-radius: 5px; }
+      .algorithm .description .message .message-body i {
+        padding: 5px 10px 5px 20px; }
 
 * {
   box-sizing: border-box;
@@ -196,15 +285,27 @@ body {
     left: 50%;
     right: 0;
     z-index: -1; }
+    @media screen and (max-width: 875px) {
+      body:after {
+        background: #e8e9eb; } }
 
-nav.nav {
+nav {
   font-family: "Wombi", sans-serif;
   margin: 0.5rem 2rem; }
-  nav.nav a {
+  nav ul {
+    text-align: center; }
+    nav ul li {
+      display: inline-block;
+      margin: 1rem 1.5rem; }
+  nav a {
+    color: #c1c0b8;
     margin-bottom: 0.5rem;
-    color: white;
     font-weight: 700;
-    text-decoration: none; }
+    font-size: 18px;
+    text-decoration: underline;
+    z-index: 5; }
+    nav a.active {
+      color: #313638; }
 
 footer img {
   position: absolute;
@@ -214,12 +315,12 @@ footer img {
 
 h2 {
   font-family: "Wombi", sans-serif;
-  font-size: 22px;
+  font-size: 28px;
   padding-left: 0.5rem;
   padding-bottom: 2rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #f06543; }
+  letter-spacing: 2px;
+  color: rgba(240, 101, 67, 0.8); }
 
 h3 {
   margin: 0.5rem 0;
@@ -255,12 +356,13 @@ section {
   width: 45%;
   max-width: 560px;
   min-height: 500px; }
-  @media screen and (max-width: 875px) {
+  @media screen and (max-width: 875px) and (min-width: 418px) {
     section {
       margin: 0.5rem; } }
   @media screen and (max-width: 875px) {
     section {
-      width: 70%; } }
+      width: 100%;
+      margin: 0.5rem 0; } }
 
 form-container,
 dependencies-container {
@@ -271,6 +373,10 @@ dependencies-container {
   backface-visibility: hidden;
   background-color: white;
   border-radius: 5px; }
+  @media screen and (max-width: 875px) {
+    form-container,
+    dependencies-container {
+      background-color: #e8e9eb; } }
   form-container div.content,
   dependencies-container div.content {
     transform: translateY(-50%) translateZ(60px) scale(0.94);
@@ -330,6 +436,10 @@ button {
   cursor: pointer;
   user-select: none;
   transition: 0.2s ease; }
+  @media screen and (max-width: 875px) {
+    button {
+      font-size: 12px;
+      padding: 0.2rem 0.8rem; } }
   button.back {
     background: #c1c0b8; }
   button:hover {
@@ -343,6 +453,9 @@ button {
     transition: 0.1s ease; }
   button .fa {
     font-size: 14px; }
+    @media screen and (max-width: 1125px) {
+      button .fa {
+        display: none; } }
   button .fa-chevron-left {
     padding-right: 5px; }
   button .fa-chevron-right {

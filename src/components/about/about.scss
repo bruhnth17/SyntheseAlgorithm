@@ -1,14 +1,42 @@
 .about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  margin: 0 50px;
+  flex-direction: row;
 
-  img {
-    float: left;
+  @media screen and (max-width: $break-small) {
+    flex-direction: row;
+    margin: 0.5rem 0;
   }
-  
-  ul {
-    margin: 0 10rem;
-    
-    li {
-      margin-left: .5rem;
+
+  div.img-container {
+    height: 500px;
+    margin: 0rem 2rem;
+
+    @media screen and (max-width: $break-small) {
+      height: 300px;
+      margin: 0;
+    }
+
+    img {
+      height: inherit;
+    }
+  }
+  div>a {
+    color: $black;
+    font-size: 20px;
+    margin: 1rem;
+    &:hover {
+      color: $red;
+    }
+  }
+  p {
+    padding: 1rem;
+    max-width: 200px;
+    a {
+      color: $red;
     }
   }
 }

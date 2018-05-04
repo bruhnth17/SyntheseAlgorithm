@@ -1,9 +1,8 @@
 <template>
   <h2>Introduction</h2>
-  <article> 
+  <article>
     <p>
-      This algorithm finds the canonical cover for a given set of 
-      functional dependencies.
+      This algorithm finds the canonical cover for a given set of functional dependencies.
     </p>
     <br />
     <p>
@@ -20,39 +19,40 @@
           <li><i class="fa fa-angle-right" aria-hidden="true"></i> For all functional dependencies (FD) <strong>α → β ∈ F</strong></li>
           <ul>
             <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> Check for all <strong>A ∈ α</strong> if <strong>β ⊆ AttrHülle(F, α−A)</strong>
-              <br /> <span>//Can you still get all Attributes from <strong>β</strong> if you can use all FDs, start with <strong>α</strong> and <strong>A</strong> isn't in <strong>α</strong> anymore?</span> 
-            </li> 
+              <br /> <span>// Can you still get all Attributes from <strong>β</strong> if you can use all FDs, start with <strong>α</strong> and <strong>A</strong> isn't in <strong>α</strong> anymore?</span>
+            </li>
             <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> If YES, substitude <strong>α → β</strong> with <strong>( α − A ) → β</strong>
           </ul>
         </ul>
-      </li>
-      <li>
-        2. Right Reduction:       
-        <ul>
+        </li>
+        <li>
+          2. Right Reduction:
+          <ul>
             <li><i class="fa fa-angle-right" aria-hidden="true"></i> For all FD <strong> α → β ∈ F</strong></li>
             <ul>
               <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> Check for all <strong>B ∈ β</strong> if <br /><strong>B ∈ AttrHülle(F − (α → β) ∪ (α → (b−B)), α)</strong>
-              <br /> <span> //Is <strong>B</strong> still accessible from <strong>α</strong> if you can use all FDs but <strong>B</strong> isnt in <strong>β</strong> anymore?</span>
-              </li> 
-              <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> If YES, substitude <strong>α → β</strong> with <strong>( α − A ) → β</strong>
+                <br /> <span> // Is <strong>B</strong> still accessible from <strong>α</strong> if you can use all FDs but <strong>B</strong> isnt in <strong>β</strong> anymore?</span>
+              </li>
+              <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> If YES, substitude <strong>α → β</strong> with
+                <strong>( α − A ) → β</strong>
             </ul>
-        </ul>
-      </li>
-      <li>
-        3. Eliminate: 
-        <ul>
-            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Eliminate all <strong>FDs</strong> with <strong>α → ∅</strong></li>
-        </ul>
-      </li>
-      <li>       
-        4. Conflate:
-        <ul>
-            <li><i class="fa fa-angle-right" aria-hidden="true"></i> For all <strong>α</strong> with <strong>α → β_1, …, α → β_n</strong></li>
+          </ul>
+          </li>
+          <li>
+            3. Eliminate:
             <ul>
-              <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> Substitude <strong>α → β_1, …, α → β_n</strong> with <strong>α → (β_1 ∪ … ∪ α → β_n)</strong></li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i> Eliminate all <strong>FDs</strong> with <strong>α → ∅</strong></li>
             </ul>
-        </ul>
-      </li>
+          </li>
+          <li>
+            4. Conflate:
+            <ul>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i> For all <strong>α</strong> with <strong>α → β_1, …, α → β_n</strong></li>
+              <ul>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> Substitude <strong>α → β_1, …, α → β_n</strong>                  with <strong>α → (β_1 ∪ … ∪ α → β_n)</strong></li>
+              </ul>
+            </ul>
+          </li>
     </ol>
   </article>
 </template>

@@ -1,23 +1,33 @@
 .algorithm {
 
+    @media screen and (max-width: $break-small) {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      section {
+        min-height: 0;
+      }
+    }
+
   .dependencies {
     .deleted,
-    .deleted > div > span {
-      color : $grey !important;
+    .deleted>div>span {
+      color: $grey !important;
     }
-    .current-attribute,
-    .current-attribute > div > span {
-      color : $orange !important;
+    span.current-attribute {
+      color: $orange !important;
     }
-
-
+    .current-attribute>div.middle,
+    .current-attribute>div>span:not(.deleted) {
+      color: $orange !important;
+    }
     form {
       width: 100%;
       display: flex;
       justify-content: center;
       margin-bottom: $tiny;
-
-      
+      &.hidden {
+        display: none;
+      }
       span {
         color: $black;
         font-size: 25px;
@@ -26,18 +36,16 @@
         font-size: 20px;
         padding: 0 2px;
       }
-      
       .middle {
-        padding: 0 $tiny;
         font-weight: bold;
+        padding: 0 .8rem 0 0.4rem;
       }
     }
-
     nav.buttons {
       margin-top: $medium;
       display: -webkit-flex;
       display: flex;
-      -webkit-flex-direction: row; 
+      -webkit-flex-direction: row;
       flex-direction: row;
       -webkit-justify-content: center;
       justify-content: center;
@@ -47,69 +55,85 @@
       }
     }
   }
-
   .status {
-    border-radius: 5px;
-    border: 3px solid $grey;
     color: $black;
-    padding: $small;
-
     h3 {
       margin: $tiny 0;
       padding: 0 $tiny;
     }
-
     p {
       height: 40px;
       display: table-cell;
       vertical-align: middle;
+      padding: .5rem;
     }
-
     .answer {
       display: block;
       padding-top: $tiny;
       font-weight: 700;
     }
+    .progress-outer {
+      height: 12px;
+      background-color: $lightgrey;
+      border-radius: 5px;
 
-   .progress-outer {
-     height: 15px;
-     background-color: $lightgrey;
-     border-radius: 5px;
+      @media screen and (max-width: $break-small) {
+        background-color: white;
+      }
 
-     .progress-inner {
-       width: 0%;
-       height: inherit;
-       border-radius: inherit;
-       background-color: $red;
-       transition: width .06s ease-in;
-     }
-   }
-
+      .progress-inner {
+        width: 0%;
+        height: inherit;
+        border-radius: inherit;
+        background-color: $red;
+        transition: width .06s ease-in;
+      }
+    }
   }
-
   .description {
-    height: 400px;
-    overflow-y: auto;
     margin-top: $small;
-
-    ul {
+    .description-list {
       display: flex;
       flex-direction: column-reverse;
-
-      li {
-        list-style: none;
-        margin-bottom: $tiny;
-        height: auto;
-        padding: $small;
-        border-radius: 5px;
+      .message .message-head {
+        cursor: pointer;
+        padding: $tiny;
+        -webkit-user-select: none;
+        /* Chrome all / Safari all */
+        -moz-user-select: none;
+        /* Firefox all */
+        -ms-user-select: none;
+        /* IE 10+ */
+        user-select: none;
+      }
+      & .message:not(.details) {
+        &:not(:last-child) .message-head {
+          color: $grey;
+        }
+        p>i {
+          transform: rotate(0);
+        }
+        .message-body {
+          display: none;
+        }
+      }
+    }
+    .message {
+      list-style: none;
+      flex: 0 0 auto;
+      p>i {
+        transform: rotate(90deg);
+        transition: transform ease-in-out .2s;
+        padding: 10px;
+      }
+      .message-body {
+        list-style-type: none;
+        padding: 10px;
+        box-shadow: inset 0px 2px 8px 0px $grey;
         background-color: $lightgrey;
-        flex: 0 0 auto;
-        transition: all 0.4s ease-out;
-        opacity: 1;
-        font-size: 14px;
-
-        &::first-child {
-          background-color: green;
+        border-radius: 5px;
+        i {
+          padding: 5px 10px 5px 20px;
         }
       }
     }

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/value-converter.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/value-converter.js</span></h1>
+    <h2>
+        Statements: <span class="metric">83.33% <small>(20 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">50% <small>(3 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">72.73% <small>(8 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">86.36% <small>(19 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">src/</a> &#187; value-converter.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">System.register(['core-js'], function (_export) {
+  'use strict';
+&nbsp;
+  var core, ValueConverterResource;
+&nbsp;
+  function _classCallCheck(instance, Constructor) { <span class="missing-if-branch" title="if path not taken" >I</span>if (!(instance instanceof Constructor)) { <span class="cstat-no" title="statement not covered" >throw new TypeError('Cannot call a class as a function'); </span>} }
+&nbsp;
+  function camelCase(name) {
+    return name.charAt(0).toLowerCase() + name.slice(1);
+  }
+&nbsp;
+  return {
+    setters: [function (_coreJs) {
+      core = _coreJs['default'];
+    }],
+    execute: function () {
+      ValueConverterResource = (function () {
+        function ValueConverterResource(name) {
+          _classCallCheck(this, ValueConverterResource);
+&nbsp;
+          this.name = name;
+        }
+&nbsp;
+        ValueConverterResource.convention = function convention(name) {
+          if (name.endsWith('ValueConverter')) {
+            return new ValueConverterResource(camelCase(name.substring(0, name.length - 14)));
+          }
+        };
+&nbsp;
+        ValueConverterResource.prototype.analyze = <span class="fstat-no" title="function not covered" >function analyze(container, target) {</span>
+<span class="cstat-no" title="statement not covered" >          this.instance = container.get(target);</span>
+        };
+&nbsp;
+        ValueConverterResource.prototype.register = <span class="fstat-no" title="function not covered" >function register(registry, name) {</span>
+<span class="cstat-no" title="statement not covered" >          registry.registerValueConverter(name || this.name, this.instance);</span>
+        };
+&nbsp;
+        ValueConverterResource.prototype.load = <span class="fstat-no" title="function not covered" >function load(container, target) {</span>
+<span class="cstat-no" title="statement not covered" >          return Promise.resolve(this);</span>
+        };
+&nbsp;
+        return ValueConverterResource;
+      })();
+&nbsp;
+      _export('ValueConverterResource', ValueConverterResource);
+    }
+  };
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9FaXNlbmJlcmdFZmZlY3QvRG9jdW1lbnRzL0dpdEh1Yi9UaGUgRHVyYW5kYWwgUHJvamVjdC9hdXJlbGlhL2JpbmRpbmcvc3JjL3ZhbHVlLWNvbnZlcnRlci5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7WUFNYSxzQkFBc0I7Ozs7QUFKbkMsV0FBUyxTQUFTLENBQUMsSUFBSSxFQUFDO0FBQ3RCLFdBQU8sSUFBSSxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUMsQ0FBQyxXQUFXLEVBQUUsR0FBRyxJQUFJLENBQUMsS0FBSyxDQUFDLENBQUMsQ0FBQyxDQUFDO0dBQ3JEOzs7Ozs7O0FBRVksNEJBQXNCO0FBQ3RCLGlCQURBLHNCQUFzQixDQUNyQixJQUFJLEVBQUM7Z0NBRE4sc0JBQXNCOztBQUUvQixjQUFJLENBQUMsSUFBSSxHQUFHLElBQUksQ0FBQztTQUNsQjs7QUFIVSw4QkFBc0IsQ0FLMUIsVUFBVSxHQUFBLG9CQUFDLElBQUksRUFBQztBQUNyQixjQUFHLElBQUksQ0FBQyxRQUFRLENBQUMsZ0JBQWdCLENBQUMsRUFBQztBQUNqQyxtQkFBTyxJQUFJLHNCQUFzQixDQUFDLFNBQVMsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLENBQUMsRUFBRSxJQUFJLENBQUMsTUFBTSxHQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUMsQ0FBQztXQUNqRjtTQUNGOztBQVRVLDhCQUFzQixXQVdqQyxPQUFPLEdBQUEsaUJBQUMsU0FBUyxFQUFFLE1BQU0sRUFBQztBQUN4QixjQUFJLENBQUMsUUFBUSxHQUFHLFNBQVMsQ0FBQyxHQUFHLENBQUMsTUFBTSxDQUFDLENBQUM7U0FDdkM7O0FBYlUsOEJBQXNCLFdBZWpDLFFBQVEsR0FBQSxrQkFBQyxRQUFRLEVBQUUsSUFBSSxFQUFDO0FBQ3RCLGtCQUFRLENBQUMsc0JBQXNCLENBQUMsSUFBSSxJQUFJLElBQUksQ0FBQyxJQUFJLEVBQUUsSUFBSSxDQUFDLFFBQVEsQ0FBQyxDQUFDO1NBQ25FOztBQWpCVSw4QkFBc0IsV0FtQmpDLElBQUksR0FBQSxjQUFDLFNBQVMsRUFBRSxNQUFNLEVBQUM7QUFDckIsaUJBQU8sT0FBTyxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsQ0FBQztTQUM5Qjs7ZUFyQlUsc0JBQXNCOzs7d0NBQXRCLHNCQUFzQiIsImZpbGUiOiIvVXNlcnMvRWlzZW5iZXJnRWZmZWN0L0RvY3VtZW50cy9HaXRIdWIvVGhlIER1cmFuZGFsIFByb2plY3QvYXVyZWxpYS9iaW5kaW5nL3NyYy92YWx1ZS1jb252ZXJ0ZXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgY29yZSBmcm9tICdjb3JlLWpzJztcblxuZnVuY3Rpb24gY2FtZWxDYXNlKG5hbWUpe1xuICByZXR1cm4gbmFtZS5jaGFyQXQoMCkudG9Mb3dlckNhc2UoKSArIG5hbWUuc2xpY2UoMSk7XG59XG5cbmV4cG9ydCBjbGFzcyBWYWx1ZUNvbnZlcnRlclJlc291cmNlIHtcbiAgY29uc3RydWN0b3IobmFtZSl7XG4gICAgdGhpcy5uYW1lID0gbmFtZTtcbiAgfVxuXG4gIHN0YXRpYyBjb252ZW50aW9uKG5hbWUpe1xuICAgIGlmKG5hbWUuZW5kc1dpdGgoJ1ZhbHVlQ29udmVydGVyJykpe1xuICAgICAgcmV0dXJuIG5ldyBWYWx1ZUNvbnZlcnRlclJlc291cmNlKGNhbWVsQ2FzZShuYW1lLnN1YnN0cmluZygwLCBuYW1lLmxlbmd0aC0xNCkpKTtcbiAgICB9XG4gIH1cblxuICBhbmFseXplKGNvbnRhaW5lciwgdGFyZ2V0KXtcbiAgICB0aGlzLmluc3RhbmNlID0gY29udGFpbmVyLmdldCh0YXJnZXQpO1xuICB9XG5cbiAgcmVnaXN0ZXIocmVnaXN0cnksIG5hbWUpe1xuICAgIHJlZ2lzdHJ5LnJlZ2lzdGVyVmFsdWVDb252ZXJ0ZXIobmFtZSB8fCB0aGlzLm5hbWUsIHRoaXMuaW5zdGFuY2UpO1xuICB9XG5cbiAgbG9hZChjb250YWluZXIsIHRhcmdldCl7XG4gICAgcmV0dXJuIFByb21pc2UucmVzb2x2ZSh0aGlzKTtcbiAgfVxufVxuIl19</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jun 08 2015 13:47:14 GMT-0400 (EDT)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 export class App {
   configureRouter(config, router) {
     this.router = router;
-    config.options.pushState = true;
+    // config.options.pushState = true; bc on thbruhn.de it's a singlepageapp
     config.options.root = "/";
     config.title = "Synthese Algorithm";
 

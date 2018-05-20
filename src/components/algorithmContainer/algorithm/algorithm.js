@@ -55,7 +55,7 @@ export class Algorithm {
           }
         }
         if(l.length > 0 && r.length > 0) {
-          domObj.push({ "left": l, "right": r });
+          domObj.push({ "left": l, "right": r, dependency: i+1 });
         }
         l = [];
         r = [];
@@ -86,9 +86,9 @@ export class Algorithm {
      */
     this.leftReduction = function (span) {
       let startingElements = [],
-        elementsToFind = [],
-        question = "",
-        modifiedDom = this.traverseDomTree((a) => { return true; });
+          elementsToFind = [],
+          question = "",
+          modifiedDom = this.traverseDomTree((a) => { return true; });
 
       //startingElements are siblings of the span
       let siblingsDom = span.parentNode.childNodes;
@@ -128,7 +128,7 @@ export class Algorithm {
                   this.explainLeftRightreduction.pushConnection({
                     "reached": tempAttr,
                     "used": left,
-                    "dependency": (i + 1)
+                    "dependency": modifiedDom[i].dependency
                   });
                   this.log.steps.push({
                     "domElem": span,
@@ -145,7 +145,7 @@ export class Algorithm {
             this.explainLeftRightreduction.pushConnection({
               "reached": tempAttr,
               "used": left,
-              "dependency": (i + 1)
+              "dependency": modifiedDom[i].dependency
             });
           }
         }
@@ -156,6 +156,7 @@ export class Algorithm {
         "removed": false,
         "question": question,
       });
+
       this.explainLeftRightreduction.clear();
       return false;
     };
@@ -167,11 +168,11 @@ export class Algorithm {
      */
     this.rightReduction = function (span) {
       let startingElements = [],
-        elementToFind = span.innerHTML,
-        question = "",
-        modifiedDom = this.traverseDomTree((a) => {
-          return (span !== a);
-        });
+          elementToFind = span.innerHTML,
+          question = "",
+          modifiedDom = this.traverseDomTree((a) => {
+            return (span !== a);
+          });
       this.explainLeftRightreduction.setElementsToFind([elementToFind]);
 
 
@@ -207,23 +208,18 @@ export class Algorithm {
         question = "Can <b>" + elementToFind + "</b> still be reached with " + "<b>" + startingElements.join(", ") + " -> " + newRightSide.join(", ") + "</b>&nbsp; instead of <b>" + startingElements.join(", ") + " -> &nbsp;" + oldRightSide.join(", ") + "</b>&nbsp; when you start with <b>" + startingElements.join(", ") + "</b>?";
       }
 
-      let elementToFindIsStartingElement = false;
+      //check if element to find is alreade on left side
       for(let i = 0; i<startingElements.length; i++) {
         if (startingElements[i] === elementToFind) {
-          elementToFindIsStartingElement = true;
+          this.log.steps.push({
+            "domElem": span,
+            "question": question,
+            "removed": true,
+            "reachMessage": [elementToFind + " was also on the left side of the dependency"],
+          });
+          return true;
         }
-      }
-
-      if(elementToFindIsStartingElement) {
-        this.log.steps.push({
-          "domElem": span,
-          "question": question,
-          "removed": true,
-          "reachMessage": [elementToFind + " was also on the left side of the dependency"],
-        });
-        return true;
-      }
-      
+      };
 
       let addedSomethingNew;
       do {
@@ -240,7 +236,7 @@ export class Algorithm {
                   this.explainLeftRightreduction.pushConnection({
                     "reached": tempAttr,
                     "used": left,
-                    "dependency": (i + 1)
+                    "dependency": modifiedDom[i].dependency
                   });
                   this.log.steps.push({
                     "domElem": span,
@@ -257,7 +253,7 @@ export class Algorithm {
             this.explainLeftRightreduction.pushConnection({
               "reached": tempAttr,
               "used": left,
-              "dependency": (i + 1)
+              "dependency": modifiedDom[i].dependency
             });
           }
         }
@@ -301,6 +297,12 @@ export class Algorithm {
 
     };
 
+    /**
+     * Function to conflate
+     * combines dependencies if the left side is the same
+     * @param {json} dependencies that are checked
+     * @return {json} conflated dependencies 
+     */
     this.confluate = function (forms) {
       // https://stackoverflow.com/questions/1584370/how-to-merge-two-arrays-in-javascript-and-de-duplicate-items
       Array.prototype.unique = function () {
@@ -342,7 +344,7 @@ export class Algorithm {
                 "conflate": true,
                 "question": "Do two Dependencies have the same left side?",
                 "removed": true,
-                "reachMessage": [(j + 1) + ". Dependency had the same Attributes on the left side as the " + (i + 1) + ". Dependecy "]
+                "reachMessage": [(j + 1) + ". Dependency had the same Attributes on the left side as the " + modifiedDom[i].dependency + ". Dependecy "]
               });
             }
           }

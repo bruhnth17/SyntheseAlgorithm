@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$tiny".
-        on line 6 of src/components/dependenciesContainer/dependenciesContainer.scss
+        on line 6 of ./components/dependenciesContainer/dependenciesContainer.scss
 
 1: dependencies-container {
 2:   form {
@@ -11,11 +11,11 @@ Error: Undefined variable: "$tiny".
 7:     &.hidden {
 8:       display: none;
 9:     }
-10:   }
-11:   .middle {
+10: 
+11:     div{
 
 Backtrace:
-src/components/dependenciesContainer/dependenciesContainer.scss:6
+./components/dependenciesContainer/dependenciesContainer.scss:6
 /home/thomas/.gem/ruby/2.5.0/gems/sass-3.4.1/lib/sass/script/tree/variable.rb:49:in `_perform'
 /home/thomas/.gem/ruby/2.5.0/gems/sass-3.4.1/lib/sass/script/tree/node.rb:50:in `perform'
 /home/thomas/.gem/ruby/2.5.0/gems/sass-3.4.1/lib/sass/tree/visitors/perform.rb:378:in `visit_prop'
@@ -76,4 +76,4 @@ src/components/dependenciesContainer/dependenciesContainer.scss:6
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$tiny\".\A         on line 6 of src/components/dependenciesContainer/dependenciesContainer.scss\A \A 1: dependencies-container {\A 2:   form {\A 3:     width: 100%;\A 4:     display: flex;\A 5:     justify-content: center;\A 6:     margin-bottom: $tiny;\A 7:     &.hidden {\A 8:       display: none;\A 9:     }\A 10:   }\A 11:   .middle {"; }
+  content: "Error: Undefined variable: \"$tiny\".\A         on line 6 of ./components/dependenciesContainer/dependenciesContainer.scss\A \A 1: dependencies-container {\A 2:   form {\A 3:     width: 100%;\A 4:     display: flex;\A 5:     justify-content: center;\A 6:     margin-bottom: $tiny;\A 7:     &.hidden {\A 8:       display: none;\A 9:     }\A 10: \A 11:     div{"; }

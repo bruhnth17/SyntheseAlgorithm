@@ -18,7 +18,7 @@
 body {
   background: $lightgrey;
   font-family: $font-text;
-  font-size: 16px;  //TODO: Make this generall
+  font-size: 16px;  //TODO: plan to make a variable for that but dont
   color: $black;
 
   &:after {
@@ -125,12 +125,14 @@ section {
   min-height: 500px;
 
   @media screen and (max-width: $break-small) and (min-width: $break-tiny){
-    margin: $tiny;
+    margin: 0;
+    padding: $small;
   }
 
   @media screen and (max-width: $break-small) {
     width: 100%;
-    margin: $tiny 0;
+    margin: 0;
+    padding: $tiny;
   }
 }
 
@@ -155,7 +157,7 @@ dependencies-container {
     position: absolute;
     width: 100%;
     height: 100%;
-    padding: 2rem;
+    padding: 1rem;
     box-sizing: border-box;
     outline: 1px solid transparent;
     perspective: inherit;

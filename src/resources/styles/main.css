@@ -5,14 +5,14 @@
   float: right;
   margin: 0 50px;
   flex-direction: row; }
-  @media screen and (max-width: 875px) {
+  @media screen and (max-width: 885px) {
     .about {
       flex-direction: row;
       margin: 0.5rem 0; } }
   .about div.img-container {
     height: 500px;
     margin: 0rem 2rem; }
-    @media screen and (max-width: 875px) {
+    @media screen and (max-width: 885px) {
       .about div.img-container {
         height: 300px;
         margin: 0; } }
@@ -100,49 +100,55 @@ dependencies-container form {
   margin-bottom: 0.5rem; }
   dependencies-container form.hidden {
     display: none; }
+  dependencies-container form div {
+    display: flex;
+    align-content: center; }
 dependencies-container .middle {
-  padding: 0 0.5rem;
-  margin-top: .45rem;
+  padding: 0 1rem;
+  margin-top: 2px;
   font-weight: bold;
   text-align: center; }
-  @media screen and (max-width: 418px) {
+  @media screen and (max-width: 445px) {
     dependencies-container .middle {
       width: 23px;
+      font-size: 12px;
       padding: 0;
       margin: 0; } }
-  @media screen and (max-width: 875px) and (min-width: 418px) {
+  @media screen and (max-width: 885px) and (min-width: 445px) {
     dependencies-container .middle {
       width: auto;
       font-size: 12px;
-      margin: 0; } }
-  @media screen and (max-width: 1125px) and (min-width: 875px) {
+      margin-top: 5px; } }
+  @media screen and (max-width: 1125px) and (min-width: 885px) {
     dependencies-container .middle {
-      width: 40px; } }
+      width: 47px;
+      font-size: 14px;
+      margin-top: 2px; } }
 dependencies-container .answer {
   color: #f09d51; }
 dependencies-container label {
   color: #c1c0b8;
   cursor: pointer;
-  font-size: 25px;
   padding: 0 1px;
   font-weight: bold; }
-  @media screen and (max-width: 418px) {
+  @media screen and (max-width: 445px) {
     dependencies-container label {
-      font-size: 14px;
       padding: 0; } }
-  @media screen and (max-width: 875px) and (min-width: 418px) {
+  @media screen and (max-width: 885px) and (min-width: 445px) {
     dependencies-container label {
-      font-size: 16px;
       padding: 0 1px; } }
-  @media screen and (max-width: 1125px) and (min-width: 875px) {
-    dependencies-container label {
-      padding: 0; } }
   dependencies-container label span {
     font-size: 20px;
     padding: 0 2px; }
-    @media screen and (max-width: 875px) {
+    @media screen and (max-width: 445px) {
       dependencies-container label span {
         font-size: 16px; } }
+    @media screen and (max-width: 885px) and (min-width: 445px) {
+      dependencies-container label span {
+        font-size: 20px; } }
+    @media screen and (max-width: 1125px) and (min-width: 885px) {
+      dependencies-container label span {
+        font-size: 18px; } }
   dependencies-container label.hidden {
     display: none; }
   dependencies-container label input {
@@ -160,7 +166,7 @@ dependencies-container nav {
   justify-content: center;
   height: 75px; }
 
-@media screen and (max-width: 875px) {
+@media screen and (max-width: 885px) {
   .algorithm {
     -webkit-flex-direction: column;
     flex-direction: column; }
@@ -220,7 +226,7 @@ dependencies-container nav {
     height: 12px;
     background-color: #e8e9eb;
     border-radius: 5px; }
-    @media screen and (max-width: 875px) {
+    @media screen and (max-width: 885px) {
       .algorithm .status .progress-outer {
         background-color: white; } }
     .algorithm .status .progress-outer .progress-inner {
@@ -285,7 +291,7 @@ body {
     left: 50%;
     right: 0;
     z-index: -1; }
-    @media screen and (max-width: 875px) {
+    @media screen and (max-width: 885px) {
       body:after {
         background: #e8e9eb; } }
 
@@ -334,7 +340,7 @@ main {
   flex-direction: row;
   -webkit-justify-content: center;
   justify-content: center; }
-  @media screen and (max-width: 875px) {
+  @media screen and (max-width: 885px) {
     main {
       flex-direction: column-reverse;
       -webkit-align-items: center;
@@ -356,13 +362,15 @@ section {
   width: 45%;
   max-width: 560px;
   min-height: 500px; }
-  @media screen and (max-width: 875px) and (min-width: 418px) {
+  @media screen and (max-width: 885px) and (min-width: 445px) {
     section {
-      margin: 0.5rem; } }
-  @media screen and (max-width: 875px) {
+      margin: 0;
+      padding: 1rem; } }
+  @media screen and (max-width: 885px) {
     section {
       width: 100%;
-      margin: 0.5rem 0; } }
+      margin: 0;
+      padding: 0.5rem; } }
 
 form-container,
 dependencies-container {
@@ -373,7 +381,7 @@ dependencies-container {
   backface-visibility: hidden;
   background-color: white;
   border-radius: 5px; }
-  @media screen and (max-width: 875px) {
+  @media screen and (max-width: 885px) {
     form-container,
     dependencies-container {
       background-color: #e8e9eb; } }
@@ -385,7 +393,7 @@ dependencies-container {
     position: absolute;
     width: 100%;
     height: 100%;
-    padding: 2rem;
+    padding: 1rem;
     box-sizing: border-box;
     outline: 1px solid transparent;
     perspective: inherit;
@@ -436,7 +444,7 @@ button {
   cursor: pointer;
   user-select: none;
   transition: 0.2s ease; }
-  @media screen and (max-width: 875px) {
+  @media screen and (max-width: 885px) {
     button {
       font-size: 12px;
       padding: 0.2rem 0.8rem; } }

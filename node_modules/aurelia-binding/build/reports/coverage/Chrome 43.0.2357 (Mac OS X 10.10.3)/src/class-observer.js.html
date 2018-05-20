@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/class-observer.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/class-observer.js</span></h1>
+    <h2>
+        Statements: <span class="metric">94.87% <small>(37 / 39)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">91.67% <small>(11 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">87.5% <small>(7 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">97.3% <small>(36 / 37)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">src/</a> &#187; class-observer.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">53</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">53</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">53</span>
+<span class="cline-any cline-yes">53</span>
+<span class="cline-any cline-yes">53</span>
+<span class="cline-any cline-yes">53</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">System.register([], function (_export) {
+  'use strict';
+&nbsp;
+  var ClassObserver;
+&nbsp;
+  function _classCallCheck(instance, Constructor) { <span class="missing-if-branch" title="if path not taken" >I</span>if (!(instance instanceof Constructor)) { <span class="cstat-no" title="statement not covered" >throw new TypeError('Cannot call a class as a function'); </span>} }
+&nbsp;
+  return {
+    setters: [],
+    execute: function () {
+      ClassObserver = (function () {
+        function ClassObserver(element) {
+          _classCallCheck(this, ClassObserver);
+&nbsp;
+          this.element = element;
+          this.doNotCache = true;
+          this.value = '';
+          this.version = 0;
+        }
+&nbsp;
+        ClassObserver.prototype.getValue = function getValue() {
+          return this.value;
+        };
+&nbsp;
+        ClassObserver.prototype.setValue = function setValue(newValue) {
+          var nameIndex = this.nameIndex || {},
+              version = this.version,
+              names,
+              name,
+              i;
+&nbsp;
+          // Add the classes, tracking the version at which they were added.
+          names = newValue.split(' ');
+          i = names.length;
+          while (i--) {
+            name = names[i];
+            if (name === '') {
+              continue;
+            }
+            nameIndex[name] = version;
+            this.element.classList.add(name);
+          }
+&nbsp;
+          // Update state variables.
+          this.value = newValue;
+          this.nameIndex = nameIndex;
+          this.version += 1;
+&nbsp;
+          // First call to setValue?  We're done.
+          if (version === 0) {
+            return;
+          }
+&nbsp;
+          // Remove classes from previous version.
+          version -= 1;
+          for (name in nameIndex) {
+            if (!nameIndex.hasOwnProperty(name) || nameIndex[name] !== version) {
+              continue;
+            }
+            this.element.classList.remove(name);
+          }
+        };
+&nbsp;
+        ClassObserver.prototype.subscribe = <span class="fstat-no" title="function not covered" >function subscribe(callback) {</span>
+<span class="cstat-no" title="statement not covered" >          throw new Error('Observation of a "' + this.element.nodeName + '" element\'s "class" property is not supported.');</span>
+        };
+&nbsp;
+        return ClassObserver;
+      })();
+&nbsp;
+      _export('ClassObserver', ClassObserver);
+    }
+  };
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9FaXNlbmJlcmdFZmZlY3QvRG9jdW1lbnRzL0dpdEh1Yi9UaGUgRHVyYW5kYWwgUHJvamVjdC9hdXJlbGlhL2JpbmRpbmcvc3JjL2NsYXNzLW9ic2VydmVyLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztNQUFhLGFBQWE7Ozs7Ozs7QUFBYixtQkFBYTtBQUNiLGlCQURBLGFBQWEsQ0FDWixPQUFPLEVBQUU7Z0NBRFYsYUFBYTs7QUFFdEIsY0FBSSxDQUFDLE9BQU8sR0FBRyxPQUFPLENBQUM7QUFDdkIsY0FBSSxDQUFDLFVBQVUsR0FBRyxJQUFJLENBQUM7QUFDdkIsY0FBSSxDQUFDLEtBQUssR0FBRyxFQUFFLENBQUM7QUFDaEIsY0FBSSxDQUFDLE9BQU8sR0FBRyxDQUFDLENBQUM7U0FDbEI7O0FBTlUscUJBQWEsV0FReEIsUUFBUSxHQUFBLG9CQUFHO0FBQ1QsaUJBQU8sSUFBSSxDQUFDLEtBQUssQ0FBQztTQUNuQjs7QUFWVSxxQkFBYSxXQVl4QixRQUFRLEdBQUEsa0JBQUMsUUFBUSxFQUFFO0FBQ2pCLGNBQUksU0FBUyxHQUFHLElBQUksQ0FBQyxTQUFTLElBQUksRUFBRTtjQUNoQyxPQUFPLEdBQUcsSUFBSSxDQUFDLE9BQU87Y0FDdEIsS0FBSztjQUFFLElBQUk7Y0FBRSxDQUFDLENBQUM7OztBQUduQixlQUFLLEdBQUcsUUFBUSxDQUFDLEtBQUssQ0FBQyxHQUFHLENBQUMsQ0FBQztBQUM1QixXQUFDLEdBQUcsS0FBSyxDQUFDLE1BQU0sQ0FBQztBQUNqQixpQkFBTSxDQUFDLEVBQUUsRUFBRTtBQUNULGdCQUFJLEdBQUcsS0FBSyxDQUFDLENBQUMsQ0FBQyxDQUFDO0FBQ2hCLGdCQUFJLElBQUksS0FBSyxFQUFFLEVBQUU7QUFDZix1QkFBUzthQUNWO0FBQ0QscUJBQVMsQ0FBQyxJQUFJLENBQUMsR0FBRyxPQUFPLENBQUM7QUFDMUIsZ0JBQUksQ0FBQyxPQUFPLENBQUMsU0FBUyxDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUMsQ0FBQztXQUNsQzs7O0FBR0QsY0FBSSxDQUFDLEtBQUssR0FBRyxRQUFRLENBQUM7QUFDdEIsY0FBSSxDQUFDLFNBQVMsR0FBRyxTQUFTLENBQUM7QUFDM0IsY0FBSSxDQUFDLE9BQU8sSUFBSSxDQUFDLENBQUM7OztBQUdsQixjQUFJLE9BQU8sS0FBSyxDQUFDLEVBQUU7QUFDakIsbUJBQU87V0FDUjs7O0FBR0QsaUJBQU8sSUFBSSxDQUFDLENBQUM7QUFDYixlQUFJLElBQUksSUFBSSxTQUFTLEVBQUU7QUFDckIsZ0JBQUksQ0FBQyxTQUFTLENBQUMsY0FBYyxDQUFDLElBQUksQ0FBQyxJQUFJLFNBQVMsQ0FBQyxJQUFJLENBQUMsS0FBSyxPQUFPLEVBQUU7QUFDbEUsdUJBQVM7YUFDVjtBQUNELGdCQUFJLENBQUMsT0FBTyxDQUFDLFNBQVMsQ0FBQyxNQUFNLENBQUMsSUFBSSxDQUFDLENBQUM7V0FDckM7U0FDRjs7QUEvQ1UscUJBQWEsV0FpRHhCLFNBQVMsR0FBQSxtQkFBQyxRQUFRLEVBQUU7QUFDbEIsZ0JBQU0sSUFBSSxLQUFLLHdCQUFzQixJQUFJLENBQUMsT0FBTyxDQUFDLFFBQVEscURBQWtELENBQUM7U0FDOUc7O2VBbkRVLGFBQWE7OzsrQkFBYixhQUFhIiwiZmlsZSI6Ii9Vc2Vycy9FaXNlbmJlcmdFZmZlY3QvRG9jdW1lbnRzL0dpdEh1Yi9UaGUgRHVyYW5kYWwgUHJvamVjdC9hdXJlbGlhL2JpbmRpbmcvc3JjL2NsYXNzLW9ic2VydmVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNsYXNzIENsYXNzT2JzZXJ2ZXIge1xuICBjb25zdHJ1Y3RvcihlbGVtZW50KSB7XG4gICAgdGhpcy5lbGVtZW50ID0gZWxlbWVudDtcbiAgICB0aGlzLmRvTm90Q2FjaGUgPSB0cnVlO1xuICAgIHRoaXMudmFsdWUgPSAnJztcbiAgICB0aGlzLnZlcnNpb24gPSAwO1xuICB9XG5cbiAgZ2V0VmFsdWUoKSB7XG4gICAgcmV0dXJuIHRoaXMudmFsdWU7XG4gIH1cblxuICBzZXRWYWx1ZShuZXdWYWx1ZSkge1xuICAgIHZhciBuYW1lSW5kZXggPSB0aGlzLm5hbWVJbmRleCB8fCB7fSxcbiAgICAgICAgdmVyc2lvbiA9IHRoaXMudmVyc2lvbixcbiAgICAgICAgbmFtZXMsIG5hbWUsIGk7XG5cbiAgICAvLyBBZGQgdGhlIGNsYXNzZXMsIHRyYWNraW5nIHRoZSB2ZXJzaW9uIGF0IHdoaWNoIHRoZXkgd2VyZSBhZGRlZC5cbiAgICBuYW1lcyA9IG5ld1ZhbHVlLnNwbGl0KCcgJyk7XG4gICAgaSA9IG5hbWVzLmxlbmd0aDtcbiAgICB3aGlsZShpLS0pIHtcbiAgICAgIG5hbWUgPSBuYW1lc1tpXTtcbiAgICAgIGlmIChuYW1lID09PSAnJykge1xuICAgICAgICBjb250aW51ZTtcbiAgICAgIH1cbiAgICAgIG5hbWVJbmRleFtuYW1lXSA9IHZlcnNpb247XG4gICAgICB0aGlzLmVsZW1lbnQuY2xhc3NMaXN0LmFkZChuYW1lKTtcbiAgICB9XG5cbiAgICAvLyBVcGRhdGUgc3RhdGUgdmFyaWFibGVzLlxuICAgIHRoaXMudmFsdWUgPSBuZXdWYWx1ZTtcbiAgICB0aGlzLm5hbWVJbmRleCA9IG5hbWVJbmRleDtcbiAgICB0aGlzLnZlcnNpb24gKz0gMTtcblxuICAgIC8vIEZpcnN0IGNhbGwgdG8gc2V0VmFsdWU/ICBXZSdyZSBkb25lLlxuICAgIGlmICh2ZXJzaW9uID09PSAwKSB7XG4gICAgICByZXR1cm47XG4gICAgfVxuXG4gICAgLy8gUmVtb3ZlIGNsYXNzZXMgZnJvbSBwcmV2aW91cyB2ZXJzaW9uLlxuICAgIHZlcnNpb24gLT0gMTtcbiAgICBmb3IobmFtZSBpbiBuYW1lSW5kZXgpIHtcbiAgICAgIGlmICghbmFtZUluZGV4Lmhhc093blByb3BlcnR5KG5hbWUpIHx8IG5hbWVJbmRleFtuYW1lXSAhPT0gdmVyc2lvbikge1xuICAgICAgICBjb250aW51ZTtcbiAgICAgIH1cbiAgICAgIHRoaXMuZWxlbWVudC5jbGFzc0xpc3QucmVtb3ZlKG5hbWUpO1xuICAgIH1cbiAgfVxuXG4gIHN1YnNjcmliZShjYWxsYmFjaykge1xuICAgIHRocm93IG5ldyBFcnJvcihgT2JzZXJ2YXRpb24gb2YgYSBcIiR7dGhpcy5lbGVtZW50Lm5vZGVOYW1lfVwiIGVsZW1lbnRcXCdzIFwiY2xhc3NcIiBwcm9wZXJ0eSBpcyBub3Qgc3VwcG9ydGVkLmApO1xuICB9XG59XG4iXX0=</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jun 08 2015 13:47:14 GMT-0400 (EDT)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

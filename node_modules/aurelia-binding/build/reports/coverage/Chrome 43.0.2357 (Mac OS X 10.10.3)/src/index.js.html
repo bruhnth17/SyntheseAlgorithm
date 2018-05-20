@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/index.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">src/index.js</span></h1>
+    <h2>
+        Statements: <span class="metric">71.79% <small>(28 / 39)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">80.95% <small>(17 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">71.79% <small>(28 / 39)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">src/</a> &#187; index.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">System.register(['aurelia-metadata', './value-converter', './class-list', './event-manager', './observer-locator', './array-change-records', './binding-modes', './parser', './binding-expression', './listener-expression', './name-expression', './call-expression', './dirty-checking', './map-change-records', './computed-observation'], function (_export) {
+  'use strict';
+&nbsp;
+  var Decorators, Metadata, ValueConverterResource, classList;
+&nbsp;
+  _export('valueConverter', valueConverter);
+&nbsp;
+  //ES7 Decorators
+&nbsp;
+  _export('computedFrom', computedFrom);
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function valueConverter(nameOrTarget) {</span>
+<span class="cstat-no" title="statement not covered" >    if (nameOrTarget === undefined || typeof nameOrTarget === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >      return <span class="fstat-no" title="function not covered" >function (target) {</span></span>
+<span class="cstat-no" title="statement not covered" >        Reflect.defineMetadata(Metadata.resource, new ValueConverterResource(nameOrTarget), target);</span>
+      };
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    Reflect.defineMetadata(Metadata.resource, new ValueConverterResource(), nameOrTarget);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function computedFrom() {</span>
+<span class="cstat-no" title="statement not covered" >    for (var _len = arguments.length, rest = Array(_len), _key = 0; _key &lt; _len; _key++) {</span>
+<span class="cstat-no" title="statement not covered" >      rest[_key] = arguments[_key];</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >function (target, key, descriptor) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (descriptor.set) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('The computed property "' + key + '" cannot have a setter function.');</span>
+      }
+<span class="cstat-no" title="statement not covered" >      descriptor.get.dependencies = rest;</span>
+<span class="cstat-no" title="statement not covered" >      return descriptor;</span>
+    };
+  }
+&nbsp;
+  return {
+    setters: [function (_aureliaMetadata) {
+      Decorators = _aureliaMetadata.Decorators;
+      Metadata = _aureliaMetadata.Metadata;
+    }, function (_valueConverter) {
+      ValueConverterResource = _valueConverter.ValueConverterResource;
+&nbsp;
+      _export('ValueConverterResource', _valueConverter.ValueConverterResource);
+    }, function (_classList) {
+      classList = _classList;
+    }, function (_eventManager) {
+      _export('EventManager', _eventManager.EventManager);
+    }, function (_observerLocator) {
+      _export('ObserverLocator', _observerLocator.ObserverLocator);
+&nbsp;
+      _export('ObjectObservationAdapter', _observerLocator.ObjectObservationAdapter);
+    }, function (_arrayChangeRecords) {
+      _export('calcSplices', _arrayChangeRecords.calcSplices);
+    }, function (_bindingModes) {
+      for (var _key2 in _bindingModes) {
+        _export(_key2, _bindingModes[_key2]);
+      }
+    }, function (_parser) {
+      _export('Parser', _parser.Parser);
+    }, function (_bindingExpression) {
+      _export('BindingExpression', _bindingExpression.BindingExpression);
+    }, function (_listenerExpression) {
+      _export('ListenerExpression', _listenerExpression.ListenerExpression);
+    }, function (_nameExpression) {
+      _export('NameExpression', _nameExpression.NameExpression);
+    }, function (_callExpression) {
+      _export('CallExpression', _callExpression.CallExpression);
+    }, function (_dirtyChecking) {
+      _export('DirtyChecker', _dirtyChecking.DirtyChecker);
+    }, function (_mapChangeRecords) {
+      _export('getChangeRecords', _mapChangeRecords.getChangeRecords);
+    }, function (_computedObservation) {
+      _export('ComputedPropertyObserver', _computedObservation.ComputedPropertyObserver);
+&nbsp;
+      _export('declarePropertyDependencies', _computedObservation.declarePropertyDependencies);
+    }],
+    execute: function () {
+&nbsp;
+      Decorators.configure.parameterizedDecorator('valueConverter', valueConverter);
+    }
+  };
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9FaXNlbmJlcmdFZmZlY3QvRG9jdW1lbnRzL0dpdEh1Yi9UaGUgRHVyYW5kYWwgUHJvamVjdC9hdXJlbGlhL2JpbmRpbmcvc3JjL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7OzRCQW1CZ0IsY0FBYzs7OzswQkFZZCxZQUFZOztBQVpyQixXQUFTLGNBQWMsQ0FBQyxZQUFZLEVBQUM7QUFDMUMsUUFBRyxZQUFZLEtBQUssU0FBUyxJQUFJLE9BQU8sWUFBWSxLQUFLLFFBQVEsRUFBQztBQUNoRSxhQUFPLFVBQVMsTUFBTSxFQUFDO0FBQ3JCLGVBQU8sQ0FBQyxjQUFjLENBQUMsUUFBUSxDQUFDLFFBQVEsRUFBRSxJQUFJLHNCQUFzQixDQUFDLFlBQVksQ0FBQyxFQUFFLE1BQU0sQ0FBQyxDQUFDO09BQzdGLENBQUE7S0FDRjs7QUFFRCxXQUFPLENBQUMsY0FBYyxDQUFDLFFBQVEsQ0FBQyxRQUFRLEVBQUUsSUFBSSxzQkFBc0IsRUFBRSxFQUFFLFlBQVksQ0FBQyxDQUFDO0dBQ3ZGOztBQUlNLFdBQVMsWUFBWSxHQUFTO3NDQUFMLElBQUk7QUFBSixVQUFJOzs7QUFDbEMsV0FBTyxVQUFTLE1BQU0sRUFBRSxHQUFHLEVBQUUsVUFBVSxFQUFDO0FBQ3RDLFVBQUksVUFBVSxDQUFDLEdBQUcsRUFBQztBQUNqQixjQUFNLElBQUksS0FBSyw2QkFBMkIsR0FBRyxzQ0FBbUMsQ0FBQztPQUNsRjtBQUNELGdCQUFVLENBQUMsR0FBRyxDQUFDLFlBQVksR0FBRyxJQUFJLENBQUM7QUFDbkMsYUFBTyxVQUFVLENBQUM7S0FDbkIsQ0FBQTtHQUNGOzs7O29DQXZDTyxVQUFVO2tDQUFFLFFBQVE7OytDQUNwQixzQkFBc0I7O3dEQUt0QixzQkFBc0I7Ozs7NENBRnRCLFlBQVk7O2tEQUNaLGVBQWU7OzJEQUFFLHdCQUF3Qjs7aURBRXpDLFdBQVc7Ozs7OztnQ0FFWCxNQUFNOztzREFDTixpQkFBaUI7O3dEQUNqQixrQkFBa0I7O2dEQUNsQixjQUFjOztnREFDZCxjQUFjOzs2Q0FDZCxZQUFZOztvREFDWixnQkFBZ0I7OytEQUNoQix3QkFBd0I7O2tFQUFFLDJCQUEyQjs7OztBQWE3RCxnQkFBVSxDQUFDLFNBQVMsQ0FBQyxzQkFBc0IsQ0FBQyxnQkFBZ0IsRUFBRSxjQUFjLENBQUMsQ0FBQyIsImZpbGUiOiIvVXNlcnMvRWlzZW5iZXJnRWZmZWN0L0RvY3VtZW50cy9HaXRIdWIvVGhlIER1cmFuZGFsIFByb2plY3QvYXVyZWxpYS9iaW5kaW5nL3NyYy9pbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7RGVjb3JhdG9ycywgTWV0YWRhdGF9IGZyb20gJ2F1cmVsaWEtbWV0YWRhdGEnO1xuaW1wb3J0IHtWYWx1ZUNvbnZlcnRlclJlc291cmNlfSBmcm9tICcuL3ZhbHVlLWNvbnZlcnRlcic7XG5pbXBvcnQgKiBhcyBjbGFzc0xpc3QgZnJvbSAnLi9jbGFzcy1saXN0JztcblxuZXhwb3J0IHtFdmVudE1hbmFnZXJ9IGZyb20gJy4vZXZlbnQtbWFuYWdlcic7XG5leHBvcnQge09ic2VydmVyTG9jYXRvciwgT2JqZWN0T2JzZXJ2YXRpb25BZGFwdGVyfSBmcm9tICcuL29ic2VydmVyLWxvY2F0b3InO1xuZXhwb3J0IHtWYWx1ZUNvbnZlcnRlclJlc291cmNlfSBmcm9tICcuL3ZhbHVlLWNvbnZlcnRlcic7XG5leHBvcnQge2NhbGNTcGxpY2VzfSBmcm9tICcuL2FycmF5LWNoYW5nZS1yZWNvcmRzJztcbmV4cG9ydCAqIGZyb20gJy4vYmluZGluZy1tb2Rlcyc7XG5leHBvcnQge1BhcnNlcn0gZnJvbSAnLi9wYXJzZXInO1xuZXhwb3J0IHtCaW5kaW5nRXhwcmVzc2lvbn0gZnJvbSAnLi9iaW5kaW5nLWV4cHJlc3Npb24nO1xuZXhwb3J0IHtMaXN0ZW5lckV4cHJlc3Npb259IGZyb20gJy4vbGlzdGVuZXItZXhwcmVzc2lvbic7XG5leHBvcnQge05hbWVFeHByZXNzaW9ufSBmcm9tICcuL25hbWUtZXhwcmVzc2lvbic7XG5leHBvcnQge0NhbGxFeHByZXNzaW9ufSBmcm9tICcuL2NhbGwtZXhwcmVzc2lvbic7XG5leHBvcnQge0RpcnR5Q2hlY2tlcn0gZnJvbSAnLi9kaXJ0eS1jaGVja2luZyc7XG5leHBvcnQge2dldENoYW5nZVJlY29yZHN9IGZyb20gJy4vbWFwLWNoYW5nZS1yZWNvcmRzJztcbmV4cG9ydCB7Q29tcHV0ZWRQcm9wZXJ0eU9ic2VydmVyLCBkZWNsYXJlUHJvcGVydHlEZXBlbmRlbmNpZXN9IGZyb20gJy4vY29tcHV0ZWQtb2JzZXJ2YXRpb24nO1xuXG4vL0VTNyBEZWNvcmF0b3JzXG5leHBvcnQgZnVuY3Rpb24gdmFsdWVDb252ZXJ0ZXIobmFtZU9yVGFyZ2V0KXtcbiAgaWYobmFtZU9yVGFyZ2V0ID09PSB1bmRlZmluZWQgfHwgdHlwZW9mIG5hbWVPclRhcmdldCA9PT0gJ3N0cmluZycpe1xuICAgIHJldHVybiBmdW5jdGlvbih0YXJnZXQpe1xuICAgICAgUmVmbGVjdC5kZWZpbmVNZXRhZGF0YShNZXRhZGF0YS5yZXNvdXJjZSwgbmV3IFZhbHVlQ29udmVydGVyUmVzb3VyY2UobmFtZU9yVGFyZ2V0KSwgdGFyZ2V0KTtcbiAgICB9XG4gIH1cblxuICBSZWZsZWN0LmRlZmluZU1ldGFkYXRhKE1ldGFkYXRhLnJlc291cmNlLCBuZXcgVmFsdWVDb252ZXJ0ZXJSZXNvdXJjZSgpLCBuYW1lT3JUYXJnZXQpO1xufVxuXG5EZWNvcmF0b3JzLmNvbmZpZ3VyZS5wYXJhbWV0ZXJpemVkRGVjb3JhdG9yKCd2YWx1ZUNvbnZlcnRlcicsIHZhbHVlQ29udmVydGVyKTtcblxuZXhwb3J0IGZ1bmN0aW9uIGNvbXB1dGVkRnJvbSguLi5yZXN0KXtcbiAgcmV0dXJuIGZ1bmN0aW9uKHRhcmdldCwga2V5LCBkZXNjcmlwdG9yKXtcbiAgICBpZiAoZGVzY3JpcHRvci5zZXQpe1xuICAgICAgdGhyb3cgbmV3IEVycm9yKGBUaGUgY29tcHV0ZWQgcHJvcGVydHkgXCIke2tleX1cIiBjYW5ub3QgaGF2ZSBhIHNldHRlciBmdW5jdGlvbi5gKTtcbiAgICB9XG4gICAgZGVzY3JpcHRvci5nZXQuZGVwZW5kZW5jaWVzID0gcmVzdDtcbiAgICByZXR1cm4gZGVzY3JpcHRvcjtcbiAgfVxufVxuIl19</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jun 08 2015 13:47:14 GMT-0400 (EDT)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

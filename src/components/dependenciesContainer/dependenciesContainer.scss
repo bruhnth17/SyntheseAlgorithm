@@ -7,26 +7,34 @@ dependencies-container {
     &.hidden {
       display: none;
     }
+
+    div{
+      display: flex;
+      align-content: center;
+    }
   }
   .middle {
-    padding: 0 $tiny;
-    margin-top: .45rem;
+    padding: 0 $small;
+    margin-top: 2px;
     font-weight: bold;
     text-align: center;
 
 
     @media screen and (max-width: $break-tiny){
       width: 23px;
+      font-size: 12px;
       padding: 0;
       margin: 0;
     }
     @media screen and (max-width: $break-small) and (min-width: $break-tiny) {
       width: auto;
       font-size: 12px;
-      margin: 0;
+      margin-top: 5px;
     }
     @media screen and (max-width: $break-medium) and (min-width: $break-small) {
-      width: 40px;
+      width: 47px;
+      font-size: 14px;
+      margin-top: 2px;
     }
   }
   .answer {
@@ -35,26 +43,26 @@ dependencies-container {
   label {
     color: $grey;
     cursor: pointer;
-    font-size: 25px;
     padding: 0 1px;
     font-weight: bold;
     @media screen and (max-width: $break-tiny) {
-      font-size: 14px;
       padding: 0;
     }
     @media screen and (max-width: $break-small) and (min-width: $break-tiny) {
-      font-size: 16px;
       padding: 0 1px;
-    }
-    @media screen and (max-width: $break-medium) and (min-width: $break-small) {
-      padding: 0;
     }
 
     span {
       font-size: 20px;
       padding: 0 2px;
-      @media screen and (max-width: $break-small) {
+      @media screen and (max-width: $break-tiny) {
         font-size: 16px;
+      }
+      @media screen and (max-width: $break-small) and (min-width: $break-tiny) {
+        font-size: 20px;
+      }
+      @media screen and (max-width: $break-medium) and (min-width: $break-small) {
+        font-size: 18px;
       }
     }
     

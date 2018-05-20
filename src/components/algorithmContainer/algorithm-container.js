@@ -284,7 +284,7 @@ export class AlgorithmContainer {
       }
 
       if (this.count === sum - 1) {
-        //special case confluence
+        //special case conflate
         this.count++;
         this.updateState();
         this.hideFormElements(true);
@@ -299,7 +299,7 @@ export class AlgorithmContainer {
     if (this.count !== undefined) {
       let sum = this.stepsLR + this.stepsRR + this.stepsEL;
       if (this.count === sum) {
-        //special case confluence
+        //special case confluate
         this.count--;
         this.updateState();
         this.removeConflatedDependencies();

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/call-expression.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/call-expression.js</span></h1>
+    <h2>
+        Statements: <span class="metric">92.5% <small>(37 / 40)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">50% <small>(3 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(11 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">94.74% <small>(36 / 38)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">src/</a> &#187; call-expression.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">System.register([], function (_export) {
+  "use strict";
+&nbsp;
+  var CallExpression, Call;
+&nbsp;
+  function _classCallCheck(instance, Constructor) { <span class="missing-if-branch" title="if path not taken" >I</span>if (!(instance instanceof Constructor)) { <span class="cstat-no" title="statement not covered" >throw new TypeError("Cannot call a class as a function"); </span>} }
+&nbsp;
+  return {
+    setters: [],
+    execute: function () {
+      CallExpression = (function () {
+        function CallExpression(observerLocator, targetProperty, sourceExpression, valueConverterLookupFunction) {
+          _classCallCheck(this, CallExpression);
+&nbsp;
+          this.observerLocator = observerLocator;
+          this.targetProperty = targetProperty;
+          this.sourceExpression = sourceExpression;
+          this.valueConverterLookupFunction = valueConverterLookupFunction;
+        }
+&nbsp;
+        CallExpression.prototype.createBinding = function createBinding(target) {
+          return new Call(this.observerLocator, this.sourceExpression, target, this.targetProperty, this.valueConverterLookupFunction);
+        };
+&nbsp;
+        return CallExpression;
+      })();
+&nbsp;
+      _export("CallExpression", CallExpression);
+&nbsp;
+      Call = (function () {
+        function Call(observerLocator, sourceExpression, target, targetProperty, valueConverterLookupFunction) {
+          _classCallCheck(this, Call);
+&nbsp;
+          this.sourceExpression = sourceExpression;
+          this.target = target;
+          this.targetProperty = observerLocator.getObserver(target, targetProperty);
+          this.valueConverterLookupFunction = valueConverterLookupFunction;
+        }
+&nbsp;
+        Call.prototype.bind = function bind(source) {
+          var _this = this;
+&nbsp;
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (this.source === source) {
+<span class="cstat-no" title="statement not covered" >            return;</span>
+          }
+&nbsp;
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (this.source) {
+<span class="cstat-no" title="statement not covered" >            this.unbind();</span>
+          }
+&nbsp;
+          this.source = source;
+          this.targetProperty.setValue(function ($event) {
+            var result,
+                temp = source.$event;
+            source.$event = $event;
+            result = _this.sourceExpression.evaluate(source, _this.valueConverterLookupFunction);
+            source.$event = temp;
+            return result;
+          });
+        };
+&nbsp;
+        Call.prototype.unbind = function unbind() {
+          this.targetProperty.setValue(null);
+        };
+&nbsp;
+        return Call;
+      })();
+    }
+  };
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9FaXNlbmJlcmdFZmZlY3QvRG9jdW1lbnRzL0dpdEh1Yi9UaGUgRHVyYW5kYWwgUHJvamVjdC9hdXJlbGlhL2JpbmRpbmcvc3JjL2NhbGwtZXhwcmVzc2lvbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7TUFBYSxjQUFjLEVBbUJyQixJQUFJOzs7Ozs7O0FBbkJHLG9CQUFjO0FBQ2QsaUJBREEsY0FBYyxDQUNiLGVBQWUsRUFBRSxjQUFjLEVBQUUsZ0JBQWdCLEVBQUUsNEJBQTRCLEVBQUM7Z0NBRGpGLGNBQWM7O0FBRXZCLGNBQUksQ0FBQyxlQUFlLEdBQUcsZUFBZSxDQUFDO0FBQ3ZDLGNBQUksQ0FBQyxjQUFjLEdBQUcsY0FBYyxDQUFDO0FBQ3JDLGNBQUksQ0FBQyxnQkFBZ0IsR0FBRyxnQkFBZ0IsQ0FBQztBQUN6QyxjQUFJLENBQUMsNEJBQTRCLEdBQUcsNEJBQTRCLENBQUM7U0FDbEU7O0FBTlUsc0JBQWMsV0FRekIsYUFBYSxHQUFBLHVCQUFDLE1BQU0sRUFBQztBQUNuQixpQkFBTyxJQUFJLElBQUksQ0FDYixJQUFJLENBQUMsZUFBZSxFQUNwQixJQUFJLENBQUMsZ0JBQWdCLEVBQ3JCLE1BQU0sRUFDTixJQUFJLENBQUMsY0FBYyxFQUNuQixJQUFJLENBQUMsNEJBQTRCLENBQ2hDLENBQUM7U0FDTDs7ZUFoQlUsY0FBYzs7O2dDQUFkLGNBQWM7O0FBbUJyQixVQUFJO0FBQ0csaUJBRFAsSUFBSSxDQUNJLGVBQWUsRUFBRSxnQkFBZ0IsRUFBRSxNQUFNLEVBQUUsY0FBYyxFQUFFLDRCQUE0QixFQUFDO2dDQURoRyxJQUFJOztBQUVOLGNBQUksQ0FBQyxnQkFBZ0IsR0FBRyxnQkFBZ0IsQ0FBQTtBQUN4QyxjQUFJLENBQUMsTUFBTSxHQUFHLE1BQU0sQ0FBQztBQUNyQixjQUFJLENBQUMsY0FBYyxHQUFHLGVBQWUsQ0FBQyxXQUFXLENBQUMsTUFBTSxFQUFFLGNBQWMsQ0FBQyxDQUFDO0FBQzFFLGNBQUksQ0FBQyw0QkFBNEIsR0FBRyw0QkFBNEIsQ0FBQztTQUNsRTs7QUFORyxZQUFJLFdBUVIsSUFBSSxHQUFBLGNBQUMsTUFBTSxFQUFDOzs7QUFDVixjQUFHLElBQUksQ0FBQyxNQUFNLEtBQUssTUFBTSxFQUFDO0FBQ3hCLG1CQUFPO1dBQ1I7O0FBRUQsY0FBRyxJQUFJLENBQUMsTUFBTSxFQUFDO0FBQ2IsZ0JBQUksQ0FBQyxNQUFNLEVBQUUsQ0FBQztXQUNmOztBQUVELGNBQUksQ0FBQyxNQUFNLEdBQUcsTUFBTSxDQUFDO0FBQ3JCLGNBQUksQ0FBQyxjQUFjLENBQUMsUUFBUSxDQUFDLFVBQUEsTUFBTSxFQUFJO0FBQ3JDLGdCQUFJLE1BQU07Z0JBQUUsSUFBSSxHQUFHLE1BQU0sQ0FBQyxNQUFNLENBQUM7QUFDakMsa0JBQU0sQ0FBQyxNQUFNLEdBQUcsTUFBTSxDQUFDO0FBQ3ZCLGtCQUFNLEdBQUcsTUFBSyxnQkFBZ0IsQ0FBQyxRQUFRLENBQUMsTUFBTSxFQUFFLE1BQUssNEJBQTRCLENBQUMsQ0FBQztBQUNuRixrQkFBTSxDQUFDLE1BQU0sR0FBRyxJQUFJLENBQUM7QUFDckIsbUJBQU8sTUFBTSxDQUFDO1dBQ2YsQ0FBQyxDQUFDO1NBQ0o7O0FBekJHLFlBQUksV0EyQlIsTUFBTSxHQUFBLGtCQUFFO0FBQ04sY0FBSSxDQUFDLGNBQWMsQ0FBQyxRQUFRLENBQUMsSUFBSSxDQUFDLENBQUM7U0FDcEM7O2VBN0JHLElBQUkiLCJmaWxlIjoiL1VzZXJzL0Vpc2VuYmVyZ0VmZmVjdC9Eb2N1bWVudHMvR2l0SHViL1RoZSBEdXJhbmRhbCBQcm9qZWN0L2F1cmVsaWEvYmluZGluZy9zcmMvY2FsbC1leHByZXNzaW9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNsYXNzIENhbGxFeHByZXNzaW9uIHtcbiAgY29uc3RydWN0b3Iob2JzZXJ2ZXJMb2NhdG9yLCB0YXJnZXRQcm9wZXJ0eSwgc291cmNlRXhwcmVzc2lvbiwgdmFsdWVDb252ZXJ0ZXJMb29rdXBGdW5jdGlvbil7XG4gICAgdGhpcy5vYnNlcnZlckxvY2F0b3IgPSBvYnNlcnZlckxvY2F0b3I7XG4gICAgdGhpcy50YXJnZXRQcm9wZXJ0eSA9IHRhcmdldFByb3BlcnR5O1xuICAgIHRoaXMuc291cmNlRXhwcmVzc2lvbiA9IHNvdXJjZUV4cHJlc3Npb247XG4gICAgdGhpcy52YWx1ZUNvbnZlcnRlckxvb2t1cEZ1bmN0aW9uID0gdmFsdWVDb252ZXJ0ZXJMb29rdXBGdW5jdGlvbjtcbiAgfVxuXG4gIGNyZWF0ZUJpbmRpbmcodGFyZ2V0KXtcbiAgICByZXR1cm4gbmV3IENhbGwoXG4gICAgICB0aGlzLm9ic2VydmVyTG9jYXRvcixcbiAgICAgIHRoaXMuc291cmNlRXhwcmVzc2lvbixcbiAgICAgIHRhcmdldCxcbiAgICAgIHRoaXMudGFyZ2V0UHJvcGVydHksXG4gICAgICB0aGlzLnZhbHVlQ29udmVydGVyTG9va3VwRnVuY3Rpb25cbiAgICAgICk7XG4gIH1cbn1cblxuY2xhc3MgQ2FsbCB7XG4gIGNvbnN0cnVjdG9yKG9ic2VydmVyTG9jYXRvciwgc291cmNlRXhwcmVzc2lvbiwgdGFyZ2V0LCB0YXJnZXRQcm9wZXJ0eSwgdmFsdWVDb252ZXJ0ZXJMb29rdXBGdW5jdGlvbil7XG4gICAgdGhpcy5zb3VyY2VFeHByZXNzaW9uID0gc291cmNlRXhwcmVzc2lvblxuICAgIHRoaXMudGFyZ2V0ID0gdGFyZ2V0O1xuICAgIHRoaXMudGFyZ2V0UHJvcGVydHkgPSBvYnNlcnZlckxvY2F0b3IuZ2V0T2JzZXJ2ZXIodGFyZ2V0LCB0YXJnZXRQcm9wZXJ0eSk7XG4gICAgdGhpcy52YWx1ZUNvbnZlcnRlckxvb2t1cEZ1bmN0aW9uID0gdmFsdWVDb252ZXJ0ZXJMb29rdXBGdW5jdGlvbjtcbiAgfVxuXG4gIGJpbmQoc291cmNlKXtcbiAgICBpZih0aGlzLnNvdXJjZSA9PT0gc291cmNlKXtcbiAgICAgIHJldHVybjtcbiAgICB9XG5cbiAgICBpZih0aGlzLnNvdXJjZSl7XG4gICAgICB0aGlzLnVuYmluZCgpO1xuICAgIH1cblxuICAgIHRoaXMuc291cmNlID0gc291cmNlO1xuICAgIHRoaXMudGFyZ2V0UHJvcGVydHkuc2V0VmFsdWUoJGV2ZW50ID0+IHtcbiAgICAgIHZhciByZXN1bHQsIHRlbXAgPSBzb3VyY2UuJGV2ZW50O1xuICAgICAgc291cmNlLiRldmVudCA9ICRldmVudDtcbiAgICAgIHJlc3VsdCA9IHRoaXMuc291cmNlRXhwcmVzc2lvbi5ldmFsdWF0ZShzb3VyY2UsIHRoaXMudmFsdWVDb252ZXJ0ZXJMb29rdXBGdW5jdGlvbik7XG4gICAgICBzb3VyY2UuJGV2ZW50ID0gdGVtcDtcbiAgICAgIHJldHVybiByZXN1bHQ7XG4gICAgfSk7XG4gIH1cblxuICB1bmJpbmQoKXtcbiAgICB0aGlzLnRhcmdldFByb3BlcnR5LnNldFZhbHVlKG51bGwpO1xuICB9XG59XG4iXX0=</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jun 08 2015 13:47:14 GMT-0400 (EDT)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

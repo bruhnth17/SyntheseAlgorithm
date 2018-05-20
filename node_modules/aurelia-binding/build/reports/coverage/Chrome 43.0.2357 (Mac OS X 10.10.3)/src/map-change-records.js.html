@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/map-change-records.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">src/map-change-records.js</span></h1>
+    <h2>
+        Statements: <span class="metric">25% <small>(5 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">50% <small>(2 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">27.78% <small>(5 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">src/</a> &#187; map-change-records.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">System.register([], function (_export) {
+  'use strict';
+&nbsp;
+  _export('getChangeRecords', getChangeRecords);
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function newRecord(type, object, key, oldValue) {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      type: type,
+      object: object,
+      key: key,
+      oldValue: oldValue
+    };
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function getChangeRecords(map) {</span>
+<span class="cstat-no" title="statement not covered" >    var entries = [];</span>
+<span class="cstat-no" title="statement not covered" >    for (var _iterator = map.keys(), _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {</span>
+<span class="cstat-no" title="statement not covered" >      var _ref;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (_isArray) {</span>
+<span class="cstat-no" title="statement not covered" >        if (_i &gt;= _iterator.length) <span class="cstat-no" title="statement not covered" >break;</span></span>
+<span class="cstat-no" title="statement not covered" >        _ref = _iterator[_i++];</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        _i = _iterator.next();</span>
+<span class="cstat-no" title="statement not covered" >        if (_i.done) <span class="cstat-no" title="statement not covered" >break;</span></span>
+<span class="cstat-no" title="statement not covered" >        _ref = _i.value;</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      var key = _ref;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      entries.push(newRecord('added', map, key));</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return entries;</span>
+  }
+&nbsp;
+  return {
+    setters: [],
+    execute: function () {}
+  };
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9FaXNlbmJlcmdFZmZlY3QvRG9jdW1lbnRzL0dpdEh1Yi9UaGUgRHVyYW5kYWwgUHJvamVjdC9hdXJlbGlhL2JpbmRpbmcvc3JjL21hcC1jaGFuZ2UtcmVjb3Jkcy5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OEJBU2dCLGdCQUFnQjs7QUFUaEMsV0FBUyxTQUFTLENBQUMsSUFBSSxFQUFFLE1BQU0sRUFBRSxHQUFHLEVBQUUsUUFBUSxFQUFDO0FBQzdDLFdBQU87QUFDTCxVQUFJLEVBQUUsSUFBSTtBQUNWLFlBQU0sRUFBRSxNQUFNO0FBQ2QsU0FBRyxFQUFFLEdBQUc7QUFDUixjQUFRLEVBQUUsUUFBUTtLQUNuQixDQUFDO0dBQ0g7O0FBRU0sV0FBUyxnQkFBZ0IsQ0FBQyxHQUFHLEVBQUM7QUFDbkMsUUFBSSxPQUFPLEdBQUcsRUFBRSxDQUFDO0FBQ2pCLHlCQUFlLEdBQUcsQ0FBQyxJQUFJLEVBQUUsa0hBQUM7Ozs7Ozs7Ozs7OztVQUFsQixHQUFHOztBQUNULGFBQU8sQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLE9BQU8sRUFBRSxHQUFHLEVBQUUsR0FBRyxDQUFDLENBQUMsQ0FBQztLQUM1QztBQUNELFdBQU8sT0FBTyxDQUFDO0dBQ2hCIiwiZmlsZSI6Ii9Vc2Vycy9FaXNlbmJlcmdFZmZlY3QvRG9jdW1lbnRzL0dpdEh1Yi9UaGUgRHVyYW5kYWwgUHJvamVjdC9hdXJlbGlhL2JpbmRpbmcvc3JjL21hcC1jaGFuZ2UtcmVjb3Jkcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImZ1bmN0aW9uIG5ld1JlY29yZCh0eXBlLCBvYmplY3QsIGtleSwgb2xkVmFsdWUpe1xuICByZXR1cm4ge1xuICAgIHR5cGU6IHR5cGUsXG4gICAgb2JqZWN0OiBvYmplY3QsXG4gICAga2V5OiBrZXksXG4gICAgb2xkVmFsdWU6IG9sZFZhbHVlXG4gIH07XG59XG5cbmV4cG9ydCBmdW5jdGlvbiBnZXRDaGFuZ2VSZWNvcmRzKG1hcCl7XG4gIHZhciBlbnRyaWVzID0gW107XG4gIGZvcih2YXIga2V5IG9mIG1hcC5rZXlzKCkpe1xuICAgIGVudHJpZXMucHVzaChuZXdSZWNvcmQoJ2FkZGVkJywgbWFwLCBrZXkpKTtcbiAgfVxuICByZXR1cm4gZW50cmllcztcbn1cbiJdfQ==</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jun 08 2015 13:47:14 GMT-0400 (EDT)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

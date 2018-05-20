@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/composite-observer.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">src/composite-observer.js</span></h1>
+    <h2>
+        Statements: <span class="metric">35.48% <small>(11 / 31)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">30% <small>(3 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">37.93% <small>(11 / 29)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">src/</a> &#187; composite-observer.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">System.register([], function (_export) {
+  "use strict";
+&nbsp;
+  var CompositeObserver;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function _classCallCheck(instance, Constructor) {</span> <span class="cstat-no" title="statement not covered" >if (!(instance instanceof Constructor)) { <span class="cstat-no" title="statement not covered" >throw new TypeError("Cannot call a class as a function"); </span>} </span>}
+&nbsp;
+  return {
+    setters: [],
+    execute: function () {
+      CompositeObserver = (function () {
+<span class="fstat-no" title="function not covered" >        function CompositeObserver(observers, evaluate) {</span>
+<span class="cstat-no" title="statement not covered" >          var _this = this;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          _classCallCheck(this, CompositeObserver);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          this.subscriptions = new Array(observers.length);</span>
+<span class="cstat-no" title="statement not covered" >          this.evaluate = evaluate;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          for (var i = 0, ii = observers.length; i &lt; ii; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            this.subscriptions[i] = observers[i].subscribe(<span class="fstat-no" title="function not covered" >function (newValue) {</span></span>
+<span class="cstat-no" title="statement not covered" >              _this.notify(_this.evaluate());</span>
+            });
+          }
+        }
+&nbsp;
+        CompositeObserver.prototype.subscribe = <span class="fstat-no" title="function not covered" >function subscribe(callback) {</span>
+<span class="cstat-no" title="statement not covered" >          var that = this;</span>
+<span class="cstat-no" title="statement not covered" >          that.callback = callback;</span>
+<span class="cstat-no" title="statement not covered" >          return <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >            that.callback = null;</span>
+          };
+        };
+&nbsp;
+        CompositeObserver.prototype.notify = <span class="fstat-no" title="function not covered" >function notify(newValue) {</span>
+<span class="cstat-no" title="statement not covered" >          var callback = this.callback;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          if (callback) {</span>
+<span class="cstat-no" title="statement not covered" >            callback(newValue);</span>
+          }
+        };
+&nbsp;
+        CompositeObserver.prototype.dispose = <span class="fstat-no" title="function not covered" >function dispose() {</span>
+<span class="cstat-no" title="statement not covered" >          var subscriptions = this.subscriptions;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          var i = subscriptions.length;</span>
+<span class="cstat-no" title="statement not covered" >          while (i--) {</span>
+<span class="cstat-no" title="statement not covered" >            subscriptions[i]();</span>
+          }
+        };
+&nbsp;
+        return CompositeObserver;
+      })();
+&nbsp;
+      _export("CompositeObserver", CompositeObserver);
+    }
+  };
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9FaXNlbmJlcmdFZmZlY3QvRG9jdW1lbnRzL0dpdEh1Yi9UaGUgRHVyYW5kYWwgUHJvamVjdC9hdXJlbGlhL2JpbmRpbmcvc3JjL2NvbXBvc2l0ZS1vYnNlcnZlci5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7TUFBYSxpQkFBaUI7Ozs7Ozs7QUFBakIsdUJBQWlCO0FBQ2pCLGlCQURBLGlCQUFpQixDQUNoQixTQUFTLEVBQUUsUUFBUSxFQUFDOzs7Z0NBRHJCLGlCQUFpQjs7QUFFMUIsY0FBSSxDQUFDLGFBQWEsR0FBRyxJQUFJLEtBQUssQ0FBQyxTQUFTLENBQUMsTUFBTSxDQUFDLENBQUM7QUFDakQsY0FBSSxDQUFDLFFBQVEsR0FBRyxRQUFRLENBQUM7O0FBRXpCLGVBQUksSUFBSSxDQUFDLEdBQUcsQ0FBQyxFQUFFLEVBQUUsR0FBRyxTQUFTLENBQUMsTUFBTSxFQUFFLENBQUMsR0FBRyxFQUFFLEVBQUUsQ0FBQyxFQUFFLEVBQUM7QUFDaEQsZ0JBQUksQ0FBQyxhQUFhLENBQUMsQ0FBQyxDQUFDLEdBQUcsU0FBUyxDQUFDLENBQUMsQ0FBQyxDQUFDLFNBQVMsQ0FBQyxVQUFDLFFBQVEsRUFBSztBQUMzRCxvQkFBSyxNQUFNLENBQUMsTUFBSyxRQUFRLEVBQUUsQ0FBQyxDQUFDO2FBQzlCLENBQUMsQ0FBQztXQUNKO1NBQ0Y7O0FBVlUseUJBQWlCLFdBWTVCLFNBQVMsR0FBQSxtQkFBQyxRQUFRLEVBQUM7QUFDakIsY0FBSSxJQUFJLEdBQUcsSUFBSSxDQUFDO0FBQ2hCLGNBQUksQ0FBQyxRQUFRLEdBQUcsUUFBUSxDQUFDO0FBQ3pCLGlCQUFPLFlBQVU7QUFDZixnQkFBSSxDQUFDLFFBQVEsR0FBRyxJQUFJLENBQUM7V0FDdEIsQ0FBQztTQUNIOztBQWxCVSx5QkFBaUIsV0FvQjVCLE1BQU0sR0FBQSxnQkFBQyxRQUFRLEVBQUM7QUFDZCxjQUFJLFFBQVEsR0FBRyxJQUFJLENBQUMsUUFBUSxDQUFDOztBQUU3QixjQUFHLFFBQVEsRUFBQztBQUNWLG9CQUFRLENBQUMsUUFBUSxDQUFDLENBQUM7V0FDcEI7U0FDRjs7QUExQlUseUJBQWlCLFdBNEI1QixPQUFPLEdBQUEsbUJBQUU7QUFDUCxjQUFJLGFBQWEsR0FBRyxJQUFJLENBQUMsYUFBYSxDQUFDOztBQUV2QyxjQUFJLENBQUMsR0FBRyxhQUFhLENBQUMsTUFBTSxDQUFDO0FBQzdCLGlCQUFNLENBQUMsRUFBRSxFQUFFO0FBQ1QseUJBQWEsQ0FBQyxDQUFDLENBQUMsRUFBRSxDQUFDO1dBQ3BCO1NBQ0Y7O2VBbkNVLGlCQUFpQjs7O21DQUFqQixpQkFBaUIiLCJmaWxlIjoiL1VzZXJzL0Vpc2VuYmVyZ0VmZmVjdC9Eb2N1bWVudHMvR2l0SHViL1RoZSBEdXJhbmRhbCBQcm9qZWN0L2F1cmVsaWEvYmluZGluZy9zcmMvY29tcG9zaXRlLW9ic2VydmVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNsYXNzIENvbXBvc2l0ZU9ic2VydmVyIHtcbiAgY29uc3RydWN0b3Iob2JzZXJ2ZXJzLCBldmFsdWF0ZSl7XG4gICAgdGhpcy5zdWJzY3JpcHRpb25zID0gbmV3IEFycmF5KG9ic2VydmVycy5sZW5ndGgpO1xuICAgIHRoaXMuZXZhbHVhdGUgPSBldmFsdWF0ZTtcblxuICAgIGZvcih2YXIgaSA9IDAsIGlpID0gb2JzZXJ2ZXJzLmxlbmd0aDsgaSA8IGlpOyBpKyspe1xuICAgICAgdGhpcy5zdWJzY3JpcHRpb25zW2ldID0gb2JzZXJ2ZXJzW2ldLnN1YnNjcmliZSgobmV3VmFsdWUpID0+IHtcbiAgICAgICAgdGhpcy5ub3RpZnkodGhpcy5ldmFsdWF0ZSgpKTtcbiAgICAgIH0pO1xuICAgIH1cbiAgfVxuXG4gIHN1YnNjcmliZShjYWxsYmFjayl7XG4gICAgdmFyIHRoYXQgPSB0aGlzO1xuICAgIHRoYXQuY2FsbGJhY2sgPSBjYWxsYmFjaztcbiAgICByZXR1cm4gZnVuY3Rpb24oKXtcbiAgICAgIHRoYXQuY2FsbGJhY2sgPSBudWxsO1xuICAgIH07XG4gIH1cblxuICBub3RpZnkobmV3VmFsdWUpe1xuICAgIHZhciBjYWxsYmFjayA9IHRoaXMuY2FsbGJhY2s7XG5cbiAgICBpZihjYWxsYmFjayl7XG4gICAgICBjYWxsYmFjayhuZXdWYWx1ZSk7XG4gICAgfVxuICB9XG5cbiAgZGlzcG9zZSgpe1xuICAgIHZhciBzdWJzY3JpcHRpb25zID0gdGhpcy5zdWJzY3JpcHRpb25zO1xuXG4gICAgdmFyIGkgPSBzdWJzY3JpcHRpb25zLmxlbmd0aDtcbiAgICB3aGlsZShpLS0pIHtcbiAgICAgIHN1YnNjcmlwdGlvbnNbaV0oKTtcbiAgICB9XG4gIH1cbn1cbiJdfQ==</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jun 08 2015 13:47:14 GMT-0400 (EDT)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

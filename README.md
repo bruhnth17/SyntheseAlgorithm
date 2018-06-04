@@ -11,7 +11,7 @@ You can input the dependencies and see what the algorithm does step by step.
 
 ### How do I get set up? ###
 
-* `git clone https://github.com/.../... && cd ...`
+* `git clone https://github.com/bruhnth17/SyntheseAlgorithm.git && cd SyntheseAlgorithm`
 * `npm install`
 * `sass watch src/`
 * `au run --watch`
